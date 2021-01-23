@@ -44,6 +44,7 @@ void menuSobre(void) {
     printf("///              pela disciplina para um controle de estoque mais           ///\n");
     printf("///                         interativo e eficiênte.                        ///\n");
     printf("///                                                                         ///\n");
+    printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
 }
