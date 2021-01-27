@@ -83,12 +83,12 @@ void menuPrincipal(void) {
 	printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
 	printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-	printf("  *|*                                                                        *|*\n");
+    printf("  *|*                                                                        *|*\n");
 	printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("  *|*===================================**===================================*|*\n");
 	printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
 	printf("  *|*                                                                        *|*\n");
-	printf("  |*|                                                                        |*|\n");
+    printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
 	printf("  |*|               VEJA AS OPCAO E DIGITE SUA ESCOLHA                       |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -98,7 +98,7 @@ void menuPrincipal(void) {
     printf("  *|*              [ 4 ] << Cadastrar saida de produto >>                    *|*\n");
     printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
     printf("  *|*                                                                        *|*\n");
-	printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
+    printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
 	printf("  *|*                                                                        *|*\n");
 	printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
