@@ -61,7 +61,7 @@ void menuSobre(void) {
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
     printf("Digite 0 para retornar ao MENU PRINCIPAL(Ainda sem direcionar) \n");
-    scanf("%f\n");
+    getchar();
 }
 
 
