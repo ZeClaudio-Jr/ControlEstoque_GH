@@ -11,14 +11,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void menuSobre(void);
 
+
+//* Assinatura das funções
+
+void menuPrincipal(void);
+//void menuSobre(void);
+
+
+/// Programa Principal <main>
 int main(void) {
-    menuSobre();
-    
+    //menuSobre();
+    menuPrincipal();
+
     return 0;
 
 }
+
 
 
 void menuSobre(void) {
@@ -53,4 +62,31 @@ void menuSobre(void) {
     printf("\n");
     printf("Digite 0 para retornar ao MENU PRINCIPAL(Ainda sem direcionar) \n");
     scanf("%f\n");
+}
+
+
+
+
+void menuPrincipal(void) {
+    system("clear");
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ==       ==   ========   ==    ==   ==     ==                ///\n");
+	printf("///          ===     ===   ==         ===   ==   ==     ==                ///\n");
+	printf("///          == == == ==   =====      == == ==   ==     ==                ///\n");
+	printf("///          ==  ===  ==   ==         ==   ===   ==     ==                ///\n");
+	printf("///          ==       ==   ========   ==    ==   =========                ///\n");
+	printf("///                Developed by                                           ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+	getchar();
 }
