@@ -16,12 +16,13 @@
 //* Assinatura das funções
 
 void menuPrincipal(void);
-//void menuSobre(void);
+void menuSobre(void);
 
 
 /// Programa Principal <main>
+
 int main(void) {
-    //menuSobre();
+    menuSobre();
     menuPrincipal();
 
     return 0;
@@ -49,7 +50,7 @@ void menuSobre(void) {
     printf("///                                                                         ///\n");
     printf("///        = = SIG-Inventory: Sistema de Controle de Estoque = =            ///\n");
     printf("///                                                                         ///\n");
-    printf("///   Programa desenvolvido em prol do desenvolvimento e aperfeiçoamento    ///\n");
+    printf("///   Programa desenvolvido em prol do desenvolvimento e aperfeicoamento    ///\n");
     printf("///  da disciplina DCT1106 - Programacao. Tal trabalho pretende instituir   ///\n");
     printf("///     um programa de controle de estoque, com finalidade didatica e       ///\n");
     printf("///    ilustrativos. Convem conter todos os modulos e funcionalidades       ///\n");
