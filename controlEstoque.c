@@ -15,9 +15,11 @@
 
 //* Assinatura das funções
 
-//void menuPrincipal(void);
-//void menuSobre(void);
+void menuPrincipal(void);
+void menuSobre(void);
 void menuProdutos(void);
+void entradaProdutos(void);
+void saidaProdutos(void);
 
 
 /// Programa Principal <main>
@@ -26,12 +28,11 @@ int main(void) {
     //menuSobre();
     //menuPrincipal();
     menuProdutos();
-
+    //menuEntrada();
+    //menuSaida();
     return 0;
 
 }
-
-
 
 
 void menuPrincipal(void) {
@@ -79,9 +80,6 @@ void menuPrincipal(void) {
 }
 
 
-
-
-
 void menuSobre(void) {
 
     printf("\n");
@@ -120,8 +118,6 @@ void menuSobre(void) {
     printf("         Digite 0 para retornar ao MENU PRINCIPAL(Ainda sem direcionar) \n");
     getchar();
 }
-
-
 
 
 void menuProdutos(void) {
@@ -171,5 +167,94 @@ void menuProdutos(void) {
 }
 
 
+void entradaProdutos(void) {
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
+    printf("  |*|        MENU                                            MENU            |*|\n");
+    printf("  *|*        MENU            ENTRADA DE PRODUTOS             MENU            *|*\n");
+    printf("  |*|        MENU                                            MENU            |*|\n");
+    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
+    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
+    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              [ 1 ] <<                     >>                           |*|\n");
+    printf("  *|*              [ 2 ] <<                     >>                           *|*\n");
+    printf("  |*|              [ 3 ] <<                     >>                           |*|\n");
+    printf("  *|*              [ 4 ] <<                     >>                           *|*\n");
+    printf("  |*|              [ 5 ] <<                     >>                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t      >>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
 
-
+void saidaProdutos(void) {
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
+    printf("  |*|        MENU                                            MENU            |*|\n");
+    printf("  *|*        MENU              SAIDA DE PRODUTOS             MENU            *|*\n");
+    printf("  |*|        MENU                                            MENU            |*|\n");
+    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
+    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
+    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              [ 1 ] <<                     >>                           |*|\n");
+    printf("  *|*              [ 2 ] <<                     >>                           *|*\n");
+    printf("  |*|              [ 3 ] <<                     >>                           |*|\n");
+    printf("  *|*              [ 4 ] <<                     >>                           *|*\n");
+    printf("  |*|              [ 5 ] <<                     >>                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t      >>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
