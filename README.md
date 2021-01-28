@@ -1,4 +1,4 @@
-Este Projeto visa elaborar um programa de controle de estoque, na qual todo as mercadorias de uma determinada empresa seja averiguado e atualizado automaticamente na tela do computador.
+Este Projeto visa elaborar um programa de controle de estoque, na qual todo as mercadorias de uma determinada empresa sejam averiguadas e atualizadas automaticamente na tela do computador.
 
 Cátedra de Programação
 
