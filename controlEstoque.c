@@ -69,18 +69,18 @@ void menuSobre(void) {
 
 void menuPrincipal(void) {
     system("cls");
-	printf("\n");
-	printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-	printf("  *|*                                                                        *|*\n");
-	printf("  |*|          ==       ==   ========   ==    ==   ==     ==                 |*|\n");
-	printf("  *|*          ===     ===   ==         ===   ==   ==     ==                 *|*\n");
-	printf("  |*|          == == == ==   =====      == == ==   ==     ==                 |*|\n");
-	printf("  *|*          ==  ===  ==   ==         ==   ===   ==     ==                 *|*\n");
-	printf("  |*|          ==       ==   ========   ==    ==   =========  PRINCIPAL      |*|\n");
-	printf("  *|*                                                                        *|*\n");
-	printf("  |*|                                                                        |*|\n");
-	printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
-	printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|          ==       ==   ========   ==    ==   ==     ==                 |*|\n");
+    printf("  *|*          ===     ===   ==         ===   ==   ==     ==                 *|*\n");
+    printf("  |*|          == == == ==   =====      == == ==   ==     ==                 |*|\n");
+    printf("  *|*          ==  ===  ==   ==         ==   ===   ==     ==                 *|*\n");
+    printf("  |*|          ==       ==   ========   ==    ==   =========  PRINCIPAL      |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
+    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
