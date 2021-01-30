@@ -136,8 +136,6 @@ void menuProdutos(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
-    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("  *|*===================================**===================================*|*\n");
@@ -183,8 +181,6 @@ void entradaProdutos(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
-    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("  *|*===================================**===================================*|*\n");
@@ -229,8 +225,6 @@ void saidaProdutos(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
-    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("  *|*===================================**===================================*|*\n");
