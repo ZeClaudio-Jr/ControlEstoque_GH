@@ -3,8 +3,5 @@ Este Projeto visa elaborar um programa de controle de estoque, na qual todas as 
 Cátedra de Programação
 
 Projeto: SIG-Inventory: Sistema de Controle de Estoque
-<<<<<<< HEAD
-=======
 
 Desenvolvido por José Cláudio de Araújo Júnior e Annielly Ferreira de Sousa, com início em Jan/2021.
->>>>>>> e682e2374c1e0138582ea403227dc6909b0bb6b2
