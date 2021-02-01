@@ -20,12 +20,25 @@ void menuSobre(void);
 void menuProdutos(void);
 void entradaProdutos(void);
 void saidaProdutos(void);
+
+//MODULO PRODUTO
 void cadastProdutos(void);
 void alterarProdutos(void);
 void consultarProdutos(void);
 void excluirProduto(void);
 void gerarRelatorio(void);
 
+//MODULO ENTRADA
+void cadastEntrada(void);
+void alterarEntrada(void);
+void consultarEntrada(void);
+void excluirEntrada(void);
+
+//MODULO SAIDA
+void cadastSaida(void);
+void alterarSaida(void);
+void consultarSaida(void);
+void excluirSaida(void);
 
 /// Programa Principal <main>
 
@@ -38,9 +51,16 @@ int main(void) {
     //cadastProdutos();
     //alterarProdutos();
     //consultarProdutos();
-    excluirProduto();
-    gerarRelatorio();
-
+    //excluirProduto();
+    //gerarRelatorio();
+    //cadastEntrada();
+    //alterarEntrada();
+    //consultarEntrada();
+    //excluirEntrada();
+    //cadastSaida();
+    //alterarSaida();
+    //consultarSaida();
+    excluirSaida();
 
     return 0;
 
@@ -486,4 +506,338 @@ void gerarRelatorio(void) {
     getchar();
 }
 
-    
+ //MODULO ENTRADA
+void cadastEntrada(void){
+system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =              Cadastrar novo ENTRADA              =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Informe sobre o nova entrada:                       |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Fornecedor: <<__________>>                          *|*\n");
+    printf("  |*|                    Quantidade: <<__________>>                          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Salvar e cadastrar nova entrada>>              |*|\n");
+    printf("  *|*                 [ 9 ] <<Salvar e Sair>>                                *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+void alterarEntrada(void){
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =            Alterar/atualizar ENTRADA             =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              Forneca as novas informacoes sobre a entrada:             |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Fornecedor: <<__________>>                          *|*\n");
+    printf("  |*|                    Quantidade: <<__________>>                          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Salvar e alterar nova entrada>>                |*|\n");
+    printf("  *|*                 [ 9 ] <<Salvar e Sair>>                                *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+void consultarEntrada(void){
+     system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                Consultar ENTRADA                 =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|         Forneca alguma das informacoes abaixo sobre a entrada:         |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Fornecedor: <<__________>>                          *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Consultar entrada>>                            |*|\n");
+    printf("  *|*                 [ 9 ] <<Sair>>                                         *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+void excluirEntrada(void){
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Excluir ENTRADA                  =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                  Escolha o entrada a ser excluido:                     |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Fornecedor: <<__________>>                          *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                     [ 0 ] <<Excluir entrada>>                          *|*\n");
+    printf("  |*|                     [ 9 ] <<Sair>>                                     |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+
+//MODULO SAIDA
+void cadastSaida(void){
+system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =               Cadastrar novo SAIDA               =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Informe sobre o nova saida:                         |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Cliente: <<__________>>                             *|*\n");
+    printf("  |*|                    Quantidade: <<__________>>                          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Salvar e cadastrar nova saida>>                |*|\n");
+    printf("  *|*                 [ 9 ] <<Salvar e Sair>>                                *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+void alterarSaida(void){
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =             Alterar/atualizar SAIDA              =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|              Forneca as novas informacoes sobre a saida:               |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Cliente: <<__________>>                             *|*\n");
+    printf("  |*|                    Quantidade: <<__________>>                          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Salvar e alterar nova saida>>                  |*|\n");
+    printf("  *|*                 [ 9 ] <<Salvar e Sair>>                                *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+void consultarSaida(void){
+     system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Consultar SAIDA                  =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|         Forneca alguma das informacoes abaixo sobre a saida:           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Cliente: <<__________>>                             *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] <<Consultar saida>>                              |*|\n");
+    printf("  *|*                 [ 9 ] <<Sair>>                                         *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+void excluirSaida(void){
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                  Excluir SAIDA                   =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                  Escolha o saida a ser excluido:                       |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Cliente: <<__________>>                             *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                     [ 0 ] <<Excluir saida>>                            *|*\n");
+    printf("  |*|                     [ 9 ] <<Sair>>                                     |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    getchar();
+}
+
+ 
