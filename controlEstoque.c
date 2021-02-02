@@ -267,10 +267,10 @@ void saidaProdutos(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|              [ 1 ] << Lancar nova saida >>                           |*|\n");
+    printf("  |*|              [ 1 ] << Lancar nova saida >>                             |*|\n");
     printf("  *|*              [ 2 ] << Alterar/atualizar saida >>                       *|*\n");
-    printf("  |*|              [ 3 ] << Consultar saida >>                             |*|\n");
-    printf("  *|*              [ 4 ] << Excluir saida >>                               *|*\n");
+    printf("  |*|              [ 3 ] << Consultar saida >>                               |*|\n");
+    printf("  *|*              [ 4 ] << Excluir saida >>                                 *|*\n");
     printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
@@ -455,8 +455,8 @@ void excluirProduto(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                         [ 0 ] <<Excluir produto>>                          |*|\n");
-    printf("  *|*                         [ 9 ] <<Sair>>                                     *|*\n");
+    printf("  |*|                         [ 0 ] <<Excluir produto>>                      |*|\n");
+    printf("  *|*                         [ 9 ] <<Sair>>                                 *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
@@ -774,8 +774,6 @@ void consultarSaida(void){
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("  *|*===================================**===================================*|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
@@ -785,7 +783,7 @@ void consultarSaida(void){
     printf("  |*|         Forneca alguma das informacoes abaixo sobre a saida:           |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
-    printf("  *|*                    Cliente: <<__________>>                             *|*\n");
+    printf("  *|*                            Cliente: <<__________>>                     *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
@@ -812,8 +810,6 @@ void excluirSaida(void){
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
