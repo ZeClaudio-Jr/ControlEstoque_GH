@@ -46,8 +46,8 @@ int main(void) {
     //menuSobre();
     //menuPrincipal();
     //menuProdutos();
-    //menuEntrada();
-    //menuSaida();
+    //entradaProdutos();
+    //saidaProdutos();
     //cadastProdutos();
     //alterarProdutos();
     //consultarProdutos();
