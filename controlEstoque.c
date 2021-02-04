@@ -18,8 +18,10 @@
 void menuPrincipal(void);
 void menuSobre(void);
 void menuProdutos(void);
-void entradaProdutos(void);
-void saidaProdutos(void);
+char entradaProdutos(void);
+char saidaProdutos(void);
+
+void navegacaoEntrada(void);
 
 //MODULO PRODUTO
 void cadastProdutos(void);
@@ -46,21 +48,21 @@ int main(void) {
     //menuSobre();
     //menuPrincipal();
     //menuProdutos();
-    //entradaProdutos();
+    entradaProdutos();
     //saidaProdutos();
     //cadastProdutos();
     //alterarProdutos();
     //consultarProdutos();
     //excluirProduto();
     //gerarRelatorio();
-    //cadastEntrada();
-    //alterarEntrada();
-    //consultarEntrada();
-    //excluirEntrada();
+    cadastEntrada();
+    alterarEntrada();
+    consultarEntrada();
+    excluirEntrada();
     //cadastSaida();
     //alterarSaida();
     //consultarSaida();
-    excluirSaida();
+    //excluirSaida();
 
     return 0;
 
@@ -198,7 +200,8 @@ void menuProdutos(void) {
 }
 
 
-void entradaProdutos(void) {
+char entradaProdutos(void) {
+  char op;
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -227,7 +230,6 @@ void entradaProdutos(void) {
     printf("  *|*              [ 2 ] << Alterar/atualizar entrada >>                     *|*\n");
     printf("  |*|              [ 3 ] << Consultar entrada >>                             |*|\n");
     printf("  *|*              [ 4 ] << Excluir entrada >>                               *|*\n");
-    printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -238,11 +240,12 @@ void entradaProdutos(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\t\t\t      >>> Tecle <ENTER> para continuar...\n");
+    scanf("%c", &op);
     getchar();
+    return op;
 }
 
-void saidaProdutos(void) {
+char saidaProdutos(void) {
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -285,7 +288,6 @@ void saidaProdutos(void) {
     printf("\t\t\t      >>> Tecle <ENTER> para continuar...\n");
     getchar();
 }
-
 
 
 void cadastProdutos(void) {
@@ -836,4 +838,24 @@ void excluirSaida(void){
     getchar();
 }
 
- 
+
+void navegacaoEntrada(void) {
+	char opcao;
+	do {
+		opcao = entradaProdutos();
+		switch (opcao) {
+			case '1' : 	cadastEntrada();
+						break;
+			case '2' : 	alterarEntrada();
+						break;
+			case '3' : 	consultarEntrada();
+						break;
+			case '4' : 	excluirEntrada();
+						break;
+      case '0': entradaProdutos();
+            break;
+      default:
+            printf("Digite uma opcao valida\n\n");
+		}
+	} while (opcao != '0');
+}
