@@ -247,13 +247,13 @@ char entradaProdutos(void) {
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
-    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
-    printf("  |*|        MENU                                            MENU            |*|\n");
-    printf("  *|*        MENU            ENTRADA DE PRODUTOS             MENU            *|*\n");
-    printf("  |*|        MENU                                            MENU            |*|\n");
-    printf("  *|*        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            *|*\n");
-    printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
+    printf("  *|*          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          *|*\n");
+    printf("  |*|          MENU                                            MENU          |*|\n");
+    printf("  *|*          MENU            ENTRADA DE PRODUTOS             MENU          *|*\n");
+    printf("  |*|          MENU                                            MENU          |*|\n");
+    printf("  *|*          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          *|*\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -281,6 +281,7 @@ char entradaProdutos(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
+    printf("Digite a opcao desejada: ");
     scanf("%c", &op);
     getchar();
     return op;
@@ -336,6 +337,7 @@ void gerarRelatorio(void) {
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
+<<<<<<< HEAD
     printf("  |*|        ****************************************************            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
@@ -343,6 +345,15 @@ void gerarRelatorio(void) {
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");
+=======
+    printf("  |*|          ****************************************************          |*|\n");
+    printf("  *|*          ****************************************************          *|*\n");
+    printf("  |*|          =                                                  =          |*|\n");
+    printf("  *|*          =              Cadastrar novo PRODUTO              =          *|*\n");
+    printf("  |*|          =                                                  =          |*|\n");
+    printf("  *|*          ****************************************************          *|*\n");
+    printf("  |*|          ****************************************************          |*|\n");
+>>>>>>> 1e169efc096eee7c5bd00239ee2de372a14d1d6d
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -621,17 +632,24 @@ void excluirProduto(void) {
 
  //MODULO ENTRADA
 void cadastEntrada(void){
-system("cls");
+  char nome[51];
+  char codigo[4];
+  char desc[51];
+  char data[11];
+  char forn[51];
+  char qtde[4];
+
+  system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|        ****************************************************            |*|\n");
-    printf("  *|*        ****************************************************            *|*\n");
-    printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        =              Cadastrar novo ENTRADA              =            *|*\n");
-    printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        ****************************************************            *|*\n");
-    printf("  |*|        ****************************************************            |*|\n");
+    printf("  |*|          ****************************************************          |*|\n");
+    printf("  *|*          ****************************************************          *|*\n");
+    printf("  |*|          =                                                  =          |*|\n");
+    printf("  *|*          =              Cadastrar novo ENTRADA              =          *|*\n");
+    printf("  |*|          =                                                  =          |*|\n");
+    printf("  *|*          ****************************************************          *|*\n");
+    printf("  |*|          ****************************************************          |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -645,9 +663,24 @@ system("cls");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                    Informe sobre o nova entrada:                       |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
-    printf("  *|*                    Fornecedor: <<__________>>                          *|*\n");
-    printf("  |*|                    Quantidade: <<__________>>                          |*|\n");
+    printf("  |*|                    Nome do produto: ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
+    printf("  |*|                    Codigo do produto: ");
+    scanf("%[0-9]", codigo);
+	  getchar();
+    printf("  |*|                    Descricao do produto: ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
+    getchar();
+    printf("  |*|                    Data: ");
+    scanf("%[0-9/]", data);
+	  getchar();
+    printf("  *|*                    Fornecedor: ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", forn);
+	  getchar();
+    printf("  |*|                    Quantidade: ");
+    scanf("%[0-9]", qtde);
+	  getchar();
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
