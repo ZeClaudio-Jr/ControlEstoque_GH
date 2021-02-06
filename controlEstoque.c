@@ -57,22 +57,25 @@ int main(void) {
         opcao = menuPrincipal();
         switch (opcao) {
             
-            case 1: paginaSobre();
+            case '1': paginaSobre();
                             break;
 
-            case 2: menuProduto();
+            case '2': menuProduto();
                             break;
 
-            case 3: menuEntrada();
+            case '3': menuEntrada();
                             break;
 
-            case 4: menuSaida();
+            case '4': menuSaida();
                             break;
 
-            case 5: moduloRelatorio();
+            case '5': moduloRelatorio();
                             break;
-        return 0;
+
+        
     } while (opcao != "0");
+
+    return 0;
 
     
 }
@@ -398,6 +401,7 @@ void menuProdutos(void) {
 			case '4' : 	excluirProduto();
 						break;
 		}
+        
 	} while (opcao != '0');
 }
 
