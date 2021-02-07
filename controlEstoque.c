@@ -12,16 +12,17 @@
 #include <stdlib.h>
 
 
-
 //* Assinatura das funções
 
 char menuPrincipal(void);
 void paginaSobre(void);
-void paginaCadastrarProduto(void);
+// void paginaCadastrarProduto(void);
 char menuProdutos(void);
+void menuProduto(void);
 char entradaProdutos(void);
+void entradaProduto(void);
 char saidaProdutos(void);
-
+void saidaProduto(void);
 void navegacaoEntrada(void);
 
 //MODULO PRODUTO
@@ -53,7 +54,6 @@ int main(void) {
     
     char opcao;
     do {
-
         opcao = menuPrincipal();
         switch (opcao) {
             
@@ -63,24 +63,33 @@ int main(void) {
             case '2': menuProduto();
                             break;
 
-            case '3': menuEntrada();
+            case '3': entradaProduto();
                             break;
 
-            case '4': menuSaida();
+            case '4': saidaProduto();
                             break;
 
-            case '5': moduloRelatorio();
+            case '5': gerarRelatorio();
                             break;
+
+            default:
+                printf("Valor inválido.")
+                            
+
+        }
 
         
-    } while (opcao != "0");
+    } while (opcao != '0');
 
     return 0;
 
-    
-}
-            
+}    
+          
     // paginaSobre();
+    menuProduto();
+    // menuEntrada();
+    // menuSaida();
+    // moduloRelatorio();
     // opcao = menuPrincipal();
     // opcao = menuProdutos();
     // opcao = entradaProdutos();
@@ -99,7 +108,6 @@ int main(void) {
     // consultarSaida();
     // excluirSaida();
     // return 0;
-
 
 
 char menuPrincipal(void) {
@@ -387,7 +395,7 @@ void gerarRelatorio(void) {
 
 
 
-void menuProdutos(void) {
+void menuProduto(void) {
 	char opcao;
 	do {
 		opcao = menuProdutos
@@ -401,7 +409,7 @@ void menuProdutos(void) {
 			case '4' : 	excluirProduto();
 						break;
 		}
-        
+
 	} while (opcao != '0');
 }
 
@@ -410,7 +418,7 @@ void menuProdutos(void) {
 // void entradaProdutos(void) {
     // 	char opcao;
     // 	do {
-    // 		opcao = entradaProdutos
+    // 		opcao = entradaProdutos();
     // 		switch (opcao) {
     // 			case '1' : 	....();
     // 						break;
@@ -425,10 +433,10 @@ void menuProdutos(void) {
 // }
 
 
-// void saidaProdutos (void);
+// void saidaProdutos (void) {
 // 	char opcao;
 // 	do {
-// 		opcao = entradaProdutos
+// 		opcao = entradaProdutos();
 // 		switch (opcao) {
 // 			case '1' : 	....();
 // 						break;
@@ -438,6 +446,8 @@ void menuProdutos(void) {
 // 						break;
 // 			case '4' : 	....();
 // 						break;
+//          default:
+//          printf("........");
 // 		}
 // 	} while (opcao != '0');
 // }
@@ -450,15 +460,15 @@ void menuProdutos(void) {
 
 
 
-
-
-
-
-
-
-
-
 void cadastProdutos(void) {
+
+    char nome [25];
+    char cod [5];
+    char valor [8];
+    char estMax [4];
+    char estmin [4];
+    char dataValid [9];
+
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -505,6 +515,14 @@ void cadastProdutos(void) {
 
 
 void alterarProdutos(void) {
+
+    char nome [25];
+    char cod [5];
+    char valor [8];
+    char estMax [4];
+    char estmin [4];
+    char dataValid [9];
+
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -551,6 +569,10 @@ void alterarProdutos(void) {
 
 
 void consultarProdutos(void) {
+
+    char nome [25];
+    char cod [5];
+    
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -595,6 +617,10 @@ void consultarProdutos(void) {
 
 
 void excluirProduto(void) {
+
+    char nome [25];
+    char cod [5];
+
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
