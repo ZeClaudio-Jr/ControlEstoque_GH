@@ -39,7 +39,7 @@ void excluirEntrada(void);
 //MODULO SAIDA
 void cadastSaida(void);
 void alterarSaida(void);
-void consultarSaida(void);
+void pesquisarSaida(void);
 void excluirSaida(void);
 
 // MODULO RELATÓRIO
@@ -198,7 +198,7 @@ char menuProdutos(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 1 ] << Lancar novo produto >>                           |*|\n");
     printf("  *|*              [ 2 ] << Alterar/atualizar produto >>                     *|*\n");
-    printf("  |*|              [ 3 ] << Consultar produto >>                             |*|\n");
+    printf("  |*|              [ 3 ] << pesquisar produto >>                             |*|\n");
     printf("  *|*              [ 4 ] << Excluir produto >>                               *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -495,7 +495,7 @@ char menuEntrada(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 1 ] << Lancar nova entrada >>                           |*|\n");
     printf("  *|*              [ 2 ] << Alterar/atualizar entrada >>                     *|*\n");
-    printf("  |*|              [ 3 ] << Consultar entrada >>                             |*|\n");
+    printf("  |*|              [ 3 ] << pesquisar entrada >>                             |*|\n");
     printf("  *|*              [ 4 ] << Excluir entrada >>                               *|*\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
@@ -781,7 +781,7 @@ char menuSaida(void){
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 1 ] << Lancar nova saida >>                             |*|\n");
     printf("  *|*              [ 2 ] << Alterar/atualizar saida >>                       *|*\n");
-    printf("  |*|              [ 3 ] << Consultar saida >>                               |*|\n");
+    printf("  |*|              [ 3 ] << pesquisar saida >>                               |*|\n");
     printf("  *|*              [ 4 ] << Excluir saida >>                                 *|*\n");
     printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -813,10 +813,10 @@ void saidaProduto(void){
           alterarSaida();		
           break;
  			case '3' : 	
-          consultarSaida();
+          pesquisarSaida();
  				  break;
  			case '4' : 	
-          excluirSaida();
+          pesquisarSaida();
  			    break;
       default:
           printf("Valor invalido \n");
@@ -1076,4 +1076,3 @@ void menuRelatorio(void) {
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
 }
-
