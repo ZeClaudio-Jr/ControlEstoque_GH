@@ -20,8 +20,7 @@ char menuSaida(void);
 void menuRelatorio(void); 
   
 
-
-//MODULO PRODUTO
+// MODULO PRODUTO
 char navegacaoProduto(void); //logico
 void cadastrarProduto(void);
 void alterarProduto(void);
@@ -29,25 +28,26 @@ void pesquisarProduto(void);
 void excluirProduto(void);
 
 
-//MODULO ENTRADA
+// MODULO ENTRADA
 void navegacaoEntrada(void);
 void cadastEntrada(void);
 void alterarEntrada(void);
 void consultarEntrada(void);
 void excluirEntrada(void);
 
-//MODULO SAIDA
+
+// MODULO SAIDA
 void cadastSaida(void);
 void alterarSaida(void);
 void consultarSaida(void);
 void excluirSaida(void);
+
 
 // MODULO RELATÓRIO
 void gerarRelatorio (void);
 
 
 /// Programa Principal <main>
-
 int main(void) {
     
     char opcao;
@@ -220,6 +220,7 @@ char menuProdutos(void) {
 
 
 char navegacaoProduto(void) {
+
 	char opcao;
 	do {
 		opcao = menuProdutos(); // Chama tela
@@ -237,13 +238,12 @@ char navegacaoProduto(void) {
                 excluirProduto();
 				break;
 
-      default:
+            default:
                printf("Valor invalido \n");
 		}       
 	} while (opcao != '0');
   
 }
-
 
 
 void cadastrarProduto(void) {
