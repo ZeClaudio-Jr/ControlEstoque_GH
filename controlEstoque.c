@@ -164,7 +164,7 @@ void menuSobre(void) {
     printf("  //= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =//\n");
     printf("  ///////////////////////////////////////////////////////////////////////////////\n");
     printf("\n");
-    printf("         Digite 0 para retornar ao MENU PRINCIPAL(Ainda sem direcionar) \n");
+    printf("         Digite 0 para retornar ao MENU PRINCIPAL \n");
     getchar();
 }
 
@@ -172,27 +172,28 @@ void menuSobre(void) {
 
 //MODULO PRODUTO
 void navegacaoProduto(void) {
+ 
   char op;
   do {
-    op = menuProdutos();            
+    op = menuProdutos();         
     switch (op) {
       case '1': 
         cadastrarProduto();
         break;
-
       case '2': 
         alterarProduto();
         break;
-
       case '3': 
        pesquisarProduto(); 
         break;
-
       case '4': 
         excluirProduto();
         break;
+      default:
+        printf("Valor invalido \n");
+        break;
     } 
-  }while (op != '0');
+  }while (op != '0'); 
 }
 
 
@@ -459,7 +460,15 @@ void excluirProduto(void) {
      		opcao = menuEntrada();                          
      		switch (opcao) {
      			case '1' : 	
-              cadastEntrada();
+            cadastEntrada();
+              switch(opcao){
+                case '0':
+                cadastEntrada();
+                break;
+                case '9':
+                menuPrincipal();
+                break;
+              }
      				  break;
      			case '2' : 	
               alterarEntrada();
@@ -527,7 +536,7 @@ void cadastEntrada(void){
   char data[11];
   char forn[25];
   char qtde[5];
-
+  char opcao;
   system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -555,7 +564,7 @@ void cadastEntrada(void){
     printf("  |*|                    Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
     getchar();
-    printf("  |*|                    Data: ");
+    printf("  |*|                    Data da compra: ");
     scanf("%[0-9/]", data);
 	  getchar();
     printf("  *|*                    Fornecedor: ");
@@ -574,7 +583,8 @@ void cadastEntrada(void){
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    printf("\t\t\t>>> O que voce deseja fazer? ");
+    scanf("%c", &opcao);
     getchar();
 }
 
