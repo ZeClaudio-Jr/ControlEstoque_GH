@@ -72,7 +72,7 @@ int main(void) {
           menuRelatorio();
           break;
       default:
-          printf("Valor invalido \n");
+          printf("Valor digitado invalido \n");
     } 
   }while (opcao != '0');
   return 0; 
@@ -184,7 +184,7 @@ void navegacaoProduto(void) {
         alterarProduto();
         break;
       case '3': 
-       pesquisarProduto(); 
+        pesquisarProduto(); 
         break;
       case '4': 
         excluirProduto();
@@ -266,32 +266,40 @@ void cadastrarProduto(void) {
     printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                    Informe sobre o novo produto:                       |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                    Nome do produto: << ");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  >>>>>>>>>>>>>>>        Informe sobre o novo produto:        <<<<<<<<<<<<<<<  \n");
+    printf("  \n");
+    printf("                **      Nome do produto: << ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
-    printf("  |*|                    Codigo do produto: << ");
+    printf("                **      Codigo do produto: << ");
     scanf("%[0-9]", cod);
     getchar ();
-    printf("  *|*                    Valor de compra/unid: << R$ ");
+    printf("                **      Valor de compra/unid: << R$ ");
     scanf ( " %[0-9] >>" , valor);
     getchar ();
-    printf("  |*|                    Estoque Maximo: << ");
+    printf("                **      Estoque Maximo: << ");
     scanf ( " %[0-9] >>" , estMax);
     getchar ();
-    printf("  *|*                    Estoque Minimo: << ");
+    printf("                **      Estoque Minimo: << ");
     scanf ( " %[0-9] >>" , estMin);
     getchar ();
-    printf("  |*|                    Data de validade (dd / mm / aaaa): << ");
+    printf("                **      Data de validade (dd / mm / aaaa): << ");
     scanf ( " %[0-9 /] >>" , dataValid);
     getchar ();    
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                 [ 0 ] <<Salvar e cadastrar novo produto>>              *|*\n");
-    printf("  |*|                 [ 9 ] <<Salvar e Sair>>                                |*|\n");
-    printf("  *|*                                                                        *|*\n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("                      [ 0 ] <<Salvar e cadastrar novo produto>>                 \n");
+    printf("                      [ 9 ] <<Salvar e Sair>>                                   \n");
+    printf("  \n");
+    printf("  \n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -323,44 +331,45 @@ void alterarProduto(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("\n");
-    printf("  ||                Forneca novas informacoes sobre o produto:                ||\n");
-    printf("  ||                                                                          ||\n");
-    printf("  ||                    Nome do produto: <<                                   ||\n");
-    scanf ( " %[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ] >>" , nome);
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  >>>>>>>>>>>>     Forneca novas informacoes sobre o produto:    <<<<<<<<<<<<  \n");
+    printf("  \n");
+    printf("                **      Nome do produto: << ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
+    printf("                **      Codigo do produto: << ");
+    scanf("%[0-9]", cod);
     getchar ();
-    printf("  ||                    Codigo do produto (apenas números): << ");
-    scanf ( " %[0-9] >>" , cod);
-    getchar ();
-    printf("\n");
-
-    printf("  ||                    Valor de compra/unid: << R$                           ||\n");
+    printf("                **      Valor de compra/unid: << R$ ");
     scanf ( " %[0-9] >>" , valor);
     getchar ();
-    printf("\n");
-
-    printf("  ||                    Estoque Maximo: <<                                    ||\n");
+    printf("                **      Estoque Maximo: << ");
     scanf ( " %[0-9] >>" , estMax);
     getchar ();
-    printf("\n");
-
-    printf("  ||                    Estoque Minimo: <<                                   ||\n");
+    printf("                **      Estoque Minimo: << ");
     scanf ( " %[0-9] >>" , estMin);
     getchar ();
-    printf("\n");
-    
-    printf("  ||                    Data de validade (dd / mm / aaaa): <<               ||\n");
+    printf("                **      Data de validade (dd / mm / aaaa): << ");
     scanf ( " %[0-9 /] >>" , dataValid);
-    getchar ();
+    getchar ();    
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("                      [ 0 ] <<Salvar e alterar novo produto>>                   \n");
+    printf("                      [ 9 ] <<Salvar e Sair>>                                   \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("\n");
-    
-    printf("  ||                                                                        ||\n");
-    printf("  ||                                                                        ||\n");
-    printf("  ||                 [ 0 ] <<Salvar e alterar novo produto>>                ||\n");
-    printf("  ||                 [ 9 ] <<Salvar e Sair>>                                ||\n");
-
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
-    
+
 }    
 
 
@@ -384,24 +393,29 @@ void pesquisarProduto(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
     printf("\n");
-    
-    printf("  ||                         Informe o produto:                               ||\n");
-    printf("  ||                                                                          ||\n");
-    printf("  ||                    Nome do produto: <<                                   ||\n");
-    scanf ( " %[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ] >>" , nome);
-    getchar ();
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  >>>>>>>>>>>>       Informe o nome ou codigo do produto:         <<<<<<<<<<<<  \n");
+    printf("  \n");
+    printf("                **      Nome do produto: << ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
+    printf("                **      Codigo do produto: << ");
+    scanf("%[0-9]", cod);
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("                      [ 0 ] <<Fazer nova pesquisa>>                             \n");
+    printf("                      [ 9 ] <<Sair>>                                   \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("\n");
-
-    printf("  ||                    Codigo do produto (apenas números): <<                ||\n");
-    scanf ( " %[0-9] >>" , cod);
-    getchar ();
-    printf("\n");
-
-    printf("  ||                                                                          ||\n");
-    printf("  ||                                                                          ||\n");
-    printf("  ||                 [ 0 ] <<Fazer nova pesquisa>>                            ||\n");
-    printf("  ||                 [ 9 ] <<Sair>>                                           ||\n");
-
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
 
@@ -427,25 +441,30 @@ void excluirProduto(void) {
     printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+        printf("\n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  >>>>>>>>>>>>       Informe o nome ou codigo do produto:         <<<<<<<<<<<<  \n");
+    printf("  \n");
+    printf("                **      Nome do produto: << ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
+    getchar();
+    printf("                **      Codigo do produto: << ");
+    scanf("%[0-9]", cod);
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
+    printf("                      [ 0 ] <<Excluir novo produto>>                              \n");
+    printf("                      [ 9 ] <<Sair>>                                   \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("\n");
-    
-    printf("  ||                         Informe o produto:                               ||\n");
-    printf("  ||                                                                          ||\n");
-    printf("  ||                    Nome do produto: <<                                   ||\n");
-    scanf ( " %[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ] >>" , nome);
-    getchar ();
-    printf("\n");
-
-    printf("  ||                    Codigo do produto (apenas números): <<                ||\n");
-    scanf ( " %[0-9] >>" , cod);
-    getchar ();
-    printf("\n");
-
-    printf("  ||                                                                          ||\n");
-    printf("  ||                                                                          ||\n");
-    printf("  ||                 [ 0 ] <<Excluir novo produto>>                            ||\n");
-    printf("  ||                 [ 9 ] <<Sair>>                                           ||\n");
-
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
 
@@ -453,7 +472,8 @@ void excluirProduto(void) {
 
 
 
- //MODULO ENTRADA
+
+//MODULO ENTRADA
  void navegacaoEntrada(void) {
      	char opcao;
      	do {
