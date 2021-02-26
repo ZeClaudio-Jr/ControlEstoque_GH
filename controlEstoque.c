@@ -307,6 +307,9 @@ void cadastrarProduto(void) {
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
 
+
+    
+
 }    
 
 
