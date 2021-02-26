@@ -23,7 +23,7 @@ void menuRelatorio(void);
 
 
 //MODULO PRODUTO
-void navegacaoProduto(void); //logico
+void navegacaoProduto(void);
 void cadastrarProduto(void);
 void alterarProduto(void);
 void pesquisarProduto(void);
@@ -53,6 +53,7 @@ void gerarRelatorio (void);
 int main(void) {
     
   char opcao;
+
   do {
     opcao = menuPrincipal();            
     switch (opcao) {
@@ -73,13 +74,14 @@ int main(void) {
           break;
       default:
           printf("Valor digitado invalido \n");
+          
     } 
   }while (opcao != '0');
   return 0; 
 }
             
 
-char menuPrincipal(void) {
+char menuPrincipal(void) {    //Parte da função que contem a assinatura da função
   char op;
     
     system("cls");
@@ -128,7 +130,7 @@ char menuPrincipal(void) {
 }
 
 
-void menuSobre(void) {
+void menuSobre(void) {    //Parte da função que contem a assinatura da função
 
     printf("\n");
     printf("           Bem vindo ao seu programa de Controle de Estoque SIG-UFRN\n");
@@ -197,7 +199,7 @@ void navegacaoProduto(void) {
 }
 
 
-char menuProdutos(void) {
+char menuProdutos(void) {    //Parte da função que contem a assinatura da função
   char op;
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -507,7 +509,7 @@ void excluirProduto(void) {
 }
 
 
-char menuEntrada(void) {
+char menuEntrada(void) {    //Parte da função que contem a assinatura da função
     char op;
 
     system("cls");
@@ -791,7 +793,7 @@ void navegacaoSaida(void){
 }
 
 
-char menuSaida(void){
+char menuSaida(void){    //Parte da função que contem a assinatura da função
     char op;
     system("cls");
     printf("\n");
@@ -1050,7 +1052,7 @@ void excluirSaida(void){
 
 
 
-void menuRelatorio(void) {
+void menuRelatorio(void) {    //Parte da função que contem a assinatura da função
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -1078,9 +1080,9 @@ void menuRelatorio(void) {
     printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
     printf("  *|*                    Codigo do produto: <<__________>>                   *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*                     [ 0 ] <<Relatorio de produto especifico>>          *|*\n");
-    printf("  |*|                     [ 1 ] <<Relatorio Geral>>                          |*|\n");
-    printf("  *|*                     [ 9 ] <<Sair>>                                     *|*\n");
+    printf("  *|*                [ 0 ] <<Relatorio de produto especifico>>               *|*\n");
+    printf("  |*|                [ 1 ] <<Relatorio Geral>>                               |*|\n");
+    printf("  *|*                [ 9 ] <<Sair>>                                          *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
