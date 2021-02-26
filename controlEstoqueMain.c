@@ -11,6 +11,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+
 
 //* Assinatura das funções
 char menuPrincipal(void);
@@ -23,7 +25,7 @@ void menuRelatorio(void);
 
 
 //MODULO PRODUTO
-void navegacaoProduto(void);
+void navegacaoProduto(void); //logico
 void cadastrarProduto(void);
 void alterarProduto(void);
 void pesquisarProduto(void);
@@ -46,14 +48,13 @@ void excluirSaida(void);
 
 // MODULO RELATÓRIO
 void gerarRelatorio (void);
-
+void delay(int);
 
 /// Programa Principal <main>
 
 int main(void) {
     
   char opcao;
-
   do {
     opcao = menuPrincipal();            
     switch (opcao) {
@@ -75,13 +76,16 @@ int main(void) {
       default:
           printf("Valor digitado invalido \n");
           
+          
     } 
   }while (opcao != '0');
+
+  // system ("pause");
   return 0; 
 }
             
 
-char menuPrincipal(void) {    //Parte da função que contem a assinatura da função
+char menuPrincipal(void) {
   char op;
     
     system("cls");
@@ -130,7 +134,7 @@ char menuPrincipal(void) {    //Parte da função que contem a assinatura da fun
 }
 
 
-void menuSobre(void) {    //Parte da função que contem a assinatura da função
+void menuSobre(void) {
 
     printf("\n");
     printf("           Bem vindo ao seu programa de Controle de Estoque SIG-UFRN\n");
@@ -170,6 +174,15 @@ void menuSobre(void) {    //Parte da função que contem a assinatura da funçã
     getchar();
 }
 
+// void delay(int seg) {
+
+//   int tempo = 400000 * seg
+//   clock_t inicio = clock();
+//   while (clock() < inicio + tempo) {
+
+//   }
+  
+// }
 
 
 //MODULO PRODUTO
@@ -199,7 +212,7 @@ void navegacaoProduto(void) {
 }
 
 
-char menuProdutos(void) {    //Parte da função que contem a assinatura da função
+char menuProdutos(void) {
   char op;
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -512,7 +525,7 @@ void excluirProduto(void) {
 }
 
 
-char menuEntrada(void) {    //Parte da função que contem a assinatura da função
+char menuEntrada(void) {
     char op;
 
     system("cls");
@@ -796,7 +809,7 @@ void navegacaoSaida(void){
 }
 
 
-char menuSaida(void){    //Parte da função que contem a assinatura da função
+char menuSaida(void){
     char op;
     system("cls");
     printf("\n");
@@ -1055,7 +1068,7 @@ void excluirSaida(void){
 
 
 
-void menuRelatorio(void) {    //Parte da função que contem a assinatura da função
+void menuRelatorio(void) {
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -1083,9 +1096,9 @@ void menuRelatorio(void) {    //Parte da função que contem a assinatura da fun
     printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
     printf("  *|*                    Codigo do produto: <<__________>>                   *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*                [ 0 ] <<Relatorio de produto especifico>>               *|*\n");
-    printf("  |*|                [ 1 ] <<Relatorio Geral>>                               |*|\n");
-    printf("  *|*                [ 9 ] <<Sair>>                                          *|*\n");
+    printf("  *|*                     [ 0 ] <<Relatorio de produto especifico>>          *|*\n");
+    printf("  |*|                     [ 1 ] <<Relatorio Geral>>                          |*|\n");
+    printf("  *|*                     [ 9 ] <<Sair>>                                     *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
