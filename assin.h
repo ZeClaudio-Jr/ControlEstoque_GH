@@ -29,4 +29,4 @@ void pesquisarSaida(void);
 void excluirSaida(void);
 
 // MODULO RELATÓRIO
-void gerarRelatorio (void); //Menu primário RELATÓRIO
+//void gerarRelatorio (void); //Menu primário RELATÓRIO

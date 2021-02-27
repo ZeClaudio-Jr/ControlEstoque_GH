@@ -6,6 +6,36 @@
 
 //MÓDULO RELATÓRIOS
 
+// void menuRelatorio(void) {
+ 
+//   char op;
+//   do {
+//     op = menuRelatorio();         
+//     switch (op) {
+//       case '0': 
+//         menuPrincipal();         
+//         break;
+// //-----------------------------------------------------------------------------------------\\
+// //-----------------------------------------------------------------------------------------//
+//       case '1': 
+//         cadastrarProduto();       // Entra no menu "Lançar novo produto" - Menu Produtos
+//         break;
+// //-----------------------------------------------------------------------------------------\\
+// //-----------------------------------------------------------------------------------------//        
+//       case '9': 
+//         alterarProduto();
+//         break;
+// //-----------------------------------------------------------------------------------------\\
+// //-----------------------------------------------------------------------------------------//
+//       default:
+//         printf("        Valor digitado invalido \n");
+//         break;
+//     } 
+
+//   }while (op != '0'); 
+// }
+
+
 void menuRelatorio(void) {
     system("cls");
     printf("\n");
@@ -34,15 +64,15 @@ void menuRelatorio(void) {
     printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
     printf("  *|*                    Codigo do produto: <<__________>>                   *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*                     [ 0 ] <<Relatorio de produto especifico>>          *|*\n");
-    printf("  |*|                     [ 1 ] <<Relatorio Geral>>                          |*|\n");
-    printf("  *|*                     [ 9 ] <<Sair>>                                     *|*\n");
+    printf("  *|*                [ 0 ] << Relatorio de produto especifico >>             *|*\n");
+    printf("  |*|                [ 1 ] << Relatorio Geral >>                             |*|\n");
+    printf("  *|*                [ 9 ] << Sair >>                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    printf("\t\t\t>>>           Tecle <ENTER> para continuar...\n");
     getchar();
 }
 

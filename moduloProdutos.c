@@ -10,26 +10,86 @@ void navegacaoProduto(void) {
  
   char op;
   do {
-    op = menuProdutos();         
+    op = menuProdutos();          // Escolha principal/primária da navegação PRODUTOS - Menu Produtos
     switch (op) {
-      case '1': 
-        cadastrarProduto();
+      case '0': 
+        menuPrincipal();          // Retorno para o menu principal/main
         break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
+      case '1': 
+        cadastrarProduto();       // Entra no menu "Lançar novo produto" - Menu Produtos
+        switch (op) {
+          case '0':
+            cadastrarProduto();   // Salva e retorna para o menu "Lançar novo produto" para cadastrar novamente - Menu Produtos
+            break;
+          case '1':
+            menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+            break;
+          case '9':
+            menuPrincipal();      // Salva e retorna para o menu principal/main
+            break;
+        }
+        break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//        
       case '2': 
         alterarProduto();
+        switch (op) {
+          case '0':
+            alterarProduto();   // Salva e retorna para o menu "Alterar produto" para alterar novamente - Menu Produtos
+            break;
+          case '1':
+            menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+            break;
+          case '9':
+            menuPrincipal();      // Salva e retorna para o menu principal/main
+            break;
+        }
         break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
       case '3': 
-        pesquisarProduto(); 
+        pesquisarProduto();
+        switch (op) {
+          case '0':
+            pesquisarProduto();   // Retorna para o menu "Pesquisar produto" para pesquisar novamente - Menu Produtos
+            break;
+          case '1':
+            menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+            break;
+          case '9':
+            menuPrincipal();      // Salva e retorna para o menu principal/main
+            break;
+        } 
         break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
       case '4': 
         excluirProduto();
+        switch (op) {
+          case '0':
+            excluirProduto();   // Retorna para o menu "Excluir produto" para excluir novamente - Menu Produtos
+            break;
+          case '1':
+            menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+            break;
+          case '9':
+            menuPrincipal();      // Salva e retorna para o menu principal/main
+            break;
+        } 
         break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
       default:
-        printf(" Valor digitado invalido \n");
+        printf("        Valor digitado invalido \n");
         break;
     } 
+
   }while (op != '0'); 
 }
+
+
 
 
 char menuProdutos(void) {
@@ -63,7 +123,7 @@ char menuProdutos(void) {
     printf("  *|*              [ 4 ] << Excluir produto >>                               *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|              [ 0 ] <<Menu principal>>                                  |*|\n");
+    printf("  |*|              [ 0 ] << Voltar ao Menu principal >>                      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  |*|                                                                        |*|\n");
@@ -84,8 +144,8 @@ void cadastrarProduto(void) {
     char nome [25];
     char cod [5];
     float valor [8];
-    int estMax [15];
-    int estMin [5];
+    int estMax;
+    int estMin;
     char dataValid [11];
 
     system("cls");
@@ -107,7 +167,7 @@ void cadastrarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>>>>>>>>        Informe sobre o novo produto:        <<<<<<<<<<<<<<<  \n");
+    printf("  >>>>>>>>>>>>>>>        Informe sobre o novo produto:        <<<<<<<<<<<<<<<   \n");
     printf("  \n");
     printf("                **      Nome do produto: << ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
@@ -119,10 +179,10 @@ void cadastrarProduto(void) {
     scanf ( " %f[0-9] >>" , valor);
     getchar ();
     printf("                **      Estoque Maximo: << ");
-    scanf ( " %[0-9] >>" , estMax);
+    scanf ( "%d",&estMax);
     getchar ();
     printf("                **      Estoque Minimo: << ");
-    scanf ( " %[0-9] >>" , estMin);
+    scanf ( "%d",&estMin);
     getchar ();
     printf("                **      Data de validade (dd / mm / aaaa): << ");
     scanf ( " %[0-9 /] >>" , dataValid);
@@ -131,8 +191,9 @@ void cadastrarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] <<Salvar e cadastrar novo produto>>                 \n");
-    printf("                      [ 9 ] <<Salvar e Sair>>                                   \n");
+    printf("                      [ 0 ] << Salvar e cadastrar novo produto >>               \n");
+    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
+    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
     printf("  \n");
     printf("  \n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -196,8 +257,9 @@ void alterarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] <<Salvar e alterar novo produto>>                   \n");
-    printf("                      [ 9 ] <<Salvar e Sair>>                                   \n");
+    printf("                      [ 0 ] << Salvar e alterar novo produto >>                 \n");
+    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
+    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
     printf("  \n");
     printf("  \n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -245,8 +307,9 @@ void pesquisarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] <<Fazer nova pesquisa>>                             \n");
-    printf("                      [ 9 ] <<Sair>>                                   \n");
+    printf("                      [ 0 ] << Pesquisar novo produto >>                        \n");
+    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
+    printf("                      [ 9 ] << Sair >>                                          \n");
     printf("  \n");
     printf("  \n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -271,20 +334,19 @@ void excluirProduto(void) {
     printf("  *|*        MENU********************************************MENU            *|*\n");
     printf("  |*|        MENU*                                          *MENU            |*|\n");
     printf("  *|*        MENU*             EXCLUIR PRODUTOS             *MENU            *|*\n");
-
     printf("  |*|        MENU*                                          *MENU            |*|\n");
     printf("  *|*        MENU********************************************MENU            *|*\n");
     printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-        printf("\n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>>>>>       Informe o nome ou codigo do produto:         <<<<<<<<<<<<  \n");
+    printf("  \n");
+    printf("  >>>>>>>>>>>>        Informe o nome ou codigo do produto:        <<<<<<<<<<<<  \n");
     printf("  \n");
     printf("                **      Nome do produto: << ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
@@ -295,8 +357,9 @@ void excluirProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] <<Excluir novo produto>>                              \n");
-    printf("                      [ 9 ] <<Sair>>                                   \n");
+    printf("                      [ 0 ] << Excluir novo produto >>                          \n");
+    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
+    printf("                      [ 9 ] << Sair >>                                          \n");
     printf("  \n");
     printf("  \n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");

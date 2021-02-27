@@ -10,9 +10,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 #include <time.h>
-
+#include <string.h>
 
 //* Assinatura das funções
 char menuPrincipal(void);
@@ -48,7 +47,7 @@ void excluirSaida(void);
 
 // MODULO RELATÓRIO
 void gerarRelatorio (void);
-void delay(int);
+
 
 /// Programa Principal <main>
 
@@ -75,12 +74,8 @@ int main(void) {
           break;
       default:
           printf("Valor digitado invalido \n");
-          
-          
     } 
   }while (opcao != '0');
-
-  // system ("pause");
   return 0; 
 }
             
@@ -174,15 +169,6 @@ void menuSobre(void) {
     getchar();
 }
 
-// void delay(int seg) {
-
-//   int tempo = 400000 * seg
-//   clock_t inicio = clock();
-//   while (clock() < inicio + tempo) {
-
-//   }
-  
-// }
 
 
 //MODULO PRODUTO
@@ -319,9 +305,6 @@ void cadastrarProduto(void) {
     printf("\n");
     printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
     getchar();
-
-
-    
 
 }    
 
