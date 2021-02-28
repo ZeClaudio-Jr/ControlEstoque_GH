@@ -220,7 +220,7 @@ void pesquisarEntrada(void){
     printf("  \n");
     printf("  \n");
     printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
-    printf("  \n");                                                                   *|*\n");
+    printf("  \n");                                                                  
     printf("  |*|          **          Nome do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
