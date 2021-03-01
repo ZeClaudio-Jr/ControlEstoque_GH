@@ -59,8 +59,8 @@ char menuPrincipal(void) {
     printf("  |*|          ==       ==   ========   ==    ==   =========  PRINCIPAL      |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*           Developed by Jose Claudio de Araujo Junior                   *|*\n");
-    printf("  |*|                        Annielly Ferreira de Sousa                      |*|\n");
+    printf("  *|*          Developed by Jose Claudio de Araujo Junior,                   *|*\n");
+    printf("  |*|                       Annielly Ferreira de Sousa .                     |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -70,7 +70,7 @@ char menuPrincipal(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                 VEJA AS OPCAO E DIGITE SUA ESCOLHA                     |*|\n");
+    printf("  |*|                VEJA AS OPCOES E DIGITE SUA ESCOLHA:                    |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
