@@ -12,37 +12,46 @@ void navegacaoProduto(void) {
   do {
     op = menuProdutos();          // Escolha principal/primária da navegação PRODUTOS - Menu Produtos
     switch (op) {
-      case '0': 
+      case '0':
+        system("cls");
         menuPrincipal();          // Retorno para o menu principal/main
         break;
 
 
-      case '1': 
+      case '1':
+        system("cls");
         cadastrarProduto();       // Entra no menu "Lançar novo produto" - Menu Produtos
         switch (op) {
           case '0':
+            system("cls");
             cadastrarProduto();   // Salva e retorna para o menu "Lançar novo produto" para cadastrar novamente - Menu Produtos
             break;
           case '1':
+            system("cls");
             menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
             break;
           case '9':
+            system("cls");
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         }
         break;
 
 
-      case '2': 
+      case '2':
+        system("cls");
         alterarProduto();
         switch (op) {
           case '0':
+            system("cls");  
             alterarProduto();   // Salva e retorna para o menu "Alterar produto" para alterar novamente - Menu Produtos
             break;
           case '1':
+            system("cls");
             menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
             break;
           case '9':
+            system("cls");
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         }
@@ -53,12 +62,15 @@ void navegacaoProduto(void) {
         pesquisarProduto();
         switch (op) {
           case '0':
+            system("cls");
             pesquisarProduto();   // Retorna para o menu "Pesquisar produto" para pesquisar novamente - Menu Produtos
             break;
           case '1':
+            system("cls");
             menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
             break;
           case '9':
+            system("cls");
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         } 
@@ -69,12 +81,15 @@ void navegacaoProduto(void) {
         excluirProduto();
         switch (op) {
           case '0':
+            system("cls");
             excluirProduto();   // Retorna para o menu "Excluir produto" para excluir novamente - Menu Produtos
             break;
           case '1':
+            system("cls");
             menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
             break;
           case '9':
+            system("cls");
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         } 
