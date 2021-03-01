@@ -6,6 +6,7 @@
 
 void menuSobre(void) {
 
+    system("cls");
     printf("\n");
     printf("           Bem vindo ao seu programa de Controle de Estoque SIG-UFRN\n");
     printf("\n");
