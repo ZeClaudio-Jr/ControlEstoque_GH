@@ -7,26 +7,26 @@ int main(){
 
     char nome[20];
     int validar;
+
     do{
       printf("Nome: ");
-      scanf("%c", nome);
+      scanf("%[A-Za-z^0-9]", nome);
+      getchar();
       validar = validaNome(nome);
-    }while(validar != 0);
-
-  getchar();
-  return 1;
+      if(validar == 1){
+          printf("Nome valido!\n");
+      }else{
+          printf("Nome invalido!\n");
+      }
+    }while(validar != 1);
+  return 0;
 }
 
 int validaNome(char nome[]){
-  int i;
-  for(i =0; i < strlen(nome); i++){
-    if((nome[i] >= 65 && nome[i] <= 90) || (nome[i] >= 97 && nome[i] <= 122)){
-        printf("Nome valido!");
-        return 0;
-    }else{
-      printf("Nome invalido!");
+  for(int i = 0; i < strlen(nome); i++){
+    if((nome[i] >= 0 && nome[i] <= 64) || (nome[i] >= 122 && nome[i] <= 97)){    
+      return 0;
     }
   }
   return 1;
 }
-
