@@ -10,7 +10,7 @@ int main(){
     
     do{
       printf("Codigo: ");
-      scanf("%[0-9^A-Za-z]", codigo);
+      scanf("%s", codigo);
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){

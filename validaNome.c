@@ -10,7 +10,7 @@ int main(){
 
     do{
       printf("Nome: ");
-      scanf("%[A-Za-z^0-9]", nome);
+      scanf("%s", nome);
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
