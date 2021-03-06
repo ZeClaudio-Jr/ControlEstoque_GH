@@ -11,7 +11,7 @@ int main(){
 
     do{
       printf("Descricao: ");
-      scanf("%s", desc);
+      scanf("%s\n", desc);
       getchar();
       validar = validaDescricao(desc);
       if(validar == 1){

@@ -10,7 +10,7 @@ int main(){
 
     do{
       printf("Nome: ");
-      scanf("%s", nome);
+      scanf("%s\n", nome);
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
