@@ -23,8 +23,11 @@ int main(){
 }
 
 int validaCodigo(char codigo[]){
+  
   for(int i = 0; i < strlen(codigo); i++){
     if((codigo[i] >= 0 && codigo[i] <= 47) || (codigo[i] >= 58 && codigo[i] <= 126)){
+      return 0;
+    }else  if (strlen(codigo) > 4){ // limita numero de caracteres digitados
       return 0;
     }
   }
