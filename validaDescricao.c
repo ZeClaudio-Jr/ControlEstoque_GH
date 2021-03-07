@@ -27,7 +27,7 @@ int validaDescricao(char desc[]){
   
   for(int i = 0; i < strlen(desc); i++){
     if((desc[i] >= 0 && desc[i] <= 64) || (desc[i] >= 122 && desc[i] <= 97)){    
-      continue;
+      return 0;
     }else  if (strlen(desc) > 49){ // limita numero de caracteres digitados
       return 0;
     }

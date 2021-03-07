@@ -26,7 +26,7 @@ int validaNome(char nome[]){
 
   for(int i = 0; i < strlen(nome); i++){
     if((nome[i] >= 0 && nome[i] <= 64) || (nome[i] >= 122 && nome[i] <= 97)){    
-      continue;
+      return 0;
     }else  if (strlen(nome) > 24){
       return 0;
     }
