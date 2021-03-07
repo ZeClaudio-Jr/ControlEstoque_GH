@@ -7,24 +7,25 @@ int main(){
 
     char codigo[5];
     int validar;
+    
     do{
       printf("Codigo: ");
-      scanf("%c", codigo);
-      validar = validaCodigo(codigo);
-    }while(validar != 0);
-
-  getchar();
-  return 1;
+      scanf("%s\n", codigo);
+      getchar();
+      validar = validaCodigo(codigo); 
+      if(validar == 1){
+          printf("Codigo valido!\n");
+      }else{
+          printf("Codigo invalido!\n");
+      }
+    }while(validar != 1);
+  return 0;
 }
 
 int validaCodigo(char codigo[]){
-  int i;
-  for(i =0; i < strlen(codigo); i++){
-    if(codigo[i] >= 48 && codigo[i] <= 57){
-        printf("Codigo valido!");
-        return 0;
-    }else{
-      printf("Codigo invalido!");
+  for(int i = 0; i < strlen(codigo); i++){
+    if((codigo[i] >= 0 && codigo[i] <= 47) || (codigo[i] >= 58 && codigo[i] <= 126)){
+      return 0;
     }
   }
   return 1;
