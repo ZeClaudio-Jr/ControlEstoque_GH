@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "assin.h"
+#include "validacao.h"
 
 //MODULO ENTRADA
  void navegacaoEntrada(void) {
@@ -78,6 +79,7 @@ void cadastEntrada(void){
   char data[11];
   char forn[25];
   char qtde[5];
+  int validar;
   char opcao;
   system("cls");
     printf("\n");
@@ -100,9 +102,17 @@ void cadastEntrada(void){
     printf("  \n");
     printf("  >>>>>>>>>>>>>>>        Informe sobre a nova entrada:        <<<<<<<<<<<<<<<   \n");
     printf("  \n");
-    printf("  |*|          **        Nome do produto: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
+    do{
+      printf("  |*|          **        Nome do produto: ");
+      scanf("%s", nome);
+      getchar();
+      validar = validaNome(nome);
+      if(validar == 1){
+            printf("  |*|          **        Descricao valida!\n");
+        }else{
+            printf("  |*|          **        Descricao invalida!\n");
+        }
+    }while(validar != 1);
     printf("  |*|          **        Codigo do produto: ");
     scanf("%[0-9]", cod);
 	  getchar();
