@@ -22,10 +22,7 @@ int main() {
   scanf("%d", &aaaa);
 
   if ((aaaa >= 2000 && aaaa <= 2100) && (mm >= 1 && mm <= 12) && (dd >= 1 && dd <= 31)) {
-    printf("\n\n%d/%d/%d - DATA ACEITA! ", dd, mm, aaaa);
 
-  } 
-  
   if (mm == 2) {
     if (bissexto) {
       diaMax = 29;
@@ -40,13 +37,15 @@ int main() {
     }
     return 0;
   }
-
+    printf("\n\n%d/%d/%d - DATA ACEITA! ", dd, mm, aaaa);
+  } 
+  
   else {
-    printf("\nData: %d/%d/%d - Data informada IMPROPRIA! DIGITE NOVAMENTE.\n\n", dd, mm, aaaa);
+    printf("\nData: %d/%d/%d - Data informada IMPROPRIA! \nDigite novamente.\n\n>>", dd, mm, aaaa);
     main();
 
   }
-
+  return 0;
 }
   // data = dataCorreta(dd,mm,aaaa);
 
