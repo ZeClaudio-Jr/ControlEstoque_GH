@@ -42,7 +42,7 @@ int main() {
   }
 
   else {
-    printf("\nData: %d/%d/%d - Data informada IMPROPRIA! \nDigite novamente.\n\n>>", dd, mm, aaaa);
+    printf("\nData: %d/%d/%d - Data informada IMPROPRIA! DIGITE NOVAMENTE.\n\n", dd, mm, aaaa);
     main();
 
   }
