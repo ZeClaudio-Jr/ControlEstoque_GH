@@ -1,2 +1,2 @@
 //* Assinatura da função
-char validata(void);
+int validata(char*);
