@@ -1,2 +1,2 @@
 //* Assinatura da função
-int validata(char*);
+int validata(int dd, int mm, int aaaa);
