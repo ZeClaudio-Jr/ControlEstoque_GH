@@ -17,3 +17,6 @@ int validaCodigo(char codigo[]);
 
 //assinatura da função validaDescricao
 int validaDescricao(char desc[]);
+
+//assinatura da função validata
+int validata(char data);
