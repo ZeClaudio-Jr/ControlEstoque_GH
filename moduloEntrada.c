@@ -80,7 +80,6 @@ void cadastEntrada(void){
   char forn[25];
   char qtde[5];
   int validar;
-  int recebe;
   char opcao;
   system("cls");
     printf("\n");
@@ -118,13 +117,13 @@ void cadastEntrada(void){
       printf("  |*|          **        Codigo do produto: ");
       scanf("%s", codigo);
       getchar();
-      recebe = validaCodigo(codigo); 
-      if(recebe == 1){
-          printf("  |*|          **        Codigo valida!\n");
+      validar = validaCodigo(codigo); 
+      if(validar == 1){
+          printf("  |*|          **        Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalida!\n");
+          printf("  |*|          **        Codigo invalido!\n");
       }
-    }while(recebe != 1);
+    }while(validar != 1);
 	  getchar();
     printf("  |*|          **        Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
@@ -156,7 +155,7 @@ void cadastEntrada(void){
 
 void alterarEntrada(void){
   char nome [25];
-  char codigo [5];  
+  char cod [5];  
   char desc[50];
   char data[11];
   char forn[25];
@@ -187,7 +186,7 @@ void alterarEntrada(void){
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("  |*|         **         Codigo do produto: ");
-    scanf("%[0-9]", codigo);
+    scanf("%[0-9]", cod);
 	  getchar();
     printf("  |*|         **         Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
