@@ -264,7 +264,7 @@ void alterarProduto(void) {
     scanf("%[0-9]", codigo);
     getchar ();
     printf("                    **      Valor de compra/unid: << R$ ");
-    scanf ( " %[0-9] >>" , valor);
+    scanf ( " %f.2 >>" , &valor);
     getchar ();
     printf("                    **      Estoque Maximo: << ");
     scanf ( "%d",&estMax);
