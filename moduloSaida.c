@@ -79,8 +79,8 @@ char menuSaida(void){
 
 
 void cadastSaida(void){
-  char nome [25];
-  char cod [5];  
+  char nome[25];
+  char codigo[5];  
   char desc[50];
   char data[11];
   char forn[25];
@@ -111,7 +111,7 @@ void cadastSaida(void){
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("  |*|          **        Codigo do produto: ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
 	  getchar();
     printf("  |*|          **        Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
@@ -143,7 +143,7 @@ void cadastSaida(void){
 
 void alterarSaida(void){
   char nome [25];
-  char cod [5];  
+  char codigo[5];  
   char desc[50];
   char data[11];
   char forn[25];
@@ -174,7 +174,7 @@ void alterarSaida(void){
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("  |*|         **         Codigo do produto: ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
 	  getchar();
     printf("  |*|         **         Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
