@@ -161,7 +161,7 @@ void cadastrarProduto(void) {
     
     char nome [25];
     char codigo [5];
-    float valor [8];
+    float valor;
     int estMax;
     int estMin;
     char dataValid [11];
@@ -230,7 +230,7 @@ void alterarProduto(void) {
     
     char nome [25];
     char codigo [5];
-    char valor [8];
+    float valor;
     char estMax [15];
     char estMin [5];
     char dataValid [11];
