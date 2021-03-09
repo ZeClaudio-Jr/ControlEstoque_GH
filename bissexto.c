@@ -1,3 +1,4 @@
+// Adaptação de qse toda a internet, afinal a combinação é essa
 #include <stdio.h>
 #include <stdlib.h>
 #include "validata.h"
