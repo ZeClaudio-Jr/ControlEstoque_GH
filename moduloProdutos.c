@@ -160,7 +160,7 @@ char menuProdutos(void) {
 void cadastrarProduto(void) {
     
     char nome [25];
-    char cod [5];
+    char codigo [5];
     float valor [8];
     int estMax;
     int estMin;
@@ -195,7 +195,7 @@ void cadastrarProduto(void) {
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("                    **      Codigo do produto: << ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
     getchar ();
     printf("                    **      Valor de compra/unid: << R$ ");
     scanf ( " %f[0-9] >>" , valor);
@@ -229,7 +229,7 @@ void cadastrarProduto(void) {
 void alterarProduto(void) {
     
     char nome [25];
-    char cod [5];
+    char codigo [5];
     char valor [8];
     char estMax [15];
     char estMin [5];
@@ -261,7 +261,7 @@ void alterarProduto(void) {
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("                    **      Codigo do produto: << ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
     getchar ();
     printf("                    **      Valor de compra/unid: << R$ ");
     scanf ( " %[0-9] >>" , valor);
@@ -295,7 +295,7 @@ void alterarProduto(void) {
 void pesquisarProduto(void) {
     
     char nome [25];
-    char cod [5];
+    char codigo [5];
     
 
     system("cls");
@@ -326,7 +326,7 @@ void pesquisarProduto(void) {
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("                      **      Codigo do produto: << ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
     printf("  \n");
     printf("  \n");
     printf("  \n");
@@ -347,7 +347,7 @@ void pesquisarProduto(void) {
 void excluirProduto(void) {
     
     char nome [25];
-    char cod [5];
+    char codigo [5];
     
 
     system("cls");
@@ -378,7 +378,7 @@ void excluirProduto(void) {
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("                    **      Codigo do produto: << ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
     printf("  \n");
     printf("  \n");
     printf("  \n");
