@@ -3,10 +3,8 @@
 #include "validata.h"
 #include "bissexto.h"
 
-main() {
-    int aaaa;
+int bissexto(int aaaa) {
     
-
     if ((aaaa % 4 == 0) && ((aaaa % 100 != 0) || (aaaa % 400 == 0))) {
         return 1;
     } 
@@ -14,5 +12,4 @@ main() {
     else {
         return 0;
     }
-
 }
