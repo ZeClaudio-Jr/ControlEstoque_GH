@@ -140,19 +140,20 @@ void cadastEntrada(void){
       }
     }while(validar != 1);
 
-    printf("  \n");    
-    do{
-      printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
-      getchar();
-      validar = validaFornecedor(forn); 
-      if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
-      }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
-      }
-    }while(validar != 1);
+  printf("  \n");    
+  do{
+    printf("  |*|          **        Fornecedor: ");
+    scanf("%s", forn);
+    getchar();
+    validar = validaFornecedor(forn);
+    if(validar == 1){
+      printf("  |*|          **        Fornecedor valido!\n");
+    }else{
+      printf("  |*|          **        Fornecedor invalido!\n");
+    }
+  }while(validar != 1);  
 
+  printf("  \n"); 
     printf("  |*|          **        Data da compra: ");
     scanf("%[0-9/]", data);
 	  getchar();
