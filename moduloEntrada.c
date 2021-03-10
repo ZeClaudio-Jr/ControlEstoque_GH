@@ -157,9 +157,21 @@ void cadastEntrada(void){
     printf("  |*|          **        Data da compra: ");
     scanf("%[0-9/]", data);
 	  getchar();
+  
+  do{
     printf("  |*|          **        Quantidade: ");
-    scanf("%[0-9]", qtde);
-	  getchar();
+    scanf("%s", qtde);
+    getchar();
+    validar = validaCodigo(qtde); 
+    if(validar == 1){
+        printf("  |*|          **        Quantidade valida!\n");
+    }else{
+        printf("  |*|          **        Quantidade invalida!\n");
+    }
+  }while(validar != 1);
+  printf("  \n");
+  
+    
     printf("  \n");
     printf("  \n");
     printf("  \n");

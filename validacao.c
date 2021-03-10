@@ -50,3 +50,15 @@ int validaFornecedor(char forn[]){
   }
   return 1;
 }
+
+// função validaCodigo
+int validaQuant(char qtde[]){
+
+  for(int i = 0; i < strlen(qtde); i++){
+    if((qtde[i] >= 0 && qtde[i] <= 47) || (qtde[i] >= 58 && qtde[i] <= 126)){    return 0;
+    }else  if (strlen(qtde) > 4){ // limita numero de caracteres digitados
+      return 0;
+    }
+  }
+  return 1;
+}

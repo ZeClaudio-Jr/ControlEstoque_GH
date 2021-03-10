@@ -23,3 +23,6 @@ int validata(char data);
 
 //assinatura da função validaFornecedor
 int validaFornecedor(char forn[]);
+
+//assinatura da função validaQuant
+int validaQuant(char qtde[]);
