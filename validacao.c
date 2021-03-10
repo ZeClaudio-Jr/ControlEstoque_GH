@@ -37,3 +37,16 @@ int validaDescricao(char desc[]){
   }
   return 1;
 }
+
+// função validaFornecedor
+int validaFornecedor(char forn[]){
+
+  for(int i = 0; i < strlen(forn); i++){
+    if((forn[i] >= 0 && forn[i] <= 64) || (forn[i] >= 122 && forn[i] <= 97)){ //se estiver nessa faixa não são letras   
+      return 0;
+    }else  if (strlen(forn) > 24){ // limita numero de caracteres digitados
+      return 0;
+    }
+  }
+  return 1;
+}

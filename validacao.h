@@ -20,3 +20,6 @@ int validaDescricao(char desc[]);
 
 //assinatura da função validata
 int validata(char data);
+
+//assinatura da função validaFornecedor
+int validaFornecedor(char forn[]);
