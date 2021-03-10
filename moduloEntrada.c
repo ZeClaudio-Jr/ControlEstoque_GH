@@ -102,39 +102,42 @@ void cadastEntrada(void){
     printf("  \n");
     printf("  >>>>>>>>>>>>>>>        Informe sobre a nova entrada:        <<<<<<<<<<<<<<<   \n");
     printf("  \n");
-    do{
+    for(int i = 0; i < 25; i++){
       printf("  |*|          **        Nome do produto: ");
       scanf("%s", nome);
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
+            break;
         }else{
             printf("  |*|          **        Descricao invalida!\n");
         }
-    }while(validar != 1);
-    do{
+    }
+    for(int i = 0; i < 5; i++){
       printf("  |*|          **        Codigo do produto: ");
       scanf("%s", codigo);
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
+          break;
       }else{
           printf("  |*|          **        Codigo invalido!\n");
       }
-    }while(validar != 1);
-    do{
+    }
+    for(int i = 0; i < 50; i++){
       printf("  |*|          **        Descricao do produto: ");
       scanf("%s", desc);
       getchar();
       validar = validaDescricao(desc); 
       if(validar == 1){
           printf("  |*|          **        Descricao valida!\n");
+          break;
       }else{
           printf("  |*|          **        Descricao invalida!\n");
       }
-    }while(validar != 1);
+    }
     printf("  |*|          **        Data da compra: ");
     scanf("%[0-9/]", data);
 	  getchar();
