@@ -114,6 +114,7 @@ void cadastEntrada(void){
             printf("  |*|          **        Descricao invalida!\n");
         }
     }
+
     for(int i = 0; i < 5; i++){
       printf("  |*|          **        Codigo do produto: ");
       scanf("%s", codigo);
@@ -126,6 +127,7 @@ void cadastEntrada(void){
           printf("  |*|          **        Codigo invalido!\n");
       }
     }
+
     for(int i = 0; i < 50; i++){
       printf("  |*|          **        Descricao do produto: ");
       scanf("%s", desc);
@@ -138,11 +140,22 @@ void cadastEntrada(void){
           printf("  |*|          **        Descricao invalida!\n");
       }
     }
+    
+    for(int i = 0; i < 25; i++){
+      printf("  |*|          **        Fornecedor: ");
+      scanf("%s", forn);
+      getchar();
+      validar = validaFornecedor(forn); 
+      if(validar == 1){
+          printf("  |*|          **        Fornecedor valido!\n");
+          break;
+      }else{
+          printf("  |*|          **        Fornecedor invalido!\n");
+      }
+    }
+     
     printf("  |*|          **        Data da compra: ");
     scanf("%[0-9/]", data);
-	  getchar();
-    printf("  *|*          **        Fornecedor: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", forn);
 	  getchar();
     printf("  |*|          **        Quantidade: ");
     scanf("%[0-9]", qtde);
@@ -164,12 +177,13 @@ void cadastEntrada(void){
 
 
 void alterarEntrada(void){
-  char nome [25];
-  char cod [5];  
+  char nome[25];
+  char codigo[5];  
   char desc[50];
   char data[11];
   char forn[25];
   char qtde[5];
+  int validar;
 
   system("cls");
     printf("\n");
@@ -196,7 +210,7 @@ void alterarEntrada(void){
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
     getchar();
     printf("  |*|         **         Codigo do produto: ");
-    scanf("%[0-9]", cod);
+    scanf("%[0-9]", codigo);
 	  getchar();
     printf("  |*|         **         Descricao do produto: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
