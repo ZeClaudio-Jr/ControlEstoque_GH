@@ -124,10 +124,17 @@ void cadastEntrada(void){
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-	  getchar();
-    printf("  |*|          **        Descricao do produto: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", desc);
-    getchar();
+    do{
+      printf("  |*|          **        Descricao do produto: ");
+      scanf("%s", desc);
+      getchar();
+      validar = validaDescricao(desc); 
+      if(validar == 1){
+          printf("  |*|          **        Descricao valida!\n");
+      }else{
+          printf("  |*|          **        Descricao invalida!\n");
+      }
+    }while(validar != 1);
     printf("  |*|          **        Data da compra: ");
     scanf("%[0-9/]", data);
 	  getchar();
