@@ -6,17 +6,21 @@ int validaFornecedor(char forn[]);
 int main(void) {
   int validar;
   char forn[25];
+
+  //quando não tem nada no for, a condição é considerada verdadeira
+  for( ; ; ){ //loop infinito
+   printf("Fornecedor: ");
+   scanf("%s", forn);
+   getchar();
+   validar = validaFornecedor(forn);
+   if(validar == 1){
+       printf("Fornecedor valido!\n");
+        break;//quebra ociclo for
+   }else{
+        printf("Fornecedor invalido!\n");
+    }
+  }  
   
-  printf("Fornecedor: ");
-  scanf("%s", forn);
-  getchar();
-  validar = validaFornecedor(forn);
-  if(validar == 1){
-      printf("Fornecedor valido!\n");
-  }else{
-      printf("Fornecedor invalido!\n");
-      main();
-  }
   return 0;
 }
 
