@@ -329,6 +329,7 @@ void alterarEntrada(void){
 void pesquisarEntrada(void){
   char nome [25];
   char forn[25];
+  int validar;
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -350,13 +351,30 @@ void pesquisarEntrada(void){
     printf("  \n");
     printf("  \n");
     printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
-    printf("  \n");                                                                  
-    printf("  |*|          **          Nome do produto: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
-    printf("  *|*          **          Nome do fornecedor: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", forn);
-	  getchar();
+    printf("  \n");
+    do{
+      printf("  |*|          **        Nome do produto: ");
+      scanf("%s", nome);
+      getchar();
+      validar = validaNome(nome);
+      if(validar == 1){
+            printf("  |*|          **        Descricao valida!\n");
+      }else{
+            printf("  |*|          **        Descricao invalida!\n");
+      }
+    }while(validar != 1);
+    printf("  \n");    
+    do{
+      printf("  |*|          **        Fornecedor: ");
+      scanf("%s", forn);
+      getchar();
+      validar = validaForne(forn);
+        if(validar == 1){
+          printf("  |*|          **        Fornecedor valido!\n");
+        }else{
+          printf("  |*|          **        Fornecedor invalido!\n");
+        }
+    }while(validar != 1);    
     printf("  \n");
     printf("  \n");
     printf("  \n");
