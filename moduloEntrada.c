@@ -112,7 +112,7 @@ void cadastEntrada(void){
       }else{
             printf("  |*|          **        Descricao invalida!\n");
       }
-      }while(validar != 1);
+    }while(validar != 1);
 
     printf("  \n");
     do{
