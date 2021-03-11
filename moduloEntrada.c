@@ -65,7 +65,7 @@ char menuEntrada(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("Digite a opcao desejada: ");
+    printf("\tDigite a opcao desejada: ");
     scanf("%c", &op);
     getchar();
     return op;
@@ -79,6 +79,7 @@ void cadastEntrada(void){
   char data[11];
   char forn[25];
   char qtde[5];
+  int dd, mm, aaaa;
   int validar;
   char opcao;
   system("cls");
@@ -140,36 +141,49 @@ void cadastEntrada(void){
       }
     }while(validar != 1);
 
-  printf("  \n");    
-  do{
-    printf("  |*|          **        Fornecedor: ");
-    scanf("%s", forn);
-    getchar();
-    validar = validaForne(forn);
-    if(validar == 1){
-      printf("  |*|          **        Fornecedor valido!\n");
-    }else{
-      printf("  |*|          **        Fornecedor invalido!\n");
-    }
-  }while(validar != 1);  
+    printf("  \n");    
+    do{
+      printf("  |*|          **        Fornecedor: ");
+      scanf("%s", forn);
+      getchar();
+      validar = validaForne(forn);
+        if(validar == 1){
+          printf("  |*|          **        Fornecedor valido!\n");
+        }else{
+          printf("  |*|          **        Fornecedor invalido!\n");
+        }
+    }while(validar != 1);     
 
-  printf("  \n"); 
-    printf("  |*|          **        Data da compra: ");
-    scanf("%[0-9/]", data);
-	  getchar();
+    printf("  \n"); 
+    printf("  |*|          **        Data da compra \n");
+    do{
+      printf("  |*|          **        Digite o dia: ");
+      scanf("%d", &dd);
+      printf("  |*|          **        Digite o mes: ");
+      scanf("%d", &mm);
+      printf("  |*|          **        Digite o ano: ");
+      scanf("%d", &aaaa);
+      validar = valiData(dd, mm, aaaa); 
+        if(validar == 1){
+          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", dd, mm,  aaaa);
+        }else{
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", dd, mm,   aaaa);
+        }
+    }while(validar != 1);
   
-  do{
-    printf("  |*|          **        Quantidade: ");
-    scanf("%s", qtde);
-    getchar();
-    validar = validaCodigo(qtde); 
-    if(validar == 1){
-        printf("  |*|          **        Quantidade valida!\n");
-    }else{
-        printf("  |*|          **        Quantidade invalida!\n");
-    }
-  }while(validar != 1);
-  printf("  \n");
+    printf("  \n"); 
+    do{
+      printf("  |*|          **        Quantidade: ");
+      scanf("%s", qtde);
+      getchar();
+      validar = validaCodigo(qtde); 
+      if(validar == 1){
+          printf("  |*|          **        Quantidade valida!\n");
+      }else{
+          printf("  |*|          **        Quantidade invalida!\n");
+      }
+    }while(validar != 1);
+    printf("  \n");
   
     
     printf("  \n");
