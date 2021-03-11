@@ -145,7 +145,7 @@ void cadastEntrada(void){
     printf("  |*|          **        Fornecedor: ");
     scanf("%s", forn);
     getchar();
-    validar = validaFornecedor(forn);
+    validar = validaForne(forn);
     if(validar == 1){
       printf("  |*|          **        Fornecedor valido!\n");
     }else{

@@ -1,4 +1,5 @@
 #include <string.h>
+#include "validacao.h"
 
 // função validaNome
 int validaNome(char nome[]){
@@ -39,7 +40,7 @@ int validaDescricao(char desc[]){
 }
 
 // função validaFornecedor
-int validaFornecedor(char forn[]){
+int validaForne(char forn[]){
 
   for(int i = 0; i < strlen(forn); i++){
     if((forn[i] >= 0 && forn[i] <= 64) || (forn[i] >= 122 && forn[i] <= 97)){ //se estiver nessa faixa não são letras   
@@ -65,7 +66,7 @@ int validaQuant(char qtde[]){
 
 // Função valiData
 int valiData(int dd, int mm, int aaaa){
- 
+  
   if ((mm >= 1 && mm <= 12) && (aaaa >= 2000 && aaaa <= 2100)) {
     if((dd >= 1 && dd <= 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12)){
       return 1;
@@ -73,7 +74,7 @@ int valiData(int dd, int mm, int aaaa){
       return 1;
     }else if ((dd >= 1 && dd <= 28) && (mm == 2)){
       return 1;
-    }else if (dd == 29 && mm == 2 &&  Bissexto(aaaa)){
+    }else if (dd == 29 && mm == 2 &&  bissexto(aaaa)){
       return 1;  
     }
   }else{

@@ -19,7 +19,7 @@ int validaCodigo(char codigo[]);
 int validaDescricao(char desc[]);
 
 //assinatura da função validaFornecedor
-int validaFornecedor(char forn[]);
+int validaForne(char forn[]);
 
 //assinatura da função validaQuant
 int validaQuant(char qtde[]);
