@@ -18,17 +18,17 @@ int validaCodigo(char codigo[]);
 //assinatura da função validaDescricao
 int validaDescricao(char desc[]);
 
-//assinatura da função validata
-int validata(char data);
-
 //assinatura da função validaFornecedor
 int validaFornecedor(char forn[]);
 
 //assinatura da função validaQuant
 int validaQuant(char qtde[]);
 
-//assinatura da função validata
-int validata(int dd, int mm, int aaaa);
+//assinatura da função valiData
+int valiData(int dd, int mm, int aaaa);
 
 //assinatura da função bissexto
 int bissexto(int aaaa);
+
+//assinatura da função validaValor
+float validaValor(float valor);
