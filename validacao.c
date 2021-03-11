@@ -51,7 +51,7 @@ int validaFornecedor(char forn[]){
   return 1;
 }
 
-// função validaCodigo
+// função validaQuantidade
 int validaQuant(char qtde[]){
 
   for(int i = 0; i < strlen(qtde); i++){
@@ -63,8 +63,8 @@ int validaQuant(char qtde[]){
   return 1;
 }
 
-// Função validata
-int validata(int dd, int mm, int aaaa){
+// Função valiData
+int valiData(int dd, int mm, int aaaa){
  
   if ((mm >= 1 && mm <= 12) && (aaaa >= 2000 && aaaa <= 2100)) {
     if((dd >= 1 && dd <= 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12)){
@@ -92,4 +92,14 @@ int bissexto(int aaaa) {
     else {
         return 0;
     }
+}
+
+// Função validaValor
+float validaValor(float valor){
+  int f;
+  f  = valor;
+  if(f == valor){
+    return 0;
+  }
+  return 1;
 }
