@@ -1,18 +1,18 @@
 //* Assinatura das funções
 char menuPrincipal(void);
 void menuSobre(void);
-// char menuProdutos(void);            
+char menuProdutos(void);            
 char menuEntrada(void);      
 char menuSaida(void);
 void menuRelatorio(void); 
 
-// //MODULO PRODUTO
-// void navegacaoProduto(void); //Menu primário PRODUTOS
+//MODULO PRODUTO
+void navegacaoProduto(void); //Menu primário PRODUTOS
 
-// void cadastrarProduto(void); //Menu secundário PRODUTOS
-// void alterarProduto(void); //Menu secundário PRODUTOS
-// void pesquisarProduto(void); //Menu secundário PRODUTOS
-// void excluirProduto(void); //Menu secundário PRODUTOS
+void cadastrarProduto(void); //Menu secundário PRODUTOS
+void alterarProduto(void); //Menu secundário PRODUTOS
+void pesquisarProduto(void); //Menu secundário PRODUTOS
+void excluirProduto(void); //Menu secundário PRODUTOS
 
 //MODULO ENTRADA
 void navegacaoEntrada(void);
