@@ -40,7 +40,7 @@ char menuEntrada(void) {
     printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
     printf("  *|*          MENU********************************************MENU          *|*\n");
     printf("  |*|          MENU*                                          *MENU          |*|\n");
-    printf("  *|*          MENU*             ENTREDA PRODUTOS             *MENU          *|*\n");
+    printf("  *|*          MENU*             ENTRADA PRODUTOS             *MENU          *|*\n");
     printf("  |*|          MENU*                                          *MENU          |*|\n");
     printf("  *|*          MENU********************************************MENU          *|*\n");
     printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
