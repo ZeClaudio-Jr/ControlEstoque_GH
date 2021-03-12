@@ -65,7 +65,7 @@ char menuEntrada(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\tDigite a opcao desejada: ");
+    printf("\t Digite a opcao desejada: ");
     scanf("%c", &op);
     getchar();
     return op;
