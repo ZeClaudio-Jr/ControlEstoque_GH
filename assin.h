@@ -15,18 +15,20 @@ void pesquisarProduto(void); //Menu secundário PRODUTOS
 void excluirProduto(void); //Menu secundário PRODUTOS
 
 //MODULO ENTRADA
-void navegacaoEntrada(void);
-void cadastEntrada(void);
-void alterarEntrada(void);
-void pesquisarEntrada(void);
-void excluirEntrada(void);
+void navegacaoEntrada(void);//Menu primário ENTRADA
+
+void cadastEntrada(void);//Menu secundário ENTRADA
+void alterarEntrada(void);//Menu secundário ENTRADA
+void pesquisarEntrada(void);//Menu secundário ENTRADA
+void excluirEntrada(void);//Menu secundário ENTRADA
 
 //MODULO SAIDA
-void navegacaoSaida(void);
-void cadastSaida(void);
-void alterarSaida(void);
-void pesquisarSaida(void);
-void excluirSaida(void);
+void navegacaoSaida(void);//Menu primário SAIDA
+
+void cadastSaida(void);//Menu secundário SAIDA
+void alterarSaida(void);//Menu secundário SAIDA
+void pesquisarSaida(void);//Menu secundário SAIDA
+void excluirSaida(void);//Menu secundário SAIDA
 
 // MODULO RELATÓRIO
-//void gerarRelatorio (void); //Menu primário RELATÓRIO
+void gerarRelatorio (void); //Menu primário RELATÓRIO
