@@ -8,8 +8,9 @@
 //MODULO PRODUTOS
 
 void navegacaoProduto(void) {
- 
+  
   char op;
+
   do {
     op = menuProdutos();          // Escolha principal/primária da navegação PRODUTOS - Menu Produtos
     switch (op) {
@@ -236,6 +237,7 @@ void cadastrarProduto(void) {
     // printf("                    **      Estoque Maximo: << ");
     // scanf ( "%d",&estMax);
     // getchar ();
+    
     // printf("                    **      Estoque Minimo: << ");
     // scanf ( "%d",&estMin);
     // getchar ();
