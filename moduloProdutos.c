@@ -8,9 +8,8 @@
 //MODULO PRODUTOS
 
 void navegacaoProduto(void) {
-  
+ 
   char op;
-
   do {
     op = menuProdutos();          // Escolha principal/primária da navegação PRODUTOS - Menu Produtos
     switch (op) {
@@ -226,6 +225,7 @@ void cadastrarProduto(void) {
     do{
       printf("  |*|          **        Valor de compra/unid: << R$ ");
       scanf("%f.2", &valor);
+      getchar();
       validar = validaValor(valor);
       if(validar == 1){
         printf("  |*|          **        Valor valido!\n");
@@ -237,7 +237,6 @@ void cadastrarProduto(void) {
     // printf("                    **      Estoque Maximo: << ");
     // scanf ( "%d",&estMax);
     // getchar ();
-    
     // printf("                    **      Estoque Minimo: << ");
     // scanf ( "%d",&estMin);
     // getchar ();
@@ -339,6 +338,7 @@ void alterarProduto(void) {
     do{
       printf("  |*|          **        Valor de compra/unid: << R$ ");
       scanf("%f.2", &valor);
+      getchar();
       validar = validaValor(valor);
       if(validar == 1){
         printf("  |*|          **        Valor valido!\n");
