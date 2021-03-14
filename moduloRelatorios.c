@@ -6,37 +6,40 @@
 
 //MÓDULO RELATÓRIOS
 
-// void menuRelatorio(void) {
+void navegacaoRelatorio(void) {
  
-//   char op;
-//   do {
-//     op = menuRelatorio();         
-//     switch (op) {
-//       case '0': 
-//         menuPrincipal();         
-//         break;
-// //-----------------------------------------------------------------------------------------\\
-// //-----------------------------------------------------------------------------------------//
-//       case '1': 
-//         cadastrarProduto();       // Entra no menu "Lançar novo produto" - Menu Produtos
-//         break;
-// //-----------------------------------------------------------------------------------------\\
-// //-----------------------------------------------------------------------------------------//        
-//       case '9': 
-//         alterarProduto();
-//         break;
-// //-----------------------------------------------------------------------------------------\\
-// //-----------------------------------------------------------------------------------------//
-//       default:
-//         printf("        Valor digitado invalido \n");
-//         break;
-//     } 
+  char op;
+  do {
+    op = menuRelatorio();         
+    switch (op) {
+      case '1': 
+        relatorioEspecifico();         
+        break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
+      case '2': 
+        relatorioGeral();       // Entra no menu "Lançar novo produto" - Menu Produtos
+        break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//        
+      case '0': 
+        menuPrincipal();
+        break;
+//-----------------------------------------------------------------------------------------\\
+//-----------------------------------------------------------------------------------------//
+      default:
+        printf("        Valor digitado invalido. \n");
+        break;
+    } 
 
-//   }while (op != '0'); 
-// }
+  }while (op != '0'); 
+}
 
 
 void menuRelatorio(void) {
+    int op;
+
+
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -59,14 +62,13 @@ void menuRelatorio(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                 Escolha o produto para gerar relatorio:                |*|\n");
+    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");
+    scanf("%d", &op);    
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
-    printf("  *|*                    Codigo do produto: <<__________>>                   *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*                [ 0 ] << Relatorio de produto especifico >>             *|*\n");
-    printf("  |*|                [ 1 ] << Relatorio Geral >>                             |*|\n");
-    printf("  *|*                [ 9 ] << Sair >>                                        *|*\n");
+    printf("  *|*                [ 1 ] << Relatorio de produto especifico >>             *|*\n");
+    printf("  |*|                [ 2 ] << Relatorio Geral >>                             |*|\n");
+    printf("  *|*                [ 0 ] << Sair >>                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
