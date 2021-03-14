@@ -8,7 +8,6 @@ void menuRelatorio(void);
 
 //MODULO PRODUTO
 void navegacaoProduto(void); //Menu primário PRODUTOS
-
 void cadastrarProduto(void); //Menu secundário PRODUTOS
 void alterarProduto(void); //Menu secundário PRODUTOS
 void pesquisarProduto(void); //Menu secundário PRODUTOS
@@ -31,4 +30,7 @@ void pesquisarSaida(void);//Menu secundário SAIDA
 void excluirSaida(void);//Menu secundário SAIDA
 
 // MODULO RELATÓRIO
-void gerarRelatorio (void); //Menu primário RELATÓRIO
+void navegacaoRelatorio(void);
+void menuRelatorio(void); //Menu primário RELATÓRIO
+void relatorioGeral(void);
+void relatorioEspecifico(void);
