@@ -11,7 +11,7 @@ void navegacaoSaida(void){
  		opcao = menuSaida();                                
  		switch (opcao) {
  			case '1' : 	
-          cadastSaida();
+          cadastrarSaida();
  			    break;
  			case '2' : 	
           alterarSaida();		
@@ -78,7 +78,7 @@ char menuSaida(void){
 }
 
 
-void cadastSaida(void){
+void cadastrarSaida(void){
   char nome [25];
   char codigo [5];  
   char desc[50];

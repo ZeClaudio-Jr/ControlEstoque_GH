@@ -9,7 +9,7 @@
 
 
 void relatorioGeral(void) {
-    char nome;
+    char nome[25];
     int validar;
 
     system("cls");

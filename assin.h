@@ -24,7 +24,7 @@ void excluirEntrada(void);//Menu secundário ENTRADA
 //MODULO SAIDA
 void navegacaoSaida(void);//Menu primário SAIDA
 
-void cadastSaida(void);//Menu secundário SAIDA
+void cadastrarSaida(void);//Menu secundário SAIDA
 void alterarSaida(void);//Menu secundário SAIDA
 void pesquisarSaida(void);//Menu secundário SAIDA
 void excluirSaida(void);//Menu secundário SAIDA
