@@ -224,7 +224,7 @@ void cadastrarProduto(void) {
 
     printf("  \n");
     do{
-      printf("  |*|          **        Valor de compra/unid: << R$ ");
+      printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
       scanf("%f.2", &valor);
       getchar();
       validar = validaValor(valor);
@@ -339,7 +339,7 @@ void alterarProduto(void) {
 
     printf("  \n");
     do{
-      printf("  |*|          **        Valor de compra/unid: << R$ ");
+      printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
       scanf("%f.2", &valor);
       getchar();
       validar = validaValor(valor);
