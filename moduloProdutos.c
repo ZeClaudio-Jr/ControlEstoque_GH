@@ -203,9 +203,9 @@ void cadastrarProduto(void) {
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+            printf("                         Descricao valida!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+            printf("                         Descricao invalida!\n");
       }
     }while(validar != 1);
 
@@ -216,9 +216,9 @@ void cadastrarProduto(void) {
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                         Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                         Codigo invalido!\n");
       }
     }while(validar != 1);
 
@@ -229,9 +229,9 @@ void cadastrarProduto(void) {
       getchar();
       validar = validaValor(valor);
       if(validar == 1){
-        printf("  |*|          **        Valor valido!\n");
+        printf("                         Valor valido!\n");
       }else{
-        printf("  |*|          **        Valor invalido!\n");
+        printf("                         Valor invalido!\n");
       }
     }while(validar != 1);
 
@@ -241,19 +241,21 @@ void cadastrarProduto(void) {
     // printf("                    **      Estoque Minimo: << ");
     // scanf ( "%d",&estMin);
     // getchar ();
+
+    printf("  \n");
     do{
-      printf("Digite o dia: ");
+      printf("  |*|          **        Digite o dia: ");
       scanf("%d", &dd);
-      printf("Digite o mes: ");
+      printf("  |*|          **        Digite o mes: ");
       scanf("%d", &mm);
-      printf("Digite o ano: ");
+      printf("  |*|          **        Digite o ano: ");
       scanf("%d", &aaaa);
+      getchar();
       validar = valiData(dd, mm, aaaa); 
-    
       if(validar == 1){
-        printf("\n\n%d/%d/%d - DATA ACEITA! ", dd, mm,  aaaa);
+        printf("\n\n                         %d/%d/%d - Data valido!\n", dd, mm,  aaaa);
       }else{
-        printf("\nData: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite novamente.\n\n>>", dd, mm,   aaaa);
+        printf("\n                         Data: %d/%d/%d - Data informada IMPROPRIA!  \n                         Digite novamente.\n\n", dd, mm,   aaaa);
       }
     }while(validar != 1);
     
@@ -316,9 +318,9 @@ void alterarProduto(void) {
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+            printf("                         Descricao valida!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+            printf("                         Descricao invalida!\n");
       }
     }while(validar != 1);
 
@@ -329,9 +331,9 @@ void alterarProduto(void) {
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                         Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                         Codigo invalido!\n");
       }
     }while(validar != 1);
 
@@ -342,34 +344,37 @@ void alterarProduto(void) {
       getchar();
       validar = validaValor(valor);
       if(validar == 1){
-        printf("  |*|          **        Valor valido!\n");
+        printf("                         Valor valido!\n");
       }else{
-        printf("  |*|          **        Valor invalido!\n");
+        printf("                         Valor invalido!\n");
       }
     }while(validar != 1);
-    
+
     // printf("                    **      Estoque Maximo: << ");
     // scanf ( "%d",&estMax);
     // getchar ();
     // printf("                    **      Estoque Minimo: << ");
     // scanf ( "%d",&estMin);
     // getchar ();
+
+    printf("  \n");
     do{
-      printf("Digite o dia: ");
+      printf("  |*|          **        Digite o dia: ");
       scanf("%d", &dd);
-      printf("Digite o mes: ");
+      printf("  |*|          **        Digite o mes: ");
       scanf("%d", &mm);
-      printf("Digite o ano: ");
+      printf("  |*|          **        Digite o ano: ");
       scanf("%d", &aaaa);
+      getchar();
       validar = valiData(dd, mm, aaaa); 
-    
       if(validar == 1){
-        printf("\n\n%d/%d/%d - DATA ACEITA! ", dd, mm,  aaaa);
+        printf("\n\n                         %d/%d/%d - Data valido!\n", dd, mm,  aaaa);
       }else{
-        printf("\nData: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite novamente.\n\n>>", dd, mm,   aaaa);
+        printf("\n                         Data: %d/%d/%d - Data informada IMPROPRIA!  \n                         Digite novamente.\n\n", dd, mm,   aaaa);
       }
     }while(validar != 1);
     
+    printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
@@ -425,11 +430,11 @@ void pesquisarProduto(void) {
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
-        printf("  |*|          **        Descricao valida!\n");
+            printf("                         Descricao valida!\n");
       }else{
-        printf("  |*|          **        Descricao invalida!\n");
+            printf("                         Descricao invalida!\n");
       }
-    } while(validar != 1);
+    }while(validar != 1);
 
     printf("  \n");
     do{
@@ -438,11 +443,11 @@ void pesquisarProduto(void) {
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                         Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                         Codigo invalido!\n");
       }
-    } while(validar != 1);
+    }while(validar != 1);
 
     printf("  \n");
     printf("  \n");
@@ -500,11 +505,11 @@ void excluirProduto(void) {
       getchar();
       validar = validaNome(nome);
       if(validar == 1){
-        printf("  |*|          **        Descricao valida!\n");
+            printf("                         Descricao valida!\n");
       }else{
-        printf("  |*|          **        Descricao invalida!\n");
+            printf("                         Descricao invalida!\n");
       }
-    } while(validar != 1);
+    }while(validar != 1);
 
     printf("  \n");
     do{
@@ -513,11 +518,11 @@ void excluirProduto(void) {
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                         Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                         Codigo invalido!\n");
       }
-    } while(validar != 1);
+    }while(validar != 1);
 
     printf("  \n");
     printf("  \n");
