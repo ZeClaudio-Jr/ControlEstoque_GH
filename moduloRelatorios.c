@@ -76,5 +76,7 @@ void menuRelatorio(void) {
     printf("\n");
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
     getchar();
+  
+  return op;
 }
 
