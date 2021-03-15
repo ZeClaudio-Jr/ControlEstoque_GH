@@ -5,7 +5,7 @@
 #include "validacao.h"
 
 
-//MÓDULO RELATÓRIOS Específico
+//MÓDULO RELATÓRIOS Geral
 
 
 void relatorioGeral(void) {
@@ -36,17 +36,12 @@ void relatorioGeral(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                 Escolha o produto para gerar relatorio:                |*|\n");
     printf("  *|*                                                                        *|*\n");
-    do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
-      getchar();
-      validar = validaNome(nome);
-      if(validar == 1){
-            printf("  |*|          **        Poduto encontrado!\n");
-      }else{
-            printf("  |*|          **        Produto Inexistente!\n");
-      }
-    }while(validar != 1);    
+    printf("  |*|                    Nome do produto: <<__________>>                     |*|\n");
+    printf("  *|*                    Codigo do produto: <<__________>>                   *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                [ 0 ] << Relatorio de produto especifico >>             *|*\n");
+    printf("  |*|                [ 1 ] << Relatorio Geral >>                             |*|\n");
+    printf("  *|*                [ 9 ] << Sair >>                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
@@ -54,5 +49,6 @@ void relatorioGeral(void) {
     printf("\n");
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
     getchar();
+    
 }
 
