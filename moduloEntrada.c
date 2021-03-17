@@ -181,21 +181,57 @@ void cadastEntrada(void){
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
-    }while(validar != 1);
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Salvar e cadastrar nova entrada >>               \n");
-    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
-    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    }while(validar != 1);   
+}
+
+
+char salvarCadastro(void){
+  char op;
+   system("cls");
     printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
+    printf("  *|*          MENU********************************************MENU          *|*\n");
+    printf("  |*|          MENU*                                          *MENU          |*|\n");
+    printf("  *|*          MENU*             ENTRADA PRODUTOS             *MENU          *|*\n");
+    printf("  |*|          MENU*                                          *MENU          |*|\n");
+    printf("  *|*          MENU********************************************MENU          *|*\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 0 ] << Salvar e cadastrar nova entrada >>            |*|\n");
+    printf("  *|*                 [ 1 ] << Salvar e voltar ao menu anterior >>           *|*\n");
+    printf("  |*|                 [ 9 ] << Salvar e Sair >>                              |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t Digite a opcao desejada: ");
+    scanf("%c", &op);
     getchar();
+    switch(op){
+      case '0':
+        cadastEntrada();
+        break;
+      case '1':
+        menuEntrada();
+        break;
+      case '9':
+        printf("\n\t\tFIM DO PROGRAMA!");
+        break;
+    }
+    
+  return op;
 }
 
 
