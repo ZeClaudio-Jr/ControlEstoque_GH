@@ -32,6 +32,6 @@ void excluirSaida(void);//Menu secundário SAIDA
 
 // MODULO RELATÓRIO
 void navegacaoRelatorio(void);
-void menuRelatorio(void); //Menu primário RELATÓRIO
+char menuRelatorio(void); //Menu primário RELATÓRIO
 void relatorioGeral(void);
 void relatorioEspecifico(void);
