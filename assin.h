@@ -4,7 +4,7 @@ void menuSobre(void);
 char menuProdutos(void);            
 char menuEntrada(void);      
 char menuSaida(void);
-void menuRelatorio(void); 
+char menuRelatorio(void); 
 
 //MODULO PRODUTO
 void navegacaoProduto(void); //Menu primário PRODUTOS
