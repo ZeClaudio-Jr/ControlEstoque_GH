@@ -36,9 +36,8 @@ void navegacaoRelatorio(void) {
 }
 
 
-void menuRelatorio(void) {
-    int op;
-
+char menuRelatorio(void) {
+    char op;
 
     system("cls");
     printf("\n");
@@ -76,7 +75,7 @@ void menuRelatorio(void) {
     printf("\n");
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
     getchar();
-  
-  
+
+  return op;  
 }
 
