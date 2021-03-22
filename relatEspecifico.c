@@ -64,6 +64,7 @@ void relatorioEspecifico(void) {
     printf("      >>    ESTOQUE: 87 UNID\n");
     printf("\n");
     printf("\n");
+    
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
     getchar();
 
