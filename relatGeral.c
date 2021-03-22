@@ -43,7 +43,7 @@ void relatorioGeral(void) {
     printf("      >>    FORNECEDOR: Alpargatas\n");
     printf("      >>    DATA COMPRA: 26/01/2021\n");
     printf("      >>    DATA VALIDADE: 20/04/2023\n");
-    printf("      >>    ESTOQUE: 87 UNID\n");
+    printf("      >>    ESTOQUE: 87 UNID\n"); 
     printf("\n");
     printf("\n");
     printf("\n");
