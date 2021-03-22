@@ -59,6 +59,8 @@ void relatorioEspecifico(void) {
     printf("      >>    CODIGO: 0129\n");
     printf("      >>    DESCRICAO.: Sandalia unissex borracha produzida pela alpargatas\n");
     printf("      >>    FORNECEDOR: Alpargatas\n");
+    printf("      >>    ENTRADA: 450 UNID\n");
+    printf("      >>    SAIDA: 363 UNID\n");
     printf("      >>    DATA COMPRA: 26/01/2021\n");
     printf("      >>    DATA VALIDADE: 20/04/2023\n");
     printf("      >>    ESTOQUE: 87 UNID\n");
