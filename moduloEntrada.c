@@ -207,6 +207,41 @@ char salvarCadastro(void){
 return op;
 }
 
+char menuRetorno(void){
+  char op;
+   system("cls || clear");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
+    printf("  *|*          MENU********************************************MENU          *|*\n");
+    printf("  |*|          MENU*                                          *MENU          |*|\n");
+    printf("  *|*          MENU*             ENTRADA PRODUTOS             *MENU          *|*\n");
+    printf("  |*|          MENU*                                          *MENU          |*|\n");
+    printf("  *|*          MENU********************************************MENU          *|*\n");
+    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                 [ 1 ] << Salvar e cadastrar nova entrada >>            |*|\n");
+    printf("  *|*                 [ 2 ] << Salvar e voltar ao menu anterior >>           *|*\n");
+    printf("  |*|                 [ 0 ] << Salvar e voltar ao menu principal >>          |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t Digite a opcao desejada: ");
+    scanf("%c", &op);
+  return op; 
+}
 
 void alterarEntrada(void){
   char nome [25];
