@@ -80,7 +80,7 @@ void cadastEntrada(void){
   char qtde[5];
   int dd, mm, aaaa;
   int validar;
-  char opcao;
+
   system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -178,6 +178,7 @@ void cadastEntrada(void){
       validar = validaCodigo(qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
+          salvarCadastro();
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
