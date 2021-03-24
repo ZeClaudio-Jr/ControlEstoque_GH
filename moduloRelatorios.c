@@ -61,8 +61,7 @@ char menuRelatorio(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");
-    scanf("%c", &op);    
+    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");  
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                [ 1 ] << Relatorio de produto especifico >>             *|*\n");
@@ -73,9 +72,8 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\t>>>           Tecle <ENTER> para continuar...\n");
+    scanf("%c", &op);  
     getchar();
 
   return op;  
 }
-
