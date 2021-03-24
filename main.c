@@ -35,7 +35,7 @@ int main(void) {
           navegacaoSaida();
           break;
       case '5': 
-          menuRelatorio();
+          navegacaoRelatorio();
           break;
       default:
           printf("        Valor digitado invalido \n");
