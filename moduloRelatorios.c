@@ -10,7 +10,7 @@ void navegacaoRelatorio(void) {
  
   char op;
   do {
-    menuRelatorio();         
+    op = menuRelatorio();         
     switch (op) {
       case '1': 
         relatorioEspecifico();         
