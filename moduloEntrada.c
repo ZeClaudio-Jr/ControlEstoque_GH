@@ -188,51 +188,23 @@ void cadastEntrada(void){
 
 char salvarCadastro(void){
   char op;
-   system("cls");
-    printf("\n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
-    printf("  *|*          MENU********************************************MENU          *|*\n");
-    printf("  |*|          MENU*                                          *MENU          |*|\n");
-    printf("  *|*          MENU*             ENTRADA PRODUTOS             *MENU          *|*\n");
-    printf("  |*|          MENU*                                          *MENU          |*|\n");
-    printf("  *|*          MENU********************************************MENU          *|*\n");
-    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                 [ 0 ] << Salvar e cadastrar nova entrada >>            |*|\n");
-    printf("  *|*                 [ 1 ] << Salvar e voltar ao menu anterior >>           *|*\n");
-    printf("  |*|                 [ 9 ] << Salvar e Sair >>                              |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
-    printf("\n");
-    printf("\t Digite a opcao desejada: ");
-    scanf("%c", &op);
-    getchar();
+  do{
+    op = menuRetorno();
     switch(op){
-      case '0':
+      case '1':
         cadastEntrada();
         break;
-      case '1':
+      case '2':
         menuEntrada();
         break;
-      case '9':
-        printf("\n\t\tFIM DO PROGRAMA!");
+      case '0':
+        menuPrincipal();
         break;
+      default:
+        printf("Digite uma opcao valida! \n");
     }
-    
-  return op;
+  }while(op != '0');
+return op;
 }
 
 
