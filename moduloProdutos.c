@@ -24,10 +24,6 @@ void navegacaoProduto(void) {
         system("cls");
         cadastrarProduto();       // Entra no menu "Lançar novo produto" - Menu Produtos
         switch (op) {
-          case '0':
-            system("cls");
-            cadastrarProduto();   // Salva e retorna para o menu "Lançar novo produto" para cadastrar novamente - Menu Produtos
-            break;
           case '1':
             system("cls");
             menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
@@ -44,10 +40,6 @@ void navegacaoProduto(void) {
         system("cls");
         alterarProduto();
         switch (op) {
-          case '0':
-            system("cls");  
-            alterarProduto();   // Salva e retorna para o menu "Alterar produto" para alterar novamente - Menu Produtos
-            break;
           case '1':
             system("cls");
             menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
@@ -82,10 +74,6 @@ void navegacaoProduto(void) {
       case '4': 
         excluirProduto();
         switch (op) {
-          case '0':
-            system("cls");
-            excluirProduto();   // Retorna para o menu "Excluir produto" para excluir novamente - Menu Produtos
-            break;
           case '1':
             system("cls");
             menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
@@ -263,7 +251,7 @@ void cadastrarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] << Salvar e cadastrar novo produto >>               \n");
+    printf("                      [   ] << Salvar e cadastrar novo produto >>               \n");
     printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
     printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
     printf("  \n");
@@ -379,7 +367,7 @@ void alterarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] << Salvar e alterar novo produto >>                 \n");
+    printf("                      [   ] << Salvar e alterar novo produto >>                 \n");
     printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
     printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
     printf("  \n");
@@ -453,7 +441,7 @@ void pesquisarProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] << Pesquisar novo produto >>                        \n");
+    printf("                      [   ] << Pesquisar novo produto >>                        \n");
     printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
     printf("                      [ 9 ] << Sair >>                                          \n");
     printf("  \n");
@@ -528,7 +516,7 @@ void excluirProduto(void) {
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("                      [ 0 ] << Excluir novo produto >>                          \n");
+    printf("                      [   ] << Excluir novo produto >>                          \n");
     printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
     printf("                      [ 9 ] << Sair >>                                          \n");
     printf("  \n");
