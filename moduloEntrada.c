@@ -80,7 +80,7 @@ void cadastEntrada(void){
   char qtde[5];
   int dd, mm, aaaa;
   int validar;
-  char opcao;
+
   system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -178,6 +178,7 @@ void cadastEntrada(void){
       validar = validaCodigo(qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
+          salvarCadastro();
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
@@ -187,7 +188,28 @@ void cadastEntrada(void){
 
 char salvarCadastro(void){
   char op;
-   system("cls");
+  do{
+    op = menuRetorno();
+    switch(op){
+      case '1':
+        cadastEntrada();
+        break;
+      case '2':
+        menuEntrada();
+        break;
+      case '0':
+        menuPrincipal();
+        break;
+      default:
+        printf("Digite uma opcao valida! \n");
+    }
+  }while(op != '0');
+return op;
+}
+
+char menuRetorno(void){
+  char op;
+   system("cls || clear");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -205,9 +227,9 @@ char salvarCadastro(void){
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
     printf("  *|*                                                                        *|*\n");
-    printf("  |*|                 [ 0 ] << Salvar e cadastrar nova entrada >>            |*|\n");
-    printf("  *|*                 [ 1 ] << Salvar e voltar ao menu anterior >>           *|*\n");
-    printf("  |*|                 [ 9 ] << Salvar e Sair >>                              |*|\n");
+    printf("  |*|                 [ 1 ] << Salvar e cadastrar nova entrada >>            |*|\n");
+    printf("  *|*                 [ 2 ] << Salvar e voltar ao menu anterior >>           *|*\n");
+    printf("  |*|                 [ 0 ] << Salvar e voltar ao menu principal >>          |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -218,22 +240,8 @@ char salvarCadastro(void){
     printf("\n");
     printf("\t Digite a opcao desejada: ");
     scanf("%c", &op);
-    getchar();
-    switch(op){
-      case '0':
-        cadastEntrada();
-        break;
-      case '1':
-        menuEntrada();
-        break;
-      case '9':
-        printf("\n\t\tFIM DO PROGRAMA!");
-        break;
-    }
-    
-  return op;
+  return op; 
 }
-
 
 void alterarEntrada(void){
   char nome [25];
@@ -345,20 +353,6 @@ void alterarEntrada(void){
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);
-    printf("  \n");
-	  printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Salvar e alterar nova entrada >>                 \n");
-    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
-    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
 }
 
 
@@ -411,20 +405,6 @@ void pesquisarEntrada(void){
           printf("  |*|          **        Fornecedor invalido!\n");
         }
     }while(validar != 1);    
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Pesquisar nova entrada >>                        \n");
-    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
-    printf("                      [ 9 ] << Sair >>                                          \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
-
 }
 
 

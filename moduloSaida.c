@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include "assin.h"
+#include "validacao.h"
+
 
 //MODULO SAIDA
 
