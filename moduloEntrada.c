@@ -1,3 +1,4 @@
+//Bibliotecas necessarias para o modulo
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
