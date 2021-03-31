@@ -5,6 +5,10 @@
 #include "assin.h"
 #include "validacao.h"
 
+
+//Definiçãp da struct Entrada
+
+
 //MODULO ENTRADA
  void navegacaoEntrada(void) {
      	char opcao;
