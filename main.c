@@ -17,8 +17,8 @@
 /// Programa Principal <main>
 
 int main(void) {
-    
   char opcao;
+  
   do {
     opcao = menuPrincipal();            
     switch (opcao) {
@@ -47,49 +47,48 @@ int main(void) {
 
 char menuPrincipal(void) {
   char op;
-    
-    system("cls");
-    printf("\n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|          ==       ==   ========   ==    ==   ==     ==                 |*|\n");
-    printf("  *|*          ===     ===   ==         ===   ==   ==     ==                 *|*\n");
-    printf("  |*|          == == == ==   =====      == == ==   ==     ==                 |*|\n");
-    printf("  *|*          ==  ===  ==   ==         ==   ===   ==     ==                 *|*\n");
-    printf("  |*|          ==       ==   ========   ==    ==   =========  PRINCIPAL      |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*          Developed by Jose Claudio de Araujo Junior,                   *|*\n");
-    printf("  |*|                       Annielly Ferreira de Sousa .                     |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("  *|*===================================**===================================*|*\n");
-    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                VEJA AS OPCOES E DIGITE SUA ESCOLHA:                    |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|              [ 1 ] << Saiba mais sobre nosso projeto >>                |*|\n");
-    printf("  *|*              [ 2 ] << Produtos >>                                      *|*\n");
-    printf("  |*|              [ 3 ] << Entrada de produtos >>                           |*|\n");
-    printf("  *|*              [ 4 ] << Saida de produtos >>                             *|*\n");
-    printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
-    printf("\n");
-    printf("                    Escolha sua opcao:   ");
-    scanf("%c", &op);
-    getchar();
+
+  system("cls");
+  printf("\n");
+  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|          ==       ==   ========   ==    ==   ==     ==                 |*|\n");
+  printf("  *|*          ===     ===   ==         ===   ==   ==     ==                 *|*\n");
+  printf("  |*|          == == == ==   =====      == == ==   ==     ==                 |*|\n");
+  printf("  *|*          ==  ===  ==   ==         ==   ===   ==     ==                 *|*\n");
+  printf("  |*|          ==       ==   ========   ==    ==   =========  PRINCIPAL      |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*          Developed by Jose Claudio de Araujo Junior,                   *|*\n");
+  printf("  |*|                       Annielly Ferreira de Sousa .                     |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+  printf("  *|*===================================**===================================*|*\n");
+  printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                VEJA AS OPCOES E DIGITE SUA ESCOLHA:                    |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|              [ 1 ] << Saiba mais sobre nosso projeto >>                |*|\n");
+  printf("  *|*              [ 2 ] << Produtos >>                                      *|*\n");
+  printf("  |*|              [ 3 ] << Entrada de produtos >>                           |*|\n");
+  printf("  *|*              [ 4 ] << Saida de produtos >>                             *|*\n");
+  printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+  printf("\n");
+  printf("                    Escolha sua opcao:   ");
+  scanf("%c", &op);
+  getchar();
 
   return op;
 }
-
