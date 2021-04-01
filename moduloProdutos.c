@@ -6,6 +6,26 @@
 
 
 
+//Definição da estrutura(struct) Produtos
+struct produtos {
+    char nome [25];
+    char codigo [5];
+    float valor;
+    // int estMax;
+    // int estMin;
+    int validar;
+    int dd; 
+    int mm;
+    int aaaa;
+};
+
+//void cadastrarProduto(struct produtos*);
+//void alterarProduto(struct produtos*);
+//void pesquisarProduto(struct produtos);
+//void excluirProduto(struct produtos*);
+
+
+
 //MODULO PRODUTOS
 
 void navegacaoProduto(void) {
@@ -145,6 +165,113 @@ char menuProdutos(void) {
 }
 
 
+// void cadastrarProduto(struct produtos* p) {
+  
+//     system("cls");
+//     printf("\n");
+//     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+//     printf("  *|*        MENU********************************************MENU            *|*\n");
+//     printf("  |*|        MENU*                                          *MENU            |*|\n");
+//     printf("  *|*        MENU*          LANCAR NOVO PRODUTOS            *MENU            *|*\n");
+//     printf("  |*|        MENU*                                          *MENU            |*|\n");
+//     printf("  *|*        MENU********************************************MENU            *|*\n");
+//     printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  >>>>>>>>>>>>>>>        Informe sobre o novo produto:        <<<<<<<<<<<<<<<   \n");
+//     printf("  \n");
+//     // printf("  \n");
+//     // printf("                            Sair agora digitando [S] \n");
+//     printf("  \n");
+    
+//     printf("  \n");
+//     do{
+//       printf("  |*|          **        Nome do produto: ");
+//       scanf("%s", nome);
+//       getchar();
+//       validar = validaNome(nome);
+//       if(validar == 1){
+//             printf("                         Descricao valida!\n");
+//       }else{
+//             printf("                         Descricao invalida!\n");
+//       }
+//     }while(validar != 1);
+
+//     printf("  \n");
+//     do{
+//       printf("  |*|          **        Codigo do produto: ");
+//       scanf("%s", codigo);
+//       getchar();
+//       validar = validaCodigo(codigo); 
+//       if(validar == 1){
+//           printf("                         Codigo valido!\n");
+//       }else{
+//           printf("                         Codigo invalido!\n");
+//       }
+//     }while(validar != 1);
+
+//     printf("  \n");
+//     do{
+//       printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
+//       scanf("%f.2", &valor);
+//       getchar();
+//       validar = validaValor(valor);
+//       if(validar == 1){
+//         printf("                         Valor valido!\n");
+//       }else{
+//         printf("                         Valor invalido!\n");
+//       }
+//     }while(validar != 1);
+
+//     // printf("                    **      Estoque Maximo: << ");
+//     // scanf ( "%d",&estMax);
+//     // getchar ();
+//     // printf("                    **      Estoque Minimo: << ");
+//     // scanf ( "%d",&estMin);
+//     // getchar ();
+
+//     printf("  \n");
+//     do{
+//       printf("  |*|          **        Digite o dia: ");
+//       scanf("%d", &dd);
+//       printf("  |*|          **        Digite o mes: ");
+//       scanf("%d", &mm);
+//       printf("  |*|          **        Digite o ano: ");
+//       scanf("%d", &aaaa);
+//       getchar();
+//       validar = valiData(dd, mm, aaaa); 
+//       if(validar == 1){
+//         printf("\n\n                         %d/%d/%d - Data valido!\n", dd, mm,  aaaa);
+//       }else{
+//         printf("\n                         Data: %d/%d/%d - Data informada IMPROPRIA!  \n                         Digite novamente.\n\n", dd, mm,   aaaa);
+//       }
+//     }while(validar != 1);
+    
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("                                                                                \n");
+//     printf("                      [ 0 ] << Salvar e voltar ao menu anterior >>              \n");
+//     printf("                      [ 1 ] << Salvar e Sair >>                                 \n");
+//     printf("  \n");
+//     printf("  \n");
+//     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+//     printf("\n");
+//     printf("\t>>>           Tecle <ENTER> para continuar...\n");
+//     getchar();
+
+// }    
+
+
 void cadastrarProduto(void) {
     
     char nome [25];
@@ -262,6 +389,9 @@ void cadastrarProduto(void) {
 }    
 
 
+// void alterarProduto(struct produtos* p) {
+
+// }
 void alterarProduto(void) {
     
     char nome [25];
@@ -378,6 +508,9 @@ void alterarProduto(void) {
 }    
 
 
+//void pesquisarProduto(struct produtos p) {
+
+// }
 void pesquisarProduto(void) {
     
     char nome [25];
@@ -452,6 +585,9 @@ void pesquisarProduto(void) {
 }
 
 
+//void excluirProduto(struct produtos* p) {
+
+//}
 void excluirProduto(void) {
     
     char nome [25];
