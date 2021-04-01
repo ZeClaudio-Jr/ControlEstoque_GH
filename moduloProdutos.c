@@ -7,6 +7,8 @@
 
 
 //Definição da estrutura(struct) Produtos
+typedef struct produtos Produtos;
+
 struct produtos {
     char nome [25];
     char codigo [5];
