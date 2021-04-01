@@ -7,8 +7,9 @@
 
 
 //Definiçãp da struct Entrada
-typedef struct entrada
-{
+typedef struct entrada Entrada;
+
+struct entrada{
   char nome [25];
   char codigo [5];  
   char desc[50];
