@@ -7,17 +7,18 @@
 
 
 //Definiçãp da struct Entrada
-// typedef struct entrada Entrada;
+typedef struct entrada{
+  char *nome;
+  char codigo;  
+  char *desc;
+  char *forn;
+  char *qtde;
+  int *dd, *mm, *aaaa;
+  int *validar;
+};
 
-// struct entrada{
-//   char nome [25];
-//   char codigo [5];  
-//   char desc[50];
-//   char forn[25];
-//   char qtde[5];
-//   int dd, mm, aaaa;
-//   int validar;
-// };
+typedef struct entrada Entrada;
+
 
 
 //MODULO ENTRADA
