@@ -117,9 +117,9 @@ void cadastEntrada(void){
     printf("  \n");
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
+      scanf("%24[^\n]", Entrada.nome);
       getchar();
-      validar = validaNome(nome);
+      validar = validaNome(Entrada.nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -130,7 +130,7 @@ void cadastEntrada(void){
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf("%s", codigo);
+      scanf("%", codigo);
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
