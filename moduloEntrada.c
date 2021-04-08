@@ -6,7 +6,7 @@
 #include "validacao.h"
 
 
-//Definiçãp da struct Entrada
+//Definição da struct Entrada
 // typedef struct entrada{
 //   char *nome;
 //   char codigo;  
@@ -14,9 +14,10 @@
 //   char *forn;
 //   char *qtde;
 //   int *dd, *mm, *aaaa;
-//   int *validar;
 // };
 
+
+//Declaração da struct Entrada
 // typedef struct entrada Entrada;
 
 
