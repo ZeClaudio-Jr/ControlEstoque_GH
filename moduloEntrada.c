@@ -6,21 +6,16 @@
 #include "validacao.h"
 
 
-//Definição da struct Entrada
-typedef struct entrada{
+typedef struct entrada Entrada; //Definição do tipo Entrada
+
+struct entrada{ //STRUCT para armazenar os dados da entrada
   char nome [25];
   char codigo [5];  
   char desc[50];
   char forn[25];
   char qtde[5];
   int dd, mm, aaaa;
-};
-
-
-//Declaração da struct Entrada
-typedef struct entrada Entrada;
-
-
+}; 
 
 //MODULO ENTRADA
  void navegacaoEntrada(void) {
@@ -90,10 +85,10 @@ char menuEntrada(void) {
 }
 
 
-void cadastEntrada(void){
-  
-  int validar;
-
+Entrada* cadastEntrada(void){ //Declaração da função
+  Entrada* cadastro; //Declaração da variavel
+  int validar; // variavel para as validações
+  cadastro = (Entrada*) malloc(sizeof(Entrada)); //reservar/aloca uma quantidade de memória
   system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -117,9 +112,9 @@ void cadastEntrada(void){
     printf("  \n");
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%24[^\n]", Entrada.nome);
+      scanf(" %24[^\n]", cadastro->nome);
       getchar();
-      validar = validaNome(Entrada.nome);
+      validar = validaNome(cadastro->nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -130,9 +125,9 @@ void cadastEntrada(void){
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf("%", codigo);
+      scanf("%s", cadastro->codigo);
       getchar();
-      validar = validaCodigo(codigo); 
+      validar = validaCodigo(cadastro->codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
@@ -143,9 +138,9 @@ void cadastEntrada(void){
     printf("  \n");
     do{
       printf("  |*|          **        Descricao do produto: ");
-      scanf("%s", desc);
+      scanf("%s", cadastro->desc);
       getchar();
-      validar = validaDescricao(desc); 
+      validar = validaDescricao(cadastro->desc); 
       if(validar == 1){
           printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -156,9 +151,9 @@ void cadastEntrada(void){
     printf("  \n");    
     do{
       printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
+      scanf("%s", cadastro->forn);
       getchar();
-      validar = validaForne(forn);
+      validar = validaForne(cadastro->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
         }else{
@@ -170,25 +165,25 @@ void cadastEntrada(void){
     printf("  |*|          **        Data da compra \n");
     do{
       printf("  |*|          **        Digite o dia: ");
-      scanf("%d", &dd);
+      scanf("%d", &cadastro->dd);
       printf("  |*|          **        Digite o mes: ");
-      scanf("%d", &mm);
+      scanf("%d", &cadastro->mm);
       printf("  |*|          **        Digite o ano: ");
-      scanf("%d", &aaaa);
-      validar = valiData(dd, mm, aaaa); 
+      scanf("%d", &cadastro->aaaa);
+      validar = valiData(cadastro->dd, cadastro->mm, cadastro->aaaa); 
         if(validar == 1){
-          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", dd, mm,  aaaa);
+          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", cadastro->dd, cadastro->mm,  cadastro->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", dd, mm,   aaaa);
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", cadastro->dd, cadastro->mm, cadastro->aaaa);
         }
     }while(validar != 1);
   
     printf("  \n"); 
     do{
       printf("  |*|          **        Quantidade: ");
-      scanf("%s", qtde);
+      scanf("%s", cadastro->qtde);
       getchar();
-      validar = validaCodigo(qtde); 
+      validar = validaCodigo(cadastro->qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
           salvarCadastro();
@@ -196,6 +191,7 @@ void cadastEntrada(void){
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);   
+  return cadastro;
 }
 
 
