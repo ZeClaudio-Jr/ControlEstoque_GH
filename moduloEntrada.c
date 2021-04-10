@@ -125,7 +125,7 @@ void cadastEntrada(void){ //Declaração da função
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %4[^/n]", cadastro->codigo);
+      scanf(" %s", cadastro->codigo);
       getchar();
       validar = validaCodigo(cadastro->codigo); 
       if(validar == 1){
@@ -138,7 +138,7 @@ void cadastEntrada(void){ //Declaração da função
     printf("  \n");
     do{
       printf("  |*|          **        Descricao do produto: ");
-      scanf(" %49[^/n]", cadastro->desc);
+      scanf(" %s", cadastro->desc);
       getchar();
       validar = validaDescricao(cadastro->desc); 
       if(validar == 1){
@@ -181,7 +181,7 @@ void cadastEntrada(void){ //Declaração da função
     printf("  \n"); 
     do{
       printf("  |*|          **        Quantidade: ");
-      scanf(" %4[^/n]", cadastro->qtde);
+      scanf(" %s", cadastro->qtde);
       getchar();
       validar = validaCodigo(cadastro->qtde); 
       if(validar == 1){
