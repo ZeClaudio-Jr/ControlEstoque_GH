@@ -191,7 +191,6 @@ void cadastEntrada(void){ //Declaração da função
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);   
-  return cadastro;
 }
 
 
