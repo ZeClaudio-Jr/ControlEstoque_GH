@@ -85,7 +85,7 @@ char menuEntrada(void) {
 }
 
 
-Entrada* cadastEntrada(void){ //Declaração da função
+void cadastEntrada(void){ //Declaração da função
   Entrada* cadastro; //Declaração da variavel
   int validar; // variavel para as validações
   cadastro = (Entrada*) malloc(sizeof(Entrada)); //reservar/aloca uma quantidade de memória
