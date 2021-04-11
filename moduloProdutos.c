@@ -1,8 +1,8 @@
-#include <stdio.h>
+#include <stdio.h>          //Biblioteca padrão
 #include <stdlib.h>
-#include <string.h>
-#include "assin.h"
-#include "validacao.h"
+#include <string.h>         //Biblioteca para Strings
+#include "assin.h"          //Biblioteca de Assinaturas
+#include "validacao.h"      //Biblioteca para as validações
 
 
 
