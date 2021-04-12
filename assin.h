@@ -16,7 +16,7 @@ void excluirProduto(void); //Menu secundário PRODUTOS
 //MODULO ENTRADA
 void navegacaoEntrada(void);//Menu primário ENTRADA
 
-void cadastEntrada(void);//Menu secundário ENTRADA
+Entrada* cadastEntr(void);//Menu secundário ENTRADA
 char salvarCadastro(void);//Menu terciario ENTRADA
 char menuRetorno(void);
 void alterarEntrada(void);//Menu secundário ENTRADA

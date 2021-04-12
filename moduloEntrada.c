@@ -85,10 +85,10 @@ char menuEntrada(void) {
 }
 
 
-void cadastEntrada(void){ //Declaração da função
-  Entrada* cadastro; //Declaração da variavel
+Entrada* cadastEntr(void){ //Declaração da função
   int validar; // variavel para as validações
-  cadastro = (Entrada*) malloc(sizeof(Entrada)); //reservar/aloca uma quantidade de memória
+  Entrada *cadastro; //Declaração da variavel
+  cadastro = (Entrada*) malloc(sizeof(Entrada)); //reservar/alocar uma quantidade de memória
   system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -191,6 +191,7 @@ void cadastEntrada(void){ //Declaração da função
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);   
+  return cadastro;
 }
 
 
