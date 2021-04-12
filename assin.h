@@ -30,7 +30,7 @@ void navegacaoEntrada(void);//Menu primário ENTRADA
 Entrada* cadastEntr(void);//Menu secundário ENTRADA
 char salvarCadastro(void);//Menu terciario ENTRADA
 char menuRetorno(void);
-void alterarEntrada(void);//Menu secundário ENTRADA
+char* alterarEntrada(void);//Menu secundário ENTRADA
 void pesquisarEntrada(void);//Menu secundário ENTRADA
 void excluirEntrada(void);//Menu secundário ENTRADA
 
