@@ -24,7 +24,7 @@ struct entrada{ //STRUCT para armazenar os dados da entrada
      		opcao = menuEntrada();                          
      		switch (opcao) {
      			case '1' : 	
-              cadastEntrada();
+              cadastEntr();
      				  break;
      			case '2' : 	
               alterarEntrada();
@@ -201,7 +201,7 @@ char salvarCadastro(void){
     op = menuRetorno();
     switch(op){
       case '1':
-        cadastEntrada();
+        cadastEntr();
         break;
       case '2':
         menuEntrada();
