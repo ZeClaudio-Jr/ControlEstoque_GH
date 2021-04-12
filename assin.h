@@ -32,7 +32,7 @@ char salvarCadastro(void);//Menu terciario ENTRADA
 char menuRetorno(void);
 char* alterarEntrada(void);//Menu secundário ENTRADA
 char* pesquisarEntrada(void);//Menu secundário ENTRADA
-void excluirEntrada(void);//Menu secundário ENTRADA
+char* excluirEntrada(void);//Menu secundário ENTRADA
 
 //MODULO SAIDA
 void navegacaoSaida(void);//Menu primário SAIDA

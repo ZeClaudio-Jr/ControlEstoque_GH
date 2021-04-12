@@ -337,10 +337,9 @@ char* pesquisarEntrada(void){
 }
 
 
-void excluirEntrada(void){
-  char nome [25];
-  char forn[25];
-  int validar;
+char* excluirEntrada(void){
+  char* codigo;
+  int validar; // variavel para as validações
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -364,39 +363,15 @@ void excluirEntrada(void){
     printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
     printf("  \n");
     do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
+      printf("  |*|          **        Codigo do produto: ");
+      scanf(" %s", codigo);
       getchar();
-      validar = validaNome(nome);
+      validar = validaCodigo(codigo); 
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+          printf("  |*|          **        Codigo valido!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+          printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-    printf("  \n");    
-    do{
-      printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
-      getchar();
-      validar = validaForne(forn);
-        if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
-        }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
-        }
-    }while(validar != 1);    
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Excluir nova entrada >>                          \n");
-    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
-    printf("                      [ 9 ] << Sair >>                                          \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
+  return codigo;
 }
