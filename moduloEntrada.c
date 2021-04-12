@@ -5,17 +5,7 @@
 #include "assin.h"
 #include "validacao.h"
 
-
 typedef struct entrada Entrada; //Definição do tipo Entrada
-
-struct entrada{ //STRUCT para armazenar os dados da entrada
-  char nome [25];
-  char codigo [5];  
-  char desc[50];
-  char forn[25];
-  char qtde[5];
-  int dd, mm, aaaa;
-}; 
 
 //MODULO ENTRADA
  void navegacaoEntrada(void) {

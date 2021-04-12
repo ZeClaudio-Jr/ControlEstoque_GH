@@ -14,6 +14,17 @@ void pesquisarProduto(void); //Menu secundário PRODUTOS
 void excluirProduto(void); //Menu secundário PRODUTOS
 
 //MODULO ENTRADA
+typedef struct entrada Entrada; //Definição do tipo Entrada
+
+struct entrada{ //STRUCT para armazenar os dados da entrada
+  char nome [25];
+  char codigo [5];  
+  char desc[50];
+  char forn[25];
+  char qtde[5];
+  int dd, mm, aaaa;
+}; 
+
 void navegacaoEntrada(void);//Menu primário ENTRADA
 
 Entrada* cadastEntr(void);//Menu secundário ENTRADA
