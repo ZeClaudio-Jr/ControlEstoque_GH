@@ -8,7 +8,7 @@ char menuRelatorio(void);
 
 //Definição da estrutura(struct) Produtos
 typedef struct produtos Produtos;
-struct produtos {
+struct produtos{
   char nome [71];
   char codigo [11];
   float valor;
@@ -19,6 +19,7 @@ struct produtos {
 };
 
 //MODULO PRODUTO
+void gravarProduto(void);
 void navegacaoProduto(void); //Menu primário PRODUTOS
 void cadastPrincipal(void);
 Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
