@@ -12,21 +12,20 @@ struct produtos{
   char nome [71];
   char codigo [11];
   float valor;
-  int dd;
-  int mm;
-  int aaaa;
+  int dd, mm, aaaa;
 
 };
 
 //MODULO PRODUTO
-void gravarProduto(void);
+//void gravarProduto(Produtos* prod);
+//void gravarProduto(void);
 void navegacaoProduto(void); //Menu primário PRODUTOS
-void cadastPrincipal(void);
+void cadastrarPrincipal(void);
 Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
-void alterarProduto(void); //Menu secundário PRODUTOS
+char* alterarProduto(void); //Menu secundário PRODUTOS
 void pesquisarPrincipal(void);
 Produtos* pesquisarProduto(void); //Menu secundário PRODUTOS
-void excluirProduto(void); //Menu secundário PRODUTOS
+char* excluirProduto(void); //Menu secundário PRODUTOS
 void gravaProduto(void);
 
 void cadastrarPrincipal(void);
