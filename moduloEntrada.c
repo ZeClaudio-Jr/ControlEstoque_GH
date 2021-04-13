@@ -5,10 +5,12 @@
 #include "assin.h"
 #include "validacao.h"
 
+
 typedef struct entrada Entrada; //Definição do tipo Entrada
 
 //MODULO ENTRADA
  void navegacaoEntrada(void) {
+   Entrada ent;
      	char opcao;
      	do {
      		opcao = menuEntrada();                          
@@ -23,7 +25,7 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
               pesquisarEntrada();
      				  break;
      			case '4' : 	
-              excluirEntrada();
+             // excluirEntrada();
      				  break;
           default:
               printf("Valor invalido \n");
@@ -176,7 +178,7 @@ Entrada* cadastEntr(void){ //Declaração da função
       validar = validaCodigo(cadastro->qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
-          salvarCadastro();
+          //salvarCadastro();
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
@@ -185,64 +187,7 @@ Entrada* cadastEntr(void){ //Declaração da função
 }
 
 
-char salvarCadastro(void){
-  char op;
-  do{
-    op = menuRetorno();
-    switch(op){
-      case '1':
-        cadastEntr();
-        break;
-      case '2':
-        menuEntrada();
-        break;
-      case '0':
-        menuPrincipal();
-        break;
-      default:
-        printf("Digite uma opcao valida! \n");
-    }
-  }while(op != '0');
-return op;
-}
-
-char menuRetorno(void){
-  char op;
-   system("cls || clear");
-    printf("\n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
-    printf("  *|*          MENU********************************************MENU          *|*\n");
-    printf("  |*|          MENU*                                          *MENU          |*|\n");
-    printf("  *|*          MENU*             ENTRADA PRODUTOS             *MENU          *|*\n");
-    printf("  |*|          MENU*                                          *MENU          |*|\n");
-    printf("  *|*          MENU********************************************MENU          *|*\n");
-    printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                     ESCOLHA A OPCAO DESEJADA                           |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                 [ 1 ] << Salvar e cadastrar nova entrada >>            |*|\n");
-    printf("  *|*                 [ 2 ] << Salvar e voltar ao menu anterior >>           *|*\n");
-    printf("  |*|                 [ 0 ] << Salvar e voltar ao menu principal >>          |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  *|*                                                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
-    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
-    printf("\n");
-    printf("\t Digite a opcao desejada: ");
-    scanf("%c", &op);
-  return op; 
-}
-
-char* alterarEntrada(void){
+char* alterarEntr(void){
   char* codigo;
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
@@ -295,7 +240,7 @@ char* alterarEntrada(void){
   return codigo;
 }
 
-char* pesquisarEntrada(void){
+char* pesquisarEntr(void){
   char* codigo;
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
@@ -336,8 +281,7 @@ char* pesquisarEntrada(void){
   return codigo;
 }
 
-
-char* excluirEntrada(void){
+char* excluirEntr(void){
   char* codigo;
   int validar; // variavel para as validações
     system("cls");
@@ -374,4 +318,23 @@ char* excluirEntrada(void){
       }
     }while(validar != 1);
   return codigo;
+}
+
+
+void cadastrarEntrada(void){
+Entrada *cadastro;
+
+cadastro = cadastEntr();//lê os dados do cadastro
+
+free(cadastro);//desaloca a porção de memória alocada por malloc
+}
+void alterarEntrada(void){
+
+}
+void pesquisarEntrada(void){
+
+
+}
+void excluirEntrada(void){
+
 }
