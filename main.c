@@ -48,7 +48,6 @@ int main(void) {
 char menuPrincipal(void) {
   char op;
 
-  system("cls");
   printf("\n");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("  *|*                                                                        *|*\n");

@@ -57,7 +57,7 @@ void excluirSaida(void){
 
 char menuSaida(void){
   char op;
-    system("cls");
+    system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -106,7 +106,7 @@ char menuSaida(void){
   int validar; // variavel para as validações
   Saida *sai; //Declaração da variavel
 
-  system("cls");
+  system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -217,7 +217,7 @@ char* alterarSai(void){
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
 
-  system("cls");
+  system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -257,7 +257,7 @@ Saida* pesquisarSai(void){
   int validar; // variavel para as validações
   sai = (Saida*) malloc(sizeof(Saida)); //reservar/aloca uma quantidade de memória
   
-    system("cls");
+    system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -297,7 +297,8 @@ char* excluirSai(void){
   char* codigo;
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
-    system("cls");
+
+    system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
