@@ -25,7 +25,7 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
               pesquisarEntrada();
      				  break;
      			case '4' : 	
-             // excluirEntrada();
+              excluirEntrada();
      				  break;
           default:
               printf("Valor invalido \n");
