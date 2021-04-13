@@ -6,12 +6,35 @@ char menuEntrada(void);
 char menuSaida(void);
 char menuRelatorio(void); 
 
+//Definição da estrutura(struct) Produtos
+typedef struct produtos Produtos;
+struct produtos {
+  char nome [71];
+  char codigo [11];
+  float valor;
+  int dd;
+  int mm;
+  int aaaa;
+
+};
+
 //MODULO PRODUTO
 void navegacaoProduto(void); //Menu primário PRODUTOS
-void cadastrarProduto(void); //Menu secundário PRODUTOS
+void cadastPrincipal(void);
+Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
 void alterarProduto(void); //Menu secundário PRODUTOS
-void pesquisarProduto(void); //Menu secundário PRODUTOS
+void pesquisarPrincipal(void);
+Produtos* pesquisarProduto(void); //Menu secundário PRODUTOS
 void excluirProduto(void); //Menu secundário PRODUTOS
+void gravaProduto(void);
+
+void cadastrarPrincipal(void);
+
+void pesquisarPrincipal(void);
+
+void alterarPrincipal(void);
+
+void excluirPrincipal(void);
 
 //MODULO ENTRADA
 typedef struct entrada Entrada; //Definição do tipo Entrada
