@@ -42,20 +42,19 @@ void cadastrarEntrada(void){
 }
 
 void alterarEntrada(void){
-  
+ //em construção 
 
 }
 
 void pesquisarEntrada(void){
   Entrada *ent;
   ent = pesquisarEntr();
-
-
+  //falta finalizar
   free(ent);
 }
 
 void excluirEntrada(void){
-
+//em construção 
 }
 
 
