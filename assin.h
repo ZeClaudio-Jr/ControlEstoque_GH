@@ -26,7 +26,7 @@ struct entrada{ //STRUCT para armazenar os dados da entrada
 void navegacaoEntrada(void);
 Entrada* cadastEntr(void);
 char* alterarEntr(void);
-char* pesquisarEntr(void);
+Entrada* pesquisarEntr(void);
 char* excluirEntr(void);
 
 void cadastrarEntrada(void);// chama tela cadastEntr e recebe um apontador para o cadastro preenchido

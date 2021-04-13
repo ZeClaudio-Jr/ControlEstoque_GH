@@ -25,13 +25,37 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
               pesquisarEntrada();
      				  break;
      			case '4' : 	
-              excluirEntrada();
+             // excluirEntrada();
      				  break;
           default:
               printf("Valor invalido \n");
               break;
      		}
      	} while (opcao != '0');
+}
+
+void cadastrarEntrada(void){
+  Entrada *ent;
+  ent = cadastEntr();//lê os dados do cadastro
+  //falta gravar os arquivos de entrada
+  free(ent);//desaloca a porção de memória alocada por malloc
+}
+
+void alterarEntrada(void){
+  
+
+}
+
+void pesquisarEntrada(void){
+  Entrada *ent;
+  ent = pesquisarEntr();
+
+
+  free(ent);
+}
+
+void excluirEntrada(void){
+
 }
 
 
@@ -79,7 +103,7 @@ char menuEntrada(void) {
 
 Entrada* cadastEntr(void){ //Declaração da função
   int validar; // variavel para as validações
-  Entrada *cadastro; //Declaração da variavel
+  Entrada *ent; //Declaração da variavel
   
   system("cls");
     printf("\n");
@@ -102,12 +126,12 @@ Entrada* cadastEntr(void){ //Declaração da função
     printf("  \n");
     printf("  >>>>>>>>>>>>>>>        Informe sobre a nova entrada:        <<<<<<<<<<<<<<<   \n");
     printf("  \n");
-    cadastro = (Entrada*) malloc(sizeof(Entrada)); //reservar/alocar uma quantidade de memória
+    ent = (Entrada*) malloc(sizeof(Entrada)); //reservar/alocar uma quantidade de memória
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf(" %24[^\n]", cadastro->nome);
+      scanf(" %24[^\n]", ent->nome);
       getchar();
-      validar = validaNome(cadastro->nome);
+      validar = validaNome(ent->nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -118,9 +142,9 @@ Entrada* cadastEntr(void){ //Declaração da função
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %s", cadastro->codigo);
+      scanf(" %s", ent->codigo);
       getchar();
-      validar = validaCodigo(cadastro->codigo); 
+      validar = validaCodigo(ent->codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
@@ -131,9 +155,9 @@ Entrada* cadastEntr(void){ //Declaração da função
     printf("  \n");
     do{
       printf("  |*|          **        Descricao do produto: ");
-      scanf(" %s", cadastro->desc);
+      scanf(" %s", ent->desc);
       getchar();
-      validar = validaDescricao(cadastro->desc); 
+      validar = validaDescricao(ent->desc); 
       if(validar == 1){
           printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -144,9 +168,9 @@ Entrada* cadastEntr(void){ //Declaração da função
     printf("  \n");    
     do{
       printf("  |*|          **        Fornecedor: ");
-      scanf(" %24[^\n]", cadastro->forn);
+      scanf(" %24[^\n]", ent->forn);
       getchar();
-      validar = validaForne(cadastro->forn);
+      validar = validaForne(ent->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
         }else{
@@ -158,25 +182,25 @@ Entrada* cadastEntr(void){ //Declaração da função
     printf("  |*|          **        Data da compra \n");
     do{
       printf("  |*|          **        Digite o dia: ");
-      scanf("%d", &cadastro->dd);
+      scanf("%d", &ent->dd);
       printf("  |*|          **        Digite o mes: ");
-      scanf("%d", &cadastro->mm);
+      scanf("%d", &ent->mm);
       printf("  |*|          **        Digite o ano: ");
-      scanf("%d", &cadastro->aaaa);
-      validar = valiData(cadastro->dd, cadastro->mm, cadastro->aaaa); 
+      scanf("%d", &ent->aaaa);
+      validar = valiData(ent->dd, ent->mm, ent->aaaa); 
         if(validar == 1){
-          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", cadastro->dd, cadastro->mm,  cadastro->aaaa);
+          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", ent->dd, ent->mm,  ent->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", cadastro->dd, cadastro->mm, cadastro->aaaa);
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", ent->dd, ent->mm, ent->aaaa);
         }
     }while(validar != 1);
   
     printf("  \n"); 
     do{
       printf("  |*|          **        Quantidade: ");
-      scanf(" %s", cadastro->qtde);
+      scanf(" %s", ent->qtde);
       getchar();
-      validar = validaCodigo(cadastro->qtde); 
+      validar = validaCodigo(ent->qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
           //salvarCadastro();
@@ -184,7 +208,7 @@ Entrada* cadastEntr(void){ //Declaração da função
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);   
-  return cadastro;
+  return ent;
 }
 
 
@@ -228,10 +252,10 @@ char* alterarEntr(void){
   return codigo;
 }
 
-char* pesquisarEntr(void){
-  char* codigo;
+Entrada* pesquisarEntr(void){
+  Entrada* ent;
   int validar; // variavel para as validações
-  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
+  ent = (Entrada*) malloc(sizeof(Entrada)); //reservar/aloca uma quantidade de memória
   
     system("cls");
     printf("\n");
@@ -253,20 +277,20 @@ char* pesquisarEntr(void){
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>              Forneca informacoes sobre a entrada:          <<<<<<<<  \n");
+    printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %s", codigo);
+      scanf(" %s", ent->codigo);
       getchar();
-      validar = validaCodigo(codigo); 
+      validar = validaCodigo(ent->codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-  return codigo;
+  return ent;
 }
 
 char* excluirEntr(void){
@@ -292,7 +316,7 @@ char* excluirEntr(void){
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>              Forneca informacoes sobre a entrada:          <<<<<<<<  \n");
+    printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
@@ -309,19 +333,3 @@ char* excluirEntr(void){
 }
 
 
-void cadastrarEntrada(void){
-Entrada *cadastro;
-cadastro = cadastEntr();//lê os dados do cadastro
-//falta gravar os arquivos de entrada
-free(cadastro);//desaloca a porção de memória alocada por malloc
-}
-void alterarEntrada(void){
-
-}
-void pesquisarEntrada(void){
-
-
-}
-void excluirEntrada(void){
-
-}
