@@ -6,7 +6,7 @@
 #include "validacao.h"
 
 
-//MODULO SAIDA
+typedef struct saida Saida; //Definição do tipo Saida
 
 void navegacaoSaida(void){                                          
  	char opcao;
@@ -32,9 +32,31 @@ void navegacaoSaida(void){
     }while (opcao != '0');
 }
 
+void cadastrarSaida(void){
+  Saida *sai;
+  sai = cadastrarSai();
+  //falta gravar os arquivos de entrada
+  free(sai);//desaloca a porção de memória alocada por malloc
+}
+
+void alterarSaida(void){
+ //em construção 
+
+}
+
+void pesquisarSaida(void){
+  Saida *sai;
+  sai = pesquisarSai();
+  //falta finalizar
+  free(sai);
+}
+
+void excluirSaida(void){
+//em construção 
+}
 
 char menuSaida(void){
-    char op;
+  char op;
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -77,18 +99,12 @@ char menuSaida(void){
     printf("\tDigite a opcao desejada: ");
     scanf("%c", &op);
     getchar();
-    return op;
+  return op;
 }
 
-
-void cadastrarSaida(void){
-  char nome [25];
-  char codigo [5];  
-  char desc[50];
-  int dd, mm, aaaa;
-  char forn[25];
-  char qtde[5];
-  int validar;
+ Saida* cadastrarSai(void){
+  int validar; // variavel para as validações
+  Saida *sai; //Declaração da variavel
 
   system("cls");
     printf("\n");
@@ -111,11 +127,12 @@ void cadastrarSaida(void){
     printf("  \n");
     printf("  >>>>>>>>>>>>>>>         Informe sobre a nova saida:         <<<<<<<<<<<<<<<   \n");
     printf("  \n");
+    sai = (Saida*) malloc(sizeof(Saida)); //reservar/alocar uma quantidade de memória
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
+      scanf(" %24[^\n]", sai->nome);
       getchar();
-      validar = validaNome(nome);
+      validar = validaNome(sai->nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -126,9 +143,9 @@ void cadastrarSaida(void){
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf("%s", codigo);
+      scanf(" %s", sai->codigo);
       getchar();
-      validar = validaCodigo(codigo); 
+      validar = validaCodigo(sai->codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
@@ -139,9 +156,9 @@ void cadastrarSaida(void){
     printf("  \n");
     do{
       printf("  |*|          **        Descricao do produto: ");
-      scanf("%s", desc);
+      scanf(" %s", sai->desc);
       getchar();
-      validar = validaDescricao(desc); 
+      validar = validaDescricao(sai->desc); 
       if(validar == 1){
           printf("  |*|          **        Descricao valida!\n");
       }else{
@@ -152,9 +169,9 @@ void cadastrarSaida(void){
     printf("  \n");    
     do{
       printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
+      scanf(" %24[^\n]", sai->forn);
       getchar();
-      validar = validaForne(forn);
+      validar = validaForne(sai->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
         }else{
@@ -166,55 +183,39 @@ void cadastrarSaida(void){
     printf("  |*|          **        Data da compra \n");
     do{
       printf("  |*|          **        Digite o dia: ");
-      scanf("%d", &dd);
+      scanf("%d", &sai->dd);
       printf("  |*|          **        Digite o mes: ");
-      scanf("%d", &mm);
+      scanf("%d", &sai->mm);
       printf("  |*|          **        Digite o ano: ");
-      scanf("%d", &aaaa);
-      validar = valiData(dd, mm, aaaa); 
+      scanf("%d", &sai->aaaa);
+      validar = valiData(sai->dd, sai->mm, sai->aaaa); 
         if(validar == 1){
-          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", dd, mm,  aaaa);
+          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", sai->dd, sai->mm,  sai->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", dd, mm,   aaaa);
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", sai->dd, sai->mm, sai->aaaa);
         }
     }while(validar != 1);
   
     printf("  \n"); 
     do{
       printf("  |*|          **        Quantidade: ");
-      scanf("%s", qtde);
+      scanf(" %s", sai->qtde);
       getchar();
-      validar = validaCodigo(qtde); 
+      validar = validaCodigo(sai->qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
-    }while(validar != 1);
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Salvar e cadastrar nova saida >>                 \n");
-    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
-    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
+    }while(validar != 1);   
+  return sai;
 }
 
 
-void alterarSaida(void){
-  char nome [25];
-  char codigo [5];  
-  char desc[50];
-  int dd, mm, aaaa;
-  char forn[25];
-  char qtde[5];
-  int validar;
+char* alterarSai(void){
+  char* codigo;
+  int validar; // variavel para as validações
+  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
 
   system("cls");
     printf("\n");
@@ -238,21 +239,8 @@ void alterarSaida(void){
     printf("  >>>>>>>>>>>>>     Forneca novas informacoes sobre a saida:    <<<<<<<<<<<<<   \n");
     printf("  \n");
     do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
-      getchar();
-      validar = validaNome(nome);
-      if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
-      }else{
-            printf("  |*|          **        Descricao invalida!\n");
-      }
-    }while(validar != 1);
-
-    printf("  \n");
-    do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf("%s", codigo);
+      scanf(" %s", codigo);
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
@@ -261,81 +249,14 @@ void alterarSaida(void){
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-
-    printf("  \n");
-    do{
-      printf("  |*|          **        Descricao do produto: ");
-      scanf("%s", desc);
-      getchar();
-      validar = validaDescricao(desc); 
-      if(validar == 1){
-          printf("  |*|          **        Descricao valida!\n");
-      }else{
-          printf("  |*|          **        Descricao invalida!\n");
-      }
-    }while(validar != 1);
-
-    printf("  \n");    
-    do{
-      printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
-      getchar();
-      validar = validaForne(forn);
-        if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
-        }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
-        }
-    }while(validar != 1);     
-
-    printf("  \n"); 
-    printf("  |*|          **        Data da compra \n");
-    do{
-      printf("  |*|          **        Digite o dia: ");
-      scanf("%d", &dd);
-      printf("  |*|          **        Digite o mes: ");
-      scanf("%d", &mm);
-      printf("  |*|          **        Digite o ano: ");
-      scanf("%d", &aaaa);
-      validar = valiData(dd, mm, aaaa); 
-        if(validar == 1){
-          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", dd, mm,  aaaa);
-        }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", dd, mm,   aaaa);
-        }
-    }while(validar != 1);
-  
-    printf("  \n"); 
-    do{
-      printf("  |*|          **        Quantidade: ");
-      scanf("%s", qtde);
-      getchar();
-      validar = validaCodigo(qtde); 
-      if(validar == 1){
-          printf("  |*|          **        Quantidade valida!\n");
-      }else{
-          printf("  |*|          **        Quantidade invalida!\n");
-      }
-    }while(validar != 1);
-	  printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Salvar e alterar nova saida >>                   \n");
-    printf("                      [ 1 ] << Salvar e voltar ao menu anterior >>              \n");
-    printf("                      [ 9 ] << Salvar e Sair >>                                 \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
+  return codigo;
 }
 
-void pesquisarSaida(void){
-  char nome [25];
-  char forn[25];
-  int validar;
+Saida* pesquisarSai(void){
+  Saida* sai;
+  int validar; // variavel para as validações
+  sai = (Saida*) malloc(sizeof(Saida)); //reservar/aloca uma quantidade de memória
+  
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -356,50 +277,26 @@ void pesquisarSaida(void){
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
-    printf("  \n");                                                             
+    printf("  >>>>>>>>>>>>>     Forneca novas informacoes sobre a saida:    <<<<<<<<<<<<<   \n");
+    printf("  \n");
     do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
+      printf("  |*|          **        Codigo do produto: ");
+      scanf(" %s", sai->codigo);
       getchar();
-      validar = validaNome(nome);
+      validar = validaCodigo(sai->codigo); 
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+          printf("  |*|          **        Codigo valido!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+          printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-    printf("  \n");    
-    do{
-      printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
-      getchar();
-      validar = validaForne(forn);
-        if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
-        }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
-        }
-    }while(validar != 1);   
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Pesquisar nova saida >>                          \n");
-    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
-    printf("                      [ 9 ] << Sair >>                                          \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
+  return sai;
 }
 
-void excluirSaida(void){
-  char nome [25];
-  char forn[25];
-  int validar;
+char* excluirSai(void){
+  char* codigo;
+  int validar; // variavel para as validações
+  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -420,42 +317,18 @@ void excluirSaida(void){
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
+    printf("  >>>>>>>>>>>>>     Forneca novas informacoes sobre a saida:    <<<<<<<<<<<<<   \n");
     printf("  \n");
     do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
+      printf("  |*|          **        Codigo do produto: ");
+      scanf(" %s", codigo);
       getchar();
-      validar = validaNome(nome);
+      validar = validaCodigo(codigo); 
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+          printf("  |*|          **        Codigo valido!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+          printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-    printf("  \n");    
-    do{
-      printf("  |*|          **        Fornecedor: ");
-      scanf("%s", forn);
-      getchar();
-      validar = validaForne(forn);
-        if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
-        }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
-        }
-    }while(validar != 1);   
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  \n");
-    printf("                      [ 0 ] << Excluir nova saida >>                            \n");
-    printf("                      [ 1 ] << Voltar ao menu anterior >>                       \n");
-    printf("                      [ 9 ] << Sair >>                                          \n");
-    printf("  \n");
-    printf("  \n");
-    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    getchar();
+  return codigo;
 }

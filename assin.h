@@ -34,13 +34,28 @@ void alterarEntrada(void);
 void pesquisarEntrada(void);
 void excluirEntrada(void);
 
-//MODULO SAIDA
-void navegacaoSaida(void);//Menu primário SAIDA
 
-void cadastrarSaida(void);//Menu secundário SAIDA
-void alterarSaida(void);//Menu secundário SAIDA
-void pesquisarSaida(void);//Menu secundário SAIDA
-void excluirSaida(void);//Menu secundário SAIDA
+//MODULO SAIDA
+typedef struct saida Saida; //Definição do tipo Saida
+struct saida{ //STRUCT para armazenar os dados da saida
+  char nome [25];
+  char codigo [5];  
+  char desc[50];
+  char forn[25];
+  char qtde[5];
+  int dd, mm, aaaa;
+}; 
+void navegacaoSaida(void);
+Saida* cadastrarSai(void);
+char* alterarSai(void);
+Saida* pesquisarSai(void);
+char* excluirSai(void);
+
+void cadastrarSaida(void);// chama tela cadastEntr e recebe um apontador para o cadastro preenchido
+void alterarSaida(void);
+void pesquisarSaida(void);
+void excluirSaida(void);
+
 
 // MODULO RELATÓRIO
 void navegacaoRelatorio(void);
