@@ -47,6 +47,7 @@ struct entrada{ //STRUCT para armazenar os dados da entrada
   int dd, mm, aaaa;
 }; 
 void navegacaoEntrada(void);
+void gravarEntrada(Entrada* ent);
 Entrada* cadastEntr(void);
 char* alterarEntr(void);
 Entrada* pesquisarEntr(void);

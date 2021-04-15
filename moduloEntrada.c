@@ -37,7 +37,7 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
 void cadastrarEntrada(void){
   Entrada *ent;
   ent = cadastEntr();//lê os dados do cadastro
-  //falta gravar os arquivos de entrada
+  gravarEntrada(ent);//grava os arquivos de entrada
   free(ent);//desaloca a porção de memória alocada por malloc
 }
 
@@ -333,3 +333,15 @@ char* excluirEntr(void){
 }
 
 
+void gravarEntrada(Entrada* ent){
+
+  FILE* fp;
+  fp = fopen("Entrada", "ab");
+  if (fp == NULL) {
+    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
+    printf("Não é possível continuar este programa...\n");
+    exit(1);
+  }
+  fwrite(ent, sizeof(Entrada), 1, fp);
+  fclose(fp);
+}
