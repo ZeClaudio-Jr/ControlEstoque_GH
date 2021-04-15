@@ -18,7 +18,7 @@
 
 int main(void) {
   char opcao;
-  
+  system("clear||cls");
   do {
     opcao = menuPrincipal();            
     switch (opcao) {

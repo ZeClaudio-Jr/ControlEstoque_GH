@@ -333,6 +333,7 @@ char* excluirEntr(void){
 }
 
 
+//FUNÇÕES DE ARQUIVOS
 void gravarEntrada(Entrada* ent){
 
   FILE* fp;//endereço do arquivo
