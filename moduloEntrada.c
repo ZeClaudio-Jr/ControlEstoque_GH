@@ -335,13 +335,12 @@ char* excluirEntr(void){
 
 void gravarEntrada(Entrada* ent){
 
-  FILE* fp;
-  fp = fopen("Entrada", "ab");
+  FILE* fp;//endereço do arquivo
+  fp = fopen("Entrada", "ab");//abre o arquivo para gravação
   if (fp == NULL) {
-    printf("Ops! Ocorreu um erro na abertura do arquivo!\n");
-    printf("Não é possível continuar este programa...\n");
+    printf("Erro na abertura do arquivo!\n");
     exit(1);
   }
-  fwrite(ent, sizeof(Entrada), 1, fp);
-  fclose(fp);
+  fwrite(ent, sizeof(Entrada), 1, fp);//escreve no arquivo
+  fclose(fp);//fecha o arquivo
 }
