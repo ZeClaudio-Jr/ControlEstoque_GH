@@ -337,7 +337,7 @@ char* excluirEntr(void){
 void gravarEntrada(Entrada* ent){
 
   FILE* fp;//endereço do arquivo
-  fp = fopen("Entrada", "ab");//abre o arquivo para gravação
+  fp = fopen("Entrada.dat", "ab");//abre o arquivo para gravação
   if (fp == NULL) {
     printf("Erro na abertura do arquivo!\n");
     exit(1);
