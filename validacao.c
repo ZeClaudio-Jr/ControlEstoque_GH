@@ -30,11 +30,12 @@ int validaCodigo(char codigo[]){
 int validaDescricao(char desc[]){
 
   for(int i = 0; i < strlen(desc); i++){
-    if((desc[i] >= 0 && desc[i] <= 64) || (desc[i] >= 122 && desc[i] <= 97)){    
+    if((desc[i] >= 0 && desc[i] <= 31) || (desc[i] >= 33 && desc[i] <= 64) || (desc[i] >= 122 && desc[i] <= 97)){    
         return 0;
     }else  if (strlen(desc) > 49){ // limita numero de caracteres digitados
       return 0;
     }
+  
   }
   return 1;
 }
@@ -43,7 +44,7 @@ int validaDescricao(char desc[]){
 int validaForne(char forn[]){
 
   for(int i = 0; i < strlen(forn); i++){
-    if((forn[i] >= 0 && forn[i] <= 64) || (forn[i] >= 122 && forn[i] <= 97)){ //se estiver nessa faixa não são letras   
+    if((forn[i] >= 0 && forn[i] <= 31) || (forn[i] >= 33 && forn[i] <= 64) || (forn[i] >= 122 && forn[i] <= 97)){   //se estiver nessa faixa não são letras   
       return 0;
     }else  if (strlen(forn) > 24){ // limita numero de caracteres digitados
       return 0;
@@ -51,7 +52,6 @@ int validaForne(char forn[]){
   }
   return 1;
 }
-
 // função validaQuantidade
 int validaQuant(char qtde[]){
 
