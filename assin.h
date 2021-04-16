@@ -1,10 +1,11 @@
 //* Assinatura das funções
 char menuPrincipal(void);
 void menuSobre(void);
-char menuProdutos(void);            
-char menuEntrada(void);      
+char menuProdutos(void);
+char menuEntrada(void);    
 char menuSaida(void);
-char menuRelatorio(void); 
+char menuRelatorio(void);
+
 
 //Definição da estrutura(struct) Produtos
 typedef struct produtos Produtos;
@@ -15,6 +16,7 @@ struct produtos{
   int dd, mm, aaaa;
   int status;
 };
+
 
 //MODULO PRODUTO
 
@@ -39,6 +41,7 @@ char* pesquisarProduto(void); //Menu secundário PRODUTOS
 char* alterarProduto(void); //Menu secundário PRODUTOS
 char* excluirProduto(void); //Menu secundário PRODUTOS
 
+
 //MODULO ENTRADA
 typedef struct entrada Entrada; //Definição do tipo Entrada
 struct entrada{ //STRUCT para armazenar os dados da entrada
@@ -49,6 +52,7 @@ struct entrada{ //STRUCT para armazenar os dados da entrada
   char qtde[5];
   int dd, mm, aaaa;
 }; 
+
 void navegacaoEntrada(void);
 void gravarEntrada(Entrada* ent);
 Entrada* cadastEntr(void);
