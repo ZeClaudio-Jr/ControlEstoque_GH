@@ -271,22 +271,15 @@ Produtos*  cadastrarProduto(void) {
 //SEPARAÇÃO DE MODULOS/FUNÇÕES
 
 
-void pesquisarPrincipal(void) { //FUNÇÕES PARA PESQUISA
-  Produtos* prod;
-  char* codigo;
+void pesquisarPrincipal(void) {
+	Produtos* prod;
+	char* codigo;
 
-  codigo = pesquisarProduto();
-  // do..while
-  // Pesquisar por nome ou por código
-  prod = buscarProdutos(codigo);
-
-  //Exibe o Produtos
-  exibirProduto(prod);
-  
-  //Pesquisa o Produtos
-  
-  free(prod);
-  free(codigo);
+	codigo = pesquisarProduto();
+	prod = buscarProduto(codigo);
+	exibirProduto(prod);
+	free(prod); 
+	free(codigo);
 }
 
 
@@ -319,22 +312,6 @@ char* pesquisarProduto(void) {
   printf("  \n");
   printf("  \n");
   printf("  \n");
-
-  // prod = (Produtos*) malloc(sizeof(Produtos));
-
-  // do{
-  //   printf("  |*|          **        Nome do produto: ");
-  //   scanf("%s", prod->nome);
-  //   getchar();
-
-  //   validar = validaNome(prod->nome);
-  //   if(validar == 1){
-  //         printf("                         Descricao valida!\n");
-  //   }else{
-  //         printf("                         Descricao invalida!\n");
-  //   }
-  // }while(validar != 1);
-
   printf("  \n");
   do{
     printf("  |*|          **        Codigo do produto: ");
@@ -367,6 +344,30 @@ char* pesquisarProduto(void) {
 
 //SEPARAÇÃO DE MODULOS/FUNÇÕES
 
+
+//SEPARAÇÃO DE MODULOS/FUNÇÕES
+
+
+void alterarPrincipal(void) {
+	Produtos* prod;
+	char* codigo;
+
+	codigo = alterarProduto();
+	prod = buscarProduto(codigo);
+	if (prod == NULL) {
+    	printf("\n\n ** Produduto inexistente! **\n\n");
+  	} else {
+		  prod = cadastrarProduto();
+		  strcpy(prod->codigo, codigo);
+		  regravarProduto(prod);
+		  // Outra opção:
+		  // excluirAluno(codigo);
+		  gravarAluno(prod);
+		  free(prod);
+
+	}
+	free(codigo);
+}
 
 //void alterarPrincipal(void); 
 char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
@@ -430,8 +431,29 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
 }    
 
 
+
 //SEPARAÇÃO DE MODULOS/FUNÇÕES
 
+
+//SEPARAÇÃO DE MODULOS/FUNÇÕES
+
+
+void excluirPrincipal(void) {
+	Produtos* prod;
+	char *codigo;
+
+	codigo = excluirProduto();
+	prod = (Produtos*) malloc(sizeof(Produtos));
+	prod = buscarProduto(codigo);
+	if (prod == NULL) {
+    	printf("\n\n ** Produto inexistente ** !\n\n");
+  	} else {
+		  prod->status = False;
+		  regravarAluno(prod);
+		  free(prod);
+	}
+	free(codigo);
+}
 
 //void excluirPrincipal(void); 
 //void excluirProduto(struct produtos* p) {}
@@ -521,7 +543,7 @@ void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
 //SEPARAÇÃO DE MODULOS/FUNÇÕES
 
 
-Produtos* buscarProdutos(char* nome) {
+Produtos* buscarProduto(char* codigo) {
   FILE* fp;
   Produtos* prod;
 
@@ -532,9 +554,8 @@ Produtos* buscarProdutos(char* nome) {
     printf("A sequencia do programa sera interrompida!\n");
     exit(1);
   }
-  while(!feof(fp)) {
-    fread(prod, sizeof(Produtos), 1, fp);
-    if (strcmp(prod->nome, nome) == 0) {
+  while (fread(prod, sizeof(Produtos), 1, fp)) {
+    if (strcmp(prod->codigo, codigo) == 0) && (prod->status == true) {
       fclose(fp);
       return prod;
     }
@@ -558,132 +579,70 @@ void exibirProduto(Produtos* prod) {
     printf("  >> Codigo: %s\n", prod->codigo);
     printf("  >> Valor: %f\n", prod->valor);
     printf("  >> Data de validade: %d/%d/%d\n", prod->dd, prod->mm, prod->aaaa);
-    // if (prod->status == 'c') {
-    //   strcpy(situacao, "CADASTRADO")
-    // } else if (prod->status == 'sc') {
-    //   strcpy(situacao, "NAO CADASTRADO");
-    // } else {
-    //   strcpy(situacao, "Sem informacao");
-    // }
-    // printf("Status do produto: %s\n", situacao);
-  }  
+    if (prod->status == 'c') {
+      strcpy(situacao, "CADASTRADO")
+    } else if (prod->status == 'sc') {
+      strcpy(situacao, "NAO CADASTRADO");
+    } else {
+      strcpy(situacao, "Sem informacao");
+    }
+    printf("Status do produto: %s\n", situacao);
+  } 
+  printf("Aperte ENTER para continuar.\n");
+  getchar();
+   
 }
 
+// void exibirProduto(Produtos* prod) {
+
+// 	if (prod == NULL) {
+// 		printf("\n ** Produto nao cadastrado ** \n");
+// 	} else {
+// 		printf("\n ** Produto encontrado ** \n");
+// 		printf("  >> Nome do Produtos: %s\n", prod->nome);
+// 		printf("  >> Codigo: %s\n", prod->codigo);
+//     printf("  >> Valor: %f\n", prod->valor);
+//     printf("  >> Data de validade: %d/%d/%d\n", prod->dd, prod->mm, prod->aaaa);
+//     printf("  >> Status: %d\n", prod->status);
+    
+// 	}
+// 	printf("\n\nTecle ENTER para continuar!\n\n");
+// 	getchar();
+// }
 
 
 //SEPARAÇÃO DE MODULOS/FUNÇÕES
 
 
 void regravarAluno(Produtos* prod) {
-	int achou;
+	int encontrado;
 	FILE* fp;
-	Produtos* alnLido;
+	Produtos* prodOk;
 
-	alnLido = (Produtos*) malloc(sizeof(Produtos));
-	fp = fopen("alunos.dat", "r+b");
+	prodOk = (Produtos*) malloc(sizeof(Produtos));
+	fp = fopen("produtos.dat", "r+b");
 	if (fp == NULL) {
-		telaErroArquivo();
+    printf("O arquivo nao pode ser aberto corretamente!\n");
+    printf("A sequencia do programa sera interrompida!\n");
+    exit(1);
+
 	}
 	// while(!feof(fp)) {
-	achou = False;
-	while(fread(alnLido, sizeof(Produtos), 1, fp) && !achou) {
-		//fread(alnLido, sizeof(Produtos), 1, fp);
-		if (strcmp(alnLido->codigo, prod->codigo) == 0) {
-			achou = True;
+	encontrado = False;
+	while(fread(prodOk, sizeof(Produtos), 1, fp) && !encontrado) {
+		//fread(prodOk, sizeof(Produtos), 1, fp);
+		if (strcmp(prodOk->codigo, prod->codigo) == 0) {
+			encontrado = True;
 			fseek(fp, -1*sizeof(Produtos), SEEK_CUR);
         	fwrite(prod, sizeof(Produtos), 1, fp);
 			//break;
 		}
 	}
 	fclose(fp);
-	free(alnLido);
+	free(prodOk);
 }
 
 
-
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
-
-
-void exibirAluno(Produtos* prod) {
-
-	if (prod == NULL) {
-		printf("\n= = = Produtos Inexistente = = =\n");
-	} else {
-		printf("\n= = = Produtos Cadastrado = = =\n");
-		printf("Matrícula: %s\n", prod->codigo);
-		printf("Nome do Produtos: %s\n", prod->nome);
-		printf("Endereço eletrônico: %s\n", prod->email);
-		printf("Data de Nasc: %s\n", prod->nasc);
-		printf("Celular: %s\n", prod->celular);
-		printf("Status: %d\n", prod->status);
-	}
-	printf("\n\nTecle ENTER para continuar!\n\n");
-	getchar();
-}
-
-
-
-
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
-
-
-void pesquisarAluno(void) {
-	Produtos* prod;
-	char* codigo;
-
-	codigo = telaPesquisarAluno();
-	prod = buscarAluno(codigo);
-	exibirAluno(prod);
-	free(prod); 
-	free(codigo);
-}
-
-
-
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
-
-
-void atualizarAluno(void) {
-	Produtos* prod;
-	char* codigo;
-
-	codigo = telaAtualizarAluno();
-	prod = buscarAluno(codigo);
-	if (prod == NULL) {
-    	printf("\n\nAluno não encontrado!\n\n");
-  	} else {
-		  prod = telaPreencherAluno();
-		  strcpy(prod->codigo, codigo);
-		  regravarAluno(prod);
-		  // Outra opção:
-		  // excluirAluno(codigo);
-		  // gravarAluno(prod);
-		  free(prod);
-	}
-	free(codigo);
-}
-
-
-
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
-
-
-void excluirAluno(void) {
-	Produtos* prod;
-	char *codigo;
-
-	codigo = telaExcluirAluno();
-	prod = (Produtos*) malloc(sizeof(Produtos));
-	prod = buscarAluno(codigo);
-	if (prod == NULL) {
-    	printf("\n\nAluno não encontrado!\n\n");
-  	} else {
-		  prod->status = False;
-		  regravarAluno(prod);
-		  free(prod);
-	}
-	free(codigo);
-}
 
 
 
