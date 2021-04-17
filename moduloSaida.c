@@ -34,25 +34,53 @@ void navegacaoSaida(void){
 
 void cadastrarSaida(void){
   Saida *sai;
-  sai = cadastrarSai();
-  //falta gravar os arquivos de entrada
+  sai = cadastSai();
+  gravarSaida(sai);
   free(sai);//desaloca a porção de memória alocada por malloc
 }
 
 void alterarSaida(void){
- //em construção 
+ Saida* sai;
+ char* codigo;
 
+ codigo = alterarSai();
+ sai = buscarSaida(codigo);
+ if(sai == NULL){
+   printf("\n\nSaida não encontrada!\n\n");
+ }else{
+   sai = cadastSai();
+   strcpy(sai->codigo, codigo);
+   regravarSaida(sai);
+   free(sai);
+ }
+ free(codigo);
 }
 
 void pesquisarSaida(void){
-  Saida *sai;
-  sai = pesquisarSai();
-  //falta finalizar
-  free(sai);
+  Saida* sai;
+	char* codigo;
+
+	codigo = pesquisarSai();
+	sai = buscarSaida(codigo);
+	exibirSaida(sai);
+	free(sai); 
+	free(codigo);
 }
 
 void excluirSaida(void){
-//em construção 
+  Saida* sai;
+  char* codigo;
+
+  codigo = excluirSai();
+  sai = (Saida*) malloc(sizeof(Saida));
+  sai = buscarSaida(codigo);
+  if(sai == NULL){
+    printf("\n\nSaida não encontrada!\n\n");
+  }else{
+    regravarSaida(sai);
+    free(sai);
+   }
+  free(codigo);
 }
 
 char menuSaida(void){
@@ -102,7 +130,7 @@ char menuSaida(void){
   return op;
 }
 
- Saida* cadastrarSai(void){
+ Saida* cadastSai(void){
   int validar; // variavel para as validações
   Saida *sai; //Declaração da variavel
 
@@ -192,7 +220,7 @@ char menuSaida(void){
         if(validar == 1){
           printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", sai->dd, sai->mm,  sai->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", sai->dd, sai->mm, sai->aaaa);
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamsaie.\n\n>>", sai->dd, sai->mm, sai->aaaa);
         }
     }while(validar != 1);
   
@@ -252,10 +280,10 @@ char* alterarSai(void){
   return codigo;
 }
 
-Saida* pesquisarSai(void){
-  Saida* sai;
+char* pesquisarSai(void){
+  char* codigo;
   int validar; // variavel para as validações
-  sai = (Saida*) malloc(sizeof(Saida)); //reservar/aloca uma quantidade de memória
+  codigo = (char*) malloc(sizeof(char)); //reservar/aloca uma quantidade de memória
   
     system("clear||cls");
     printf("\n");
@@ -281,24 +309,23 @@ Saida* pesquisarSai(void){
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %s", sai->codigo);
+      scanf(" %s", codigo);
       getchar();
-      validar = validaCodigo(sai->codigo); 
+      validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-  return sai;
+  return codigo;
 }
 
 char* excluirSai(void){
   char* codigo;
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
-
-    system("clear||cls");
+    system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -332,4 +359,69 @@ char* excluirSai(void){
       }
     }while(validar != 1);
   return codigo;
+}
+
+
+
+//FUNÇÕES DE ARQUIVOS
+void gravarSaida(Saida* sai){
+
+  FILE* fp;//endereço do arquivo
+  fp = fopen("Saida.dat", "ab");//abre o arquivo para gravação
+  if (fp == NULL) {
+    printf("Erro na abertura do arquivo!\n");
+    exit(1);
+  }
+  fwrite(sai, sizeof(Saida), 1, fp);//escreve no arquivo
+  fclose(fp);//fecha o arquivo
+}
+
+Saida* buscarSaida(char* codigo) {
+		FILE* fp;
+	Saida* sai;
+
+	sai = (Saida*) malloc(sizeof(Saida));
+	fp = fopen("Saidas.dat", "rb");
+	if (fp == NULL) {
+		printf("Erro na abertura do arquivo!\n");
+    exit(1);
+	}
+	while(fread(sai, sizeof(Saida), 1, fp)){
+		if(strcmp(sai->codigo, codigo) == 0){
+			fclose(fp);
+			return sai;
+		}
+	}
+	fclose(fp);
+	return NULL;
+}
+
+void exibirSaida(Saida* sai) {
+
+	if (sai == NULL) {
+		printf("\n= = = Saida Inexistsaie = = =\n");
+	} else {
+		printf("\n= = = Saida Cadastrada = = =\n");
+    printf("Nome do Produto: %s\n", sai->nome);
+		printf("Codigo do Produto: %s\n", sai->codigo);
+		printf("Descrição do produto: %s\n", sai->desc);
+		printf("Fornecedor: %s\n", sai->forn);
+	  printf(" Data da Saida: %d/%d/%d\n", sai->dd, sai->mm,   sai->aaaa);
+	}
+	printf("\n\nTecle ENTER para continuar!\n\n");
+	getchar();
+}
+
+void regravarSaida(Saida* sai) {
+	FILE* fp;
+	Saida* saiLido;
+
+	saiLido = (Saida*) malloc(sizeof(Saida));
+	fp = fopen("Saidas.dat", "r+b");
+	if (fp == NULL) {
+		printf("Erro na abertura do arquivo!\n");
+   exit(1);
+	}
+	fclose(fp);
+	free(saiLido);
 }
