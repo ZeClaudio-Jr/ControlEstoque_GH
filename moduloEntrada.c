@@ -15,7 +15,7 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
      		opcao = menuEntrada();                          
      		switch (opcao) {
      			case '1' : 	
-              cadastEntr();
+              cadastrarEntrada();
      				  break;
      			case '2' : 	
               alterarEntrada();
@@ -38,22 +38,52 @@ void cadastrarEntrada(void){
   ent = cadastEntr();//lê os dados do cadastro
   gravarEntrada(ent);//grava os arquivos de entrada
   free(ent);//desaloca a porção de memória alocada por malloc
+
 }
 
 void alterarEntrada(void){
- //em construção 
+	Entrada* ent;
+	char* codigo;
 
+	codigo = alterarEntr();
+	ent = buscarEntrada(codigo);
+	if (ent == NULL) {
+    	printf("\n\nEntrada não encontrado!\n\n");
+  	} else {
+		  ent = cadastEntr();
+		  strcpy(ent->codigo, codigo);
+		  regravarEntrada(ent);
+		  free(ent);
+	}
+	free(codigo);
 }
 
+
 void pesquisarEntrada(void){
-  Entrada *ent;
-  ent = pesquisarEntr();
-  //falta finalizar
-  free(ent);
+  Entrada* ent;
+	char* codigo;
+
+	codigo = pesquisarEntr();
+	ent = buscarEntrada(codigo);
+	exibirEntrada(ent);
+	free(ent); 
+	free(codigo);
 }
 
 void excluirEntrada(void){
-//em construção 
+  Entrada* ent;
+	char *codigo;
+
+	codigo = excluirEntr();
+	ent = (Entrada*) malloc(sizeof(Entrada));
+	ent = buscarEntrada(codigo);
+	if (ent == NULL) {
+    	printf("\n\nEntrada não encontrado!\n\n");
+  	} else {
+		  regravarEntrada(ent);
+		  free(ent);
+	}
+	free(codigo);
 }
 
 
@@ -99,11 +129,11 @@ char menuEntrada(void) {
 }
 
 
-Entrada* cadastEntr(void){ //Declaração da função
-  int validar; // variavel para as validações
-  Entrada *ent; //Declaração da variavel
-  
-  system("clear||cls");
+Entrada* cadastEntr(void){
+  Entrada *ent;
+  int validar;// variavel para as validações
+
+  system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -209,6 +239,7 @@ Entrada* cadastEntr(void){ //Declaração da função
 }
 
 
+
 char* alterarEntr(void){
   char* codigo;
   int validar; // variavel para as validações
@@ -249,10 +280,10 @@ char* alterarEntr(void){
   return codigo;
 }
 
-Entrada* pesquisarEntr(void){
-  Entrada* ent;
+char* pesquisarEntr(void){
+  char* codigo;
   int validar; // variavel para as validações
-  ent = (Entrada*) malloc(sizeof(Entrada)); //reservar/aloca uma quantidade de memória
+  codigo = (char*) malloc(sizeof(char)); //reservar/aloca uma quantidade de memória
   
     system("clear||cls");
     printf("\n");
@@ -278,16 +309,16 @@ Entrada* pesquisarEntr(void){
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %s", ent->codigo);
+      scanf(" %s", codigo);
       getchar();
-      validar = validaCodigo(ent->codigo); 
+      validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
       }else{
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
-  return ent;
+  return codigo;
 }
 
 char* excluirEntr(void){
@@ -316,6 +347,7 @@ char* excluirEntr(void){
     printf("  \n");
     printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
     printf("  \n");
+    codigo = (char*) malloc(5*sizeof(char));
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf("%s", codigo);
@@ -342,4 +374,54 @@ void gravarEntrada(Entrada* ent){
   }
   fwrite(ent, sizeof(Entrada), 1, fp);//escreve no arquivo
   fclose(fp);//fecha o arquivo
+}
+
+Entrada* buscarEntrada(char* codigo) {
+		FILE* fp;
+	Entrada* ent;
+
+	ent = (Entrada*) malloc(sizeof(Entrada));
+	fp = fopen("Entradas.dat", "rb");
+	if (fp == NULL) {
+		printf("Erro na abertura do arquivo!\n");
+    exit(1);
+	}
+	while(fread(ent, sizeof(Entrada), 1, fp)){
+		if(strcmp(ent->codigo, codigo) == 0){
+			fclose(fp);
+			return ent;
+		}
+	}
+	fclose(fp);
+	return NULL;
+}
+
+void exibirEntrada(Entrada* ent) {
+
+	if (ent == NULL) {
+		printf("\n= = = Entrada Inexistente = = =\n");
+	} else {
+		printf("\n= = = Entrada Cadastrado = = =\n");
+    printf("Nome do Produto: %s\n", ent->nome);
+		printf("Codigo do Produto: %s\n", ent->codigo);
+		printf("Descrição do produto: %s\n", ent->desc);
+		printf("Fornecedor: %s\n", ent->forn);
+	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm,   ent->aaaa);
+	}
+	printf("\n\nTecle ENTER para continuar!\n\n");
+	getchar();
+}
+
+void regravarEntrada(Entrada* ent) {
+	FILE* fp;
+	Entrada* entLido;
+
+	entLido = (Entrada*) malloc(sizeof(Entrada));
+	fp = fopen("Entradas.dat", "r+b");
+	if (fp == NULL) {
+		printf("Erro na abertura do arquivo!\n");
+   exit(1);
+	}
+	fclose(fp);
+	free(entLido);
 }
