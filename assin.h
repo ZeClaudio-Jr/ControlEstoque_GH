@@ -78,14 +78,19 @@ struct saida{ //STRUCT para armazenar os dados da saida
   char forn[25];
   char qtde[5];
   int dd, mm, aaaa;
+  int status;
 }; 
 void navegacaoSaida(void);
-Saida* cadastrarSai(void);
+void gravarSaida(Saida* Sai);
+Saida* buscarSaida(char* codigo);
+void exibirSaida(Saida* Sai);
+void regravarSaida(Saida* Sai);
+Saida* cadastSai(void);
 char* alterarSai(void);
-Saida* pesquisarSai(void);
+char* pesquisarSai(void);
 char* excluirSai(void);
 
-void cadastrarSaida(void);// chama tela cadastEntr e recebe um apontador para o cadastro preenchido
+void cadastrarSaida(void);// chama tela cadastSai e recebe um apontador para o cadastro preenchido
 void alterarSaida(void);
 void pesquisarSaida(void);
 void excluirSaida(void);
