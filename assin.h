@@ -1,10 +1,11 @@
 //* Assinatura das funções
 char menuPrincipal(void);
 void menuSobre(void);
-char menuProdutos(void);            
-char menuEntrada(void);      
+char menuProdutos(void);
+char menuEntrada(void);    
 char menuSaida(void);
-char menuRelatorio(void); 
+char menuRelatorio(void);
+
 
 //Definição da estrutura(struct) Produtos
 typedef struct produtos Produtos;
@@ -13,28 +14,33 @@ struct produtos{
   char codigo [11];
   float valor;
   int dd, mm, aaaa;
-
+  int status;
 };
 
+
 //MODULO PRODUTO
-//void gravarProduto(Produtos* prod);
-//void gravarProduto(void);
+
 void navegacaoProduto(void); //Menu primário PRODUTOS
-void cadastrarPrincipal(void);
-Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
-char* alterarProduto(void); //Menu secundário PRODUTOS
-void pesquisarPrincipal(void);
-Produtos* pesquisarProduto(void); //Menu secundário PRODUTOS
-char* excluirProduto(void); //Menu secundário PRODUTOS
-void gravaProduto(void);
 
 void cadastrarPrincipal(void);
-
 void pesquisarPrincipal(void);
-
 void alterarPrincipal(void);
-
 void excluirPrincipal(void);
+
+void gravarProduto(void);
+
+void gravarProduto(Produtos*);
+void exibirProduto(Produtos*);
+void regravarProduto(Produtos*);
+
+Produtos* buscarProdutos(char*);
+
+Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
+Produtos* pesquisarProduto(void); //Menu secundário PRODUTOS
+char* pesquisarProduto(void); //Menu secundário PRODUTOS
+char* alterarProduto(void); //Menu secundário PRODUTOS
+char* excluirProduto(void); //Menu secundário PRODUTOS
+
 
 //MODULO ENTRADA
 typedef struct entrada Entrada; //Definição do tipo Entrada
@@ -47,6 +53,7 @@ struct entrada{ //STRUCT para armazenar os dados da entrada
   int dd, mm, aaaa;
   int status;
 }; 
+
 void navegacaoEntrada(void);
 void gravarEntrada(Entrada* ent);
 Entrada* buscarEntrada(char* codigo);
