@@ -283,7 +283,7 @@ char* alterarSai(void){
 char* pesquisarSai(void){
   char* codigo;
   int validar; // variavel para as validações
-  codigo = (char*) malloc(sizeof(char)); //reservar/aloca uma quantidade de memória
+  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
   
     system("clear||cls");
     printf("\n");
@@ -399,7 +399,7 @@ Saida* buscarSaida(char* codigo) {
 void exibirSaida(Saida* sai) {
 
 	if (sai == NULL) {
-		printf("\n= = = Saida Inexistsaie = = =\n");
+		printf("\n= = = Saida Inexistente = = =\n");
 	} else {
 		printf("\n= = = Saida Cadastrada = = =\n");
     printf("Nome do Produto: %s\n", sai->nome);
