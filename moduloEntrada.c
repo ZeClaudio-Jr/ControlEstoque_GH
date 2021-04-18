@@ -48,7 +48,7 @@ void alterarEntrada(void){
 	codigo = alterarEntr();
 	ent = buscarEntrada(codigo);
 	if (ent == NULL) {
-    	printf("\n\nEntrada não encontrado!\n\n");
+    	printf("\n\nEntrada não encontrada!\n\n");
   	} else {
 		  ent = cadastEntr();
 		  strcpy(ent->codigo, codigo);
@@ -78,7 +78,7 @@ void excluirEntrada(void){
 	ent = (Entrada*) malloc(sizeof(Entrada));
 	ent = buscarEntrada(codigo);
 	if (ent == NULL) {
-    	printf("\n\nEntrada não encontrado!\n\n");
+    	printf("\n\nEntrada não encontrada!\n\n");
   	} else {
 		  regravarEntrada(ent);
 		  free(ent);
@@ -283,7 +283,7 @@ char* alterarEntr(void){
 char* pesquisarEntr(void){
   char* codigo;
   int validar; // variavel para as validações
-  codigo = (char*) malloc(sizeof(char)); //reservar/aloca uma quantidade de memória
+  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
   
     system("clear||cls");
     printf("\n");
