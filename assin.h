@@ -1,3 +1,8 @@
+// #define
+#define True 1
+#define False 0
+
+
 //* Assinatura das funções
 char menuPrincipal(void);
 void menuSobre(void);
@@ -11,9 +16,9 @@ char menuRelatorio(void);
 typedef struct produtos Produtos;
 struct produtos{
   char nome [71];
-  char codigo [11];
+  char codigo [5];
   float valor;
-  int dd, mm, aaaa;
+  int dd, mm, aaaa; //???? Será que é char?
   int status;
 };
 
@@ -28,16 +33,16 @@ void alterarPrincipal(void);
 void excluirPrincipal(void);
 
 
-void gravarProduto(Produtos* prod);
-void exibirProduto(Produtos* prod);
-void regravarProduto(Produtos* prod);
-
-Produtos* buscarProduto(char* codigo);
-
 Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
 char* pesquisarProduto(void); //Menu secundário PRODUTOS
 char* alterarProduto(void); //Menu secundário PRODUTOS
 char* excluirProduto(void); //Menu secundário PRODUTOS
+
+
+void gravarProduto(Produtos* prod);
+void exibirProduto(Produtos* prod);
+Produtos* buscarProduto(char* codigo);
+void regravarProduto(Produtos* prod);
 
 
 //MODULO ENTRADA
