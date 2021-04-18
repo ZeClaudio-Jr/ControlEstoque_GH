@@ -381,7 +381,7 @@ Saida* buscarSaida(char* codigo) {
 	Saida* sai;
 
 	sai = (Saida*) malloc(sizeof(Saida));
-	fp = fopen("Saidas.dat", "rb");
+	fp = fopen("Saida.dat", "rb");
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
     exit(1);
@@ -417,7 +417,7 @@ void regravarSaida(Saida* sai) {
 	Saida* saiLido;
 
 	saiLido = (Saida*) malloc(sizeof(Saida));
-	fp = fopen("Saidas.dat", "r+b");
+	fp = fopen("Saida.dat", "r+b");
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
