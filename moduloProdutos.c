@@ -565,7 +565,8 @@ Produtos* buscarProduto(char* codigo) {
   }
   
   while (fread(prod, sizeof(Produtos), 1, fp)) {
-    if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
+    //if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
+    if (strcmp(prod->codigo, codigo) == 0) {
       fclose(fp);
       return prod;
     }
