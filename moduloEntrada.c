@@ -33,6 +33,8 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
      	} while (opcao != '0');
 }
 
+
+//FUNÇOES DE ARQUIVO
 void cadastrarEntrada(void){
   Entrada *ent;
   ent = cadastEntr();//lê os dados do cadastro
@@ -62,7 +64,7 @@ void alterarEntrada(void){
 void pesquisarEntrada(void){
   Entrada* ent;
 	char* codigo;
-
+  
 	codigo = pesquisarEntr();
 	ent = buscarEntrada(codigo);
 	exibirEntrada(ent);
@@ -376,8 +378,9 @@ void gravarEntrada(Entrada* ent){
   fclose(fp);//fecha o arquivo
 }
 
+
 Entrada* buscarEntrada(char* codigo) {
-		FILE* fp;
+	FILE* fp;
 	Entrada* ent;
 
 	ent = (Entrada*) malloc(sizeof(Entrada));
@@ -386,7 +389,7 @@ Entrada* buscarEntrada(char* codigo) {
 		printf("Erro na abertura do arquivo!\n");
     exit(1);
 	}
-	while(fread(ent, sizeof(Entrada), 1, fp)){
+	while(fread(ent, sizeof(Entrada), 1, fp) == 1){
 		if(strcmp(ent->codigo, codigo) == 0){
 			fclose(fp);
 			return ent;
@@ -396,21 +399,23 @@ Entrada* buscarEntrada(char* codigo) {
 	return NULL;
 }
 
-void exibirEntrada(Entrada* ent) {
 
+void exibirEntrada(Entrada* ent) {
+  
 	if (ent == NULL) {
 		printf("\n= = = Entrada Inexistente = = =\n");
 	} else {
-		printf("\n= = = Entrada Cadastrado = = =\n");
+		printf("\n= = = Entrada Cadastrada = = =\n");
     printf("Nome do Produto: %s\n", ent->nome);
 		printf("Codigo do Produto: %s\n", ent->codigo);
 		printf("Descrição do produto: %s\n", ent->desc);
 		printf("Fornecedor: %s\n", ent->forn);
-	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm,   ent->aaaa);
+	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
 }
+
 
 void regravarEntrada(Entrada* ent) {
 	FILE* fp;
@@ -422,6 +427,12 @@ void regravarEntrada(Entrada* ent) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
 	}
+   while(fread(entLido, sizeof(Entrada),1, fp)){
+    if(strcmp(entLido->codigo, ent->codigo) == 0){
+      fseek(fp, -1*sizeof(Entrada), SEEK_CUR);
+      fwrite(ent, sizeof(Entrada), 1, fp);
+    }
+  }
 	fclose(fp);
 	free(entLido);
 }
