@@ -27,16 +27,14 @@ void pesquisarPrincipal(void);
 void alterarPrincipal(void);
 void excluirPrincipal(void);
 
-void gravarProduto(void);
 
-void gravarProduto(Produtos*);
-void exibirProduto(Produtos*);
-void regravarProduto(Produtos*);
+void gravarProduto(Produtos* prod);
+void exibirProduto(Produtos* prod);
+void regravarProduto(Produtos* prod);
 
-Produtos* buscarProdutos(char*);
+Produtos* buscarProduto(char* codigo);
 
 Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
-Produtos* pesquisarProduto(void); //Menu secundário PRODUTOS
 char* pesquisarProduto(void); //Menu secundário PRODUTOS
 char* alterarProduto(void); //Menu secundário PRODUTOS
 char* excluirProduto(void); //Menu secundário PRODUTOS
