@@ -381,7 +381,7 @@ Entrada* buscarEntrada(char* codigo) {
 	Entrada* ent;
 
 	ent = (Entrada*) malloc(sizeof(Entrada));
-	fp = fopen("Entradas.dat", "rb");
+	fp = fopen("Entrada.dat", "rb");
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
     exit(1);
@@ -417,7 +417,7 @@ void regravarEntrada(Entrada* ent) {
 	Entrada* entLido;
 
 	entLido = (Entrada*) malloc(sizeof(Entrada));
-	fp = fopen("Entradas.dat", "r+b");
+	fp = fopen("Entrada.dat", "r+b");
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
