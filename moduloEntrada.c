@@ -427,12 +427,10 @@ void regravarEntrada(Entrada* ent) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
 	}
-  while(!feof(fp)){
-    fread(entLido, sizeof(Entrada),1, fp);
+   while(fread(entLido, sizeof(Entrada),1, fp)){
     if(strcmp(entLido->codigo, ent->codigo) == 0){
       fseek(fp, -1*sizeof(Entrada), SEEK_CUR);
       fwrite(ent, sizeof(Entrada), 1, fp);
-      break;
     }
   }
 	fclose(fp);
