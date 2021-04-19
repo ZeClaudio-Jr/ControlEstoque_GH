@@ -195,19 +195,19 @@ char menuSaida(void){
       }
     }while(validar != 1);
 
-    printf("  \n");    
+   printf("  \n");    
     do{
       printf("  |*|          **        Fornecedor: ");
-      scanf(" %24[^\n]", sai->forn);
+      scanf(" %24[^\n]", ent->forn);
       getchar();
-      validar = validaForne(sai->forn);
+      validar = validaForne(ent->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
         }else{
           printf("  |*|          **        Fornecedor invalido!\n");
         }
     }while(validar != 1);     
-
+    
     printf("  \n"); 
     printf("  |*|          **        Data da compra \n");
     do{
