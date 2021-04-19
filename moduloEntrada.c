@@ -82,11 +82,12 @@ void excluirEntrada(void){
 	if (ent == NULL) {
     	printf("\n\nEntrada não encontrada!\n\n");
   	} else {
+      ent->status = False;
 		  regravarEntrada(ent);
 		  free(ent);
 	}
 	free(codigo);
-}
+  }
 
 
 char menuEntrada(void) {
@@ -135,7 +136,7 @@ Entrada* cadastEntr(void){
   Entrada *ent;
   int validar;// variavel para as validações
 
-  system("cls");
+    system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -237,6 +238,7 @@ Entrada* cadastEntr(void){
           printf("  |*|          **        Quantidade invalida!\n");
       }
     }while(validar != 1);   
+    ent->status = True;
   return ent;
 }
 
@@ -427,7 +429,7 @@ void regravarEntrada(Entrada* ent) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
 	}
-   while(fread(entLido, sizeof(Entrada),1, fp)){
+  while(fread(entLido, sizeof(Entrada),1, fp)){
     if(strcmp(entLido->codigo, ent->codigo) == 0){
       fseek(fp, -1*sizeof(Entrada), SEEK_CUR);
       fwrite(ent, sizeof(Entrada), 1, fp);
