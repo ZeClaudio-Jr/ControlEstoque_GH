@@ -330,19 +330,17 @@ char* pesquisarProduto(void) {
     }
   }while(validar != 1);
 
-  printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("                                                                                \n");
-  printf("                      [ 0 ] << Voltar ao menu anterior >>                       \n");
-  printf("                      [ 1 ] << Sair >>                                          \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-  printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...\n");
-  getchar();
+  // printf("  \n");
+  // printf("  \n");
+  // printf("  \n");
+  // printf("  \n");
+  // printf("                                                                                \n");
+  // printf("                      [ 0 ] << Voltar ao menu anterior >>                       \n");
+  // printf("                      [ 1 ] << Sair >>                                          \n");
+  // printf("  \n");
+  // printf("  \n");
+  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  // printf("\n");
   return codigo;
   
 }
