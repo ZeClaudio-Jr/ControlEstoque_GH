@@ -412,6 +412,7 @@ void exibirEntrada(Entrada* ent) {
 		printf("Codigo do Produto: %s\n", ent->codigo);
 		printf("Descrição do produto: %s\n", ent->desc);
 		printf("Fornecedor: %s\n", ent->forn);
+    printf("Quantidade: %s\n", ent->qtde);
 	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");

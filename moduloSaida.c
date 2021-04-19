@@ -323,6 +323,7 @@ char* pesquisarSai(void){
   return codigo;
 }
 
+
 char* excluirSai(void){
   char* codigo;
   int validar; // variavel para as validações
@@ -408,6 +409,7 @@ void exibirSaida(Saida* sai) {
 		printf("Codigo do Produto: %s\n", sai->codigo);
 		printf("Descrição do produto: %s\n", sai->desc);
 		printf("Fornecedor: %s\n", sai->forn);
+    printf("Quantidade: %s\n", sai->qtde);
 	  printf(" Data da Saida: %d/%d/%d\n", sai->dd, sai->mm,   sai->aaaa);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
