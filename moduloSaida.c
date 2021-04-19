@@ -77,9 +77,10 @@ void excluirSaida(void){
   if(sai == NULL){
     printf("\n\nSaida não encontrada!\n\n");
   }else{
+    sai->status = False;
     regravarSaida(sai);
     free(sai);
-   }
+  }
   free(codigo);
 }
 
@@ -235,7 +236,8 @@ char menuSaida(void){
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
-    }while(validar != 1);   
+    }while(validar != 1);  
+    sai->status = True; 
   return sai;
 }
 
@@ -386,7 +388,7 @@ Saida* buscarSaida(char* codigo) {
 		printf("Erro na abertura do arquivo!\n");
     exit(1);
 	}
-	while(fread(sai, sizeof(Saida), 1, fp)){
+	while(fread(sai, sizeof(Saida), 1, fp) == 1){
 		if(strcmp(sai->codigo, codigo) == 0){
 			fclose(fp);
 			return sai;
@@ -421,7 +423,13 @@ void regravarSaida(Saida* sai) {
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
-	}
+  }
+	while(fread(saiLido, sizeof(Saida),1, fp)){
+    if(strcmp(saiLido->codigo, sai->codigo) == 0){
+      fseek(fp, -1*sizeof(Saida), SEEK_CUR);
+      fwrite(sai, sizeof(Saida), 1, fp);
+    }
+  }
 	fclose(fp);
 	free(saiLido);
 }
