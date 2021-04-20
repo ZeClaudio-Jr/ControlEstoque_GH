@@ -19,7 +19,7 @@ struct produtos{
   char codigo [5];
   float valor;
   int dd, mm, aaaa; //???? Será que é char?
-  int status;
+  char status;
 };
 
 
@@ -31,6 +31,7 @@ void cadastrarPrincipal(void);
 void pesquisarPrincipal(void);
 void alterarPrincipal(void);
 void excluirPrincipal(void);
+void deletarPrincipal(void);
 
 
 Produtos* cadastrarProduto(void); //Menu secundário PRODUTOS
@@ -43,6 +44,7 @@ void gravarProduto(Produtos* prod);
 void exibirProduto(Produtos* prod);
 Produtos* buscarProduto(char* codigo);
 void regravarProduto(Produtos* prod);
+void deletarProduto(Produtos* prod);
 
 
 //MODULO ENTRADA
