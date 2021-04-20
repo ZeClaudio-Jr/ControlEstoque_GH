@@ -5,7 +5,6 @@
 #include "assin.h"
 #include "validacao.h"
 
-
 typedef struct saida Saida; //Definição do tipo Saida
 
 void navegacaoSaida(void){                                          
@@ -126,14 +125,16 @@ char menuSaida(void){
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
     printf("\tDigite a opcao desejada: ");
-    scanf("%c", &op);
-    getchar();
+    scanf(" %c", &op);
+    // getchar();
   return op;
 }
 
  Saida* cadastSai(void){
   int validar; // variavel para as validações
   Saida *sai; //Declaração da variavel
+  Entrada *ent;
+  ent = (Entrada*) malloc(sizeof(Entrada));//reservar/alocar uma quantidade de memória
 
   system("clear||cls");
     printf("\n");
@@ -160,7 +161,7 @@ char menuSaida(void){
     do{
       printf("  |*|          **        Nome do produto: ");
       scanf(" %24[^\n]", sai->nome);
-      getchar();
+      // getchar();
       validar = validaNome(sai->nome);
       if(validar == 1){
             printf("  |*|          **        Descricao valida!\n");
@@ -173,7 +174,7 @@ char menuSaida(void){
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf(" %s", sai->codigo);
-      getchar();
+      // getchar();
       validar = validaCodigo(sai->codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
@@ -186,7 +187,7 @@ char menuSaida(void){
     do{
       printf("  |*|          **        Descricao do produto: ");
       scanf(" %s", sai->desc);
-      getchar();
+      // getchar();
       validar = validaDescricao(sai->desc); 
       if(validar == 1){
           printf("  |*|          **        Descricao valida!\n");
@@ -199,7 +200,7 @@ char menuSaida(void){
     do{
       printf("  |*|          **        Fornecedor: ");
       scanf(" %24[^\n]", ent->forn);
-      getchar();
+      // getchar();
       validar = validaForne(ent->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
@@ -229,7 +230,7 @@ char menuSaida(void){
     do{
       printf("  |*|          **        Quantidade: ");
       scanf(" %s", sai->qtde);
-      getchar();
+      // getchar();
       validar = validaCodigo(sai->qtde); 
       if(validar == 1){
           printf("  |*|          **        Quantidade valida!\n");
@@ -271,7 +272,7 @@ char* alterarSai(void){
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf(" %s", codigo);
-      getchar();
+      // getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
@@ -312,7 +313,7 @@ char* pesquisarSai(void){
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf(" %s", codigo);
-      getchar();
+      // getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
@@ -353,7 +354,7 @@ char* excluirSai(void){
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf(" %s", codigo);
-      getchar();
+      // getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
           printf("  |*|          **        Codigo valido!\n");
@@ -413,6 +414,7 @@ void exibirSaida(Saida* sai) {
 	  printf(" Data da Saida: %d/%d/%d\n", sai->dd, sai->mm,   sai->aaaa);
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
+	getchar();
 	getchar();
 }
 

@@ -21,6 +21,7 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
       case '1':
         system("clear||cls");
         cadastrarPrincipal();       // Entra no menu "Lançar novo produto" - Menu Produtos
+        /*
         switch (op) {
           case '0':
             system("clear||cls");
@@ -31,13 +32,14 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         }
+        */
         break;
-
 
       case '2':
         system("clear||cls");
         alterarPrincipal();
-        switch (op) {
+        /*
+        switch (op) {	
           case '0':
             system("clear||cls");
             menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
@@ -47,12 +49,14 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         }
+        */
         break;
 
 
       case '3': 
         system("clear||cls");
         pesquisarPrincipal();
+        /*
         switch (op) {
           case '0':
             system("clear||cls");
@@ -63,12 +67,14 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         } 
+        */
         break;
 
 
       case '4': 
         system("clear||cls");
         excluirPrincipal();
+        /*
         switch (op) {
           case '0':
             system("clear||cls");
@@ -79,13 +85,15 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
             menuPrincipal();      // Salva e retorna para o menu principal/main
             break;
         } 
-       
+        */
+        break;
+    
+    	/*
       default:
         printf("        Valor digitado invalido \n");
-        break;
+        */
     } 
-    op = menuProdutos();
-   
+   // op = menuProdutos();
 
   } while (op != '0');
 
@@ -138,8 +146,8 @@ char menuProdutos(void) { //MENU PRINCIPAL PRODUTOS
   printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
   printf("\n");
   printf("                          Escolha sua opcao:   ");
-  scanf("%c", &op);
-  getchar();
+  scanf(" %c", &op);
+  //getchar();
 
   return op;
 }
@@ -194,8 +202,8 @@ Produtos*  cadastrarProduto(void) {
 
   do{
     printf("  |*|          **        Nome do produto: ");
-    scanf("%s", prod->nome);
-    getchar();
+    scanf(" %s", prod->nome);
+    //getchar();
     validar = validaNome(prod->nome);
     if(validar == 1){
           printf("                         Descricao valida!\n");
@@ -207,8 +215,8 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   do{
     printf("  |*|          **        Codigo do produto: ");
-    scanf("%s", prod->codigo);
-    getchar();
+    scanf(" %s", prod->codigo);
+    //getchar();
     validar = validaCodigo(prod->codigo); 
     if(validar == 1){
         printf("                         Codigo valido!\n");
@@ -221,7 +229,7 @@ Produtos*  cadastrarProduto(void) {
   do{
     printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
     scanf("%f.2", &prod->valor);
-    getchar();
+    //getchar();
     validar = validaValor(prod->valor);
     if(validar == 1){
       printf("                         Valor valido!\n");
@@ -240,7 +248,7 @@ Produtos*  cadastrarProduto(void) {
     scanf("%d", &prod->mm);
     printf("  |*|          **        Digite o ano: ");
     scanf("%d", &prod->aaaa);
-    getchar();
+    //getchar();
     validar = valiData(prod->dd, prod->mm, prod->aaaa); 
     if(validar == 1){
       printf("\n\n                         %d/%d/%d - Data valido!\n", prod->dd, prod->mm, prod->aaaa);
@@ -262,6 +270,7 @@ Produtos*  cadastrarProduto(void) {
   printf("\n");
   printf("\t>>>           Tecle <ENTER> para continuar...\n");
   getchar();
+  getchar();
   return prod;
 
 } 
@@ -277,12 +286,34 @@ void pesquisarPrincipal(void) {
 	codigo = pesquisarProduto();//Chama a tela de pesquisa
 
 	prod = buscarProduto(codigo);
-	
-  exibirProduto(prod);
 
-	free(prod); 
+   if(prod->status == 1) {
+   
+  	exibirProduto(prod);
+  	
+  	free(prod); 
 	
   free(codigo);
+
+  }
+  
+  else if(prod->status == 0){
+  	
+  	printf("O produto pesquisado estava cadastrado, mas foi deletado. Ent�o ele n�o ser� exibido.");
+  	getchar();
+  	getchar();
+  
+  } else {
+  	printf("Produto inexistente no sistema.");
+  	getchar();
+  	getchar();
+  }
+  
+  	free(prod); 
+	
+  free(codigo);
+
+  
 }
 
 
@@ -320,8 +351,8 @@ char* pesquisarProduto(void) {
 
   do{
     printf("  |*|          **        Informe o codigo do produto: ");
-    scanf("%s", codigo);
-    getchar();
+    scanf(" %s", codigo);
+    //getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
         printf("                         Codigo valido!\n");
@@ -406,16 +437,18 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
 
   do{
     printf("  |*|          **        Informe o codigo do produto: ");
-    scanf("%s", codigo);
-    getchar();
+    scanf(" %s", codigo);
+    //getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
         printf("                         Codigo valido!\n");
+        return codigo;
     }else{
         printf("                         Codigo invalido!\n");
     }
   }while(validar != 1);
 
+	/*
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -430,7 +463,9 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
   printf("\n");
   printf("\t>>>           Tecle <ENTER> para continuar...\n");
   getchar();
-  return codigo;
+  getchar();
+  */
+  
 
 }    
 
@@ -439,24 +474,29 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
 
 
 void excluirPrincipal(void) {
+	
 	Produtos* prod;
+	
 	char *codigo;
 
 	codigo = excluirProduto();
 	
-  prod = (Produtos*) malloc(sizeof(Produtos));
+    prod = (Produtos*) malloc(sizeof(Produtos));
 
 	prod = buscarProduto(codigo);
 	
   if (prod == NULL) {
     	printf("\n\n ** Produto inexistente ** !\n\n");
+    	getchar();
+    	getchar();
   } else {
-		  prod->status = False;
+		  prod->status = 0;
 		  regravarProduto(prod);
-		  free(prod);
 	}
 	free(codigo);
+	free(prod);
 }
+
 
 
 //void excluirProduto(struct produtos* p) {}
@@ -495,16 +535,18 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
   
   do{
     printf("  |*|          **        Informe o codigo do produto: ");
-    scanf("%s", codigo);
-    getchar();
+    scanf(" %s", codigo);
+    // getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
         printf("                         Codigo valido!\n");
+        return codigo;
     }else{
         printf("                         Codigo invalido!\n");
     }
   }while(validar != 1);
 
+  /*
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -518,7 +560,9 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
   printf("\n");
   printf("\t>>>           Tecle <ENTER> para continuar...\n");
   getchar();
+  getchar();
   return codigo;
+  */
 
 }
 
@@ -529,6 +573,8 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
 
 void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
   FILE* fp; //Criar endereço do arquivo
+  
+  prod->status = 1;
 
   fp = fopen("produtos.dat", "ab"); //Abrir o arquivo para gravação ("ab" significa: ALTERAR(APPEND) e BINÁRIO(BINARY))
 
@@ -567,7 +613,8 @@ Produtos* buscarProduto(char* codigo) {
     if (strcmp(prod->codigo, codigo) == 0) {
       fclose(fp);
       return prod;
-    }
+    } 
+	
   }
   fclose(fp);
   return NULL;
@@ -590,6 +637,7 @@ void exibirProduto(Produtos* prod) {
     printf("  >> Data de validade: %d/%d/%d\n", prod->dd, prod->mm, prod->aaaa);
   }
   printf("Aperte ENTER para continuar.\n");
+  getchar();
   getchar();
   //   if (prod->status == 'c') {
   //     strcpy(situacao, "CADASTRADO")

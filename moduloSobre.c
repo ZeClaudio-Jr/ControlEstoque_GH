@@ -43,6 +43,7 @@ void menuSobre(void) {
     printf("\n");
     printf("                Digite ENTER para retornar ao MENU PRINCIPAL \n");
     getchar();
+    getchar();
 }
 
 

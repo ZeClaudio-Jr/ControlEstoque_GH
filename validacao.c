@@ -3,8 +3,10 @@
 
 // função validaNome
 int validaNome(char nome[]){
+	
+	int i = 0;
 
-  for(int i = 0; i < strlen(nome); i++){
+  for(i; i < strlen(nome); i++){
     if((nome[i] >= 0 && nome[i] <= 64) || (nome[i] >= 122 && nome[i] <= 97)){ //se estiver nessa faixa não são letras   
       return 0;
     }else  if (strlen(nome) > 24){ // limita numero de caracteres digitados
@@ -16,8 +18,10 @@ int validaNome(char nome[]){
 
 // função validaCodigo
 int validaCodigo(char codigo[]){
+	
+	int i = 0;
 
-  for(int i = 0; i < strlen(codigo); i++){
+  for(i; i < strlen(codigo); i++){
     if((codigo[i] >= 0 && codigo[i] <= 47) || (codigo[i] >= 58 && codigo[i] <= 126)){    return 0;
     }else  if (strlen(codigo) > 4){ // limita numero de caracteres digitados
       return 0;
@@ -28,8 +32,10 @@ int validaCodigo(char codigo[]){
 
 // função validaDescricao
 int validaDescricao(char desc[]){
+	
+	int i = 0;
 
-  for(int i = 0; i < strlen(desc); i++){
+  for(i; i < strlen(desc); i++){
     if((desc[i] >= 0 && desc[i] <= 31) || (desc[i] >= 33 && desc[i] <= 64) || (desc[i] >= 122 && desc[i] <= 97)){    
         return 0;
     }else  if (strlen(desc) > 49){ // limita numero de caracteres digitados
@@ -42,8 +48,10 @@ int validaDescricao(char desc[]){
 
 // função validaFornecedor
 int validaForne(char forn[]){
+	
+	int i = 0;
 
-  for(int i = 0; i < strlen(forn); i++){
+  for(i; i < strlen(forn); i++){
     if((forn[i] >= 0 && forn[i] <= 31) || (forn[i] >= 33 && forn[i] <= 64) || (forn[i] >= 122 && forn[i] <= 97)){   //se estiver nessa faixa não são letras   
       return 0;
     }else  if (strlen(forn) > 24){ // limita numero de caracteres digitados
@@ -54,8 +62,10 @@ int validaForne(char forn[]){
 }
 // função validaQuantidade
 int validaQuant(char qtde[]){
+	
+	int i = 0;
 
-  for(int i = 0; i < strlen(qtde); i++){
+  for(i; i < strlen(qtde); i++){
     if((qtde[i] >= 0 && qtde[i] <= 47) || (qtde[i] >= 58 && qtde[i] <= 126)){    return 0;
     }else  if (strlen(qtde) > 4){ // limita numero de caracteres digitados
       return 0;

@@ -37,8 +37,11 @@ int main(void) {
       case '5': 
           navegacaoRelatorio();
           break;
+          /*
       default:
           printf("        Valor digitado invalido \n");
+          break;
+          */
     } 
   }while (opcao != '0');
   return 0; 
@@ -46,6 +49,7 @@ int main(void) {
             
 
 char menuPrincipal(void) {
+	
   char op;
 
   printf("\n");
@@ -85,9 +89,11 @@ char menuPrincipal(void) {
   printf("  |*|                                                                        |*|\n");
   printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
   printf("\n");
-  printf("                    Escolha sua opcao:   ");
-  scanf("%c", &op);
-  getchar();
+  
+  printf(" Escolha sua opcao: ");
+  scanf(" %c", &op);
+  // getchar();
 
   return op;
+  
 }

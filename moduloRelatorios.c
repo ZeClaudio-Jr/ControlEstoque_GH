@@ -75,8 +75,8 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    scanf("%c", &op);  
-    getchar();
+    scanf(" %c", &op);  
+    // getchar();
 
   return op;  
 }
@@ -114,8 +114,8 @@ void relatorioEspecifico(void) {
     printf("  *|*                                                                        *|*\n");
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
-      getchar();
+      scanf(" %s", nome);
+      // getchar();
       validar = validaNome(nome);
       if(validar == 1){
             printf("  |*|          **        Poduto encontrado!\n");
@@ -143,6 +143,7 @@ void relatorioEspecifico(void) {
     printf("\n");
     
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
+    getchar();
     getchar();
 
 
@@ -192,6 +193,7 @@ void relatorioGeral(void) {
     printf("\n");
     printf("\n");
     printf("\t>>>           Tecle <ENTER> para continuar...\n");
+    getchar();
     getchar();
     
 }
