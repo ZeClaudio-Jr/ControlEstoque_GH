@@ -23,7 +23,7 @@ void navegacaoSaida(void){
           pesquisarSaida();
  				  break;
  			case '4' : 	
-          pesquisarSaida();
+          excluirSaida();
  			    break;
       default:
           printf("Valor invalido \n");
@@ -209,7 +209,7 @@ char menuSaida(void){
     }while(validar != 1);     
 
     printf("  \n"); 
-    printf("  |*|          **        Data da compra \n");
+    printf("  |*|          **       Data da compra \n");
     do{
       printf("  |*|          **        Digite o dia: ");
       scanf("%d", &sai->dd);
