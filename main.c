@@ -47,7 +47,7 @@ int main(void) {
 
 char menuPrincipal(void) {
   char op;
-
+  system("clear||cls");
   printf("\n");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("  *|*                                                                        *|*\n");
