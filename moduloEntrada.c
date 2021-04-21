@@ -164,9 +164,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaNome(ent->nome);
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+            printf("  |*|          **        Nome do Produto valido!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+            printf("  |*|          **        Nome do Produto invalido!\n");
       }
     }while(validar != 1);
 

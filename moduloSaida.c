@@ -159,20 +159,20 @@ char menuSaida(void){
     sai = (Saida*) malloc(sizeof(Saida)); //reservar/alocar uma quantidade de memória
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf(" %24[^\n]", sai->nome);
+      scanf("%s", sai->nome);
       getchar();
       validar = validaNome(sai->nome);
       if(validar == 1){
-            printf("  |*|          **        Descricao valida!\n");
+            printf("  |*|          **        Nome do Produto valido!\n");
       }else{
-            printf("  |*|          **        Descricao invalida!\n");
+            printf("  |*|          **        Nome do Produto invalido!\n");
       }
     }while(validar != 1);
 
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
-      scanf(" %s", sai->codigo);
+      scanf("%s", sai->codigo);
       getchar();
       validar = validaCodigo(sai->codigo); 
       if(validar == 1){
@@ -185,7 +185,7 @@ char menuSaida(void){
     printf("  \n");
     do{
       printf("  |*|          **        Descricao do produto: ");
-      scanf(" %s", sai->desc);
+      scanf(" %49[^\n]", sai->desc);
       getchar();
       validar = validaDescricao(sai->desc); 
       if(validar == 1){
@@ -195,19 +195,19 @@ char menuSaida(void){
       }
     }while(validar != 1);
 
-   printf("  \n");    
+    printf("  \n");    
     do{
       printf("  |*|          **        Fornecedor: ");
-      scanf(" %24[^\n]", ent->forn);
+      scanf(" %24[^\n]", sai->forn);
       getchar();
-      validar = validaForne(ent->forn);
+      validar = validaForne(sai->forn);
         if(validar == 1){
           printf("  |*|          **        Fornecedor valido!\n");
         }else{
           printf("  |*|          **        Fornecedor invalido!\n");
         }
     }while(validar != 1);     
-    
+
     printf("  \n"); 
     printf("  |*|          **        Data da compra \n");
     do{
@@ -221,14 +221,14 @@ char menuSaida(void){
         if(validar == 1){
           printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", sai->dd, sai->mm,  sai->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamsaie.\n\n>>", sai->dd, sai->mm, sai->aaaa);
+          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", sai->dd, sai->mm,   sai->aaaa);
         }
     }while(validar != 1);
   
     printf("  \n"); 
     do{
       printf("  |*|          **        Quantidade: ");
-      scanf(" %s", sai->qtde);
+      scanf("%s", sai->qtde);
       getchar();
       validar = validaCodigo(sai->qtde); 
       if(validar == 1){
@@ -236,8 +236,8 @@ char menuSaida(void){
       }else{
           printf("  |*|          **        Quantidade invalida!\n");
       }
-    }while(validar != 1);  
-    sai->status = True; 
+    }while(validar != 1);   
+    sai->status = True;
   return sai;
 }
 
@@ -323,7 +323,6 @@ char* pesquisarSai(void){
   return codigo;
 }
 
-
 char* excluirSai(void){
   char* codigo;
   int validar; // variavel para as validações
@@ -365,7 +364,6 @@ char* excluirSai(void){
 }
 
 
-
 //FUNÇÕES DE ARQUIVOS
 void gravarSaida(Saida* sai){
 
@@ -380,7 +378,7 @@ void gravarSaida(Saida* sai){
 }
 
 Saida* buscarSaida(char* codigo) {
-		FILE* fp;
+	FILE* fp;
 	Saida* sai;
 
 	sai = (Saida*) malloc(sizeof(Saida));
@@ -425,8 +423,8 @@ void regravarSaida(Saida* sai) {
 	if (fp == NULL) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
-  }
-	while(fread(saiLido, sizeof(Saida),1, fp)){
+	}
+  while(fread(saiLido, sizeof(Saida),1, fp)){
     if(strcmp(saiLido->codigo, sai->codigo) == 0){
       fseek(fp, -1*sizeof(Saida), SEEK_CUR);
       fwrite(sai, sizeof(Saida), 1, fp);
