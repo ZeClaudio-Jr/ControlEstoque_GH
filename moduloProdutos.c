@@ -148,7 +148,7 @@ char menuProdutos(void) { //MENU PRINCIPAL PRODUTOS
 
 
 void cadastrarPrincipal(void) { //FUNÇÕES PARA CADASTRO
-  Produtos *prod;
+  Produtos* prod;
 
   prod = cadastrarProduto(); //Chama a tela de cadastro
 
@@ -327,17 +327,15 @@ char* pesquisarProduto(void) {
     }
   }while(validar != 1);
 
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("                                                                                \n");
-  // printf("                      [ 0 ] << Voltar ao menu anterior >>                       \n");
-  // printf("                      [ 1 ] << Sair >>                                          \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-  // printf("\n");
+  printf("  \n");
+  printf("  \n");
+  printf("  \n");
+  printf("  \n");
+  printf("  \n");
+  printf("  \n");
+  printf("  \n");
+  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  printf("\n");
   return codigo;
   
 }
@@ -554,14 +552,14 @@ Produtos* buscarProduto(char* codigo) {
   fp = fopen("produtos.dat", "rb");
   
   if (fp == NULL) {
-    printf("O arquivo nao pode ser aberto corretamente!\n");
+    printf("O arquivo nao foi encontrado!\n");
     printf("A sequencia do programa sera interrompida!\n");
     exit(1);
   }
   
   while(fread(prod, sizeof(Produtos), 1, fp) == 1) {
-    //if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
-    if (strcmp(prod->codigo, codigo) == 0) {
+    if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
+    // if (strcmp(prod->codigo, codigo) == 0) {
       fclose(fp);
       return prod;
     }
@@ -580,7 +578,7 @@ void exibirProduto(Produtos* prod) {
   if (prod == NULL) {
     printf(" ## Produto nao cadastrado! ##\n\n");
   } else {
-    printf("** Descricao do produto já cadastrado **\n\n");
+    printf("** Descricao do produto ja cadastrado **\n\n");
     printf("  >> Nome: %s\n", prod->nome);
     printf("  >> Codigo: %s\n", prod->codigo);
     printf("  >> Valor: %f\n", prod->valor);
