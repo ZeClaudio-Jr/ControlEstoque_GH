@@ -12,7 +12,7 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
   do {
     op = menuProdutos();
     switch (op) {
-      case '0':
+      case '9':
         system("clear||cls");
         menuPrincipal();          // Retorno para o menu principal/main
         break;
@@ -128,7 +128,7 @@ char menuProdutos(void) { //MENU PRINCIPAL PRODUTOS
   printf("  *|*              [ 4 ] << Excluir produto >>                               *|*\n");
   printf("  |*|                                                                        |*|\n");
   printf("  *|*                                                                        *|*\n");
-  printf("  |*|              [ 0 ] << Voltar ao Menu principal >>                      |*|\n");
+  printf("  |*|              [ 9 ] << Voltar ao Menu principal >>                      |*|\n");
   printf("  *|*                                                                        *|*\n");
   printf("  |*|                                                                        |*|\n");
   printf("  |*|                                                                        |*|\n");
@@ -231,8 +231,7 @@ Produtos*  cadastrarProduto(void) {
 
   printf("  \n");
   do{
-    printf("  |*|          **        Data de validade(dd/mm/aaaa): \n");
-    // scanf("%d/%d/%d", &prod->dd, &prod->mm, &prod->aaaa);
+    printf("  |*|          **        Data de validade(dd/mm/aaaa): \n\n");
     printf("  |*|          **        Digite o dia: ");
     scanf("%d", &prod->dd);
     printf("  |*|          **        Digite o mes: ");
@@ -247,14 +246,13 @@ Produtos*  cadastrarProduto(void) {
       printf("\n                         Data: %d/%d/%d - Data informada IMPROPRIA!  \n                         Digite novamente.\n\n", prod->dd, prod->mm, prod->aaaa);
     }
   }while(validar != 1);
+
+  prod->status = True;
     
   printf("  \n");
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("                                                                                \n");
-  printf("                      [ 0 ] << Salvar e voltar ao menu anterior >>              \n");
-  printf("                      [ 1 ] << Salvar e Sair >>                                 \n");
   printf("  \n");
   printf("  \n");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
