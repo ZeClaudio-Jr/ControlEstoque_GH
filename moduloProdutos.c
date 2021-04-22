@@ -252,7 +252,7 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("  \n");
+  // printf("  \n");
   // printf("  \n");
   // printf("  \n");
   // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -417,13 +417,13 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
   printf("  \n");
   printf("  \n");
   printf("                                                                                \n");
-  printf("                      [ 0 ] << Salvar e voltar ao menu anterior >>              \n");
-  printf("                      [ 1 ] << Salvar e Sair >>                                 \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  // printf("                      [ 0 ] << Salvar e voltar ao menu anterior >>              \n");
+  // printf("                      [ 1 ] << Salvar e Sair >>                                 \n");
+  // printf("  \n");
+  // printf("  \n");
+  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...\n");
+  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
   return codigo;
 
