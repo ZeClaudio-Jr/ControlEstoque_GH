@@ -21,75 +21,74 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
       case '1':
         system("clear||cls");
         cadastrarPrincipal();       // Entra no menu "Lançar novo produto" - Menu Produtos
-        switch (op) {
-          case '0':
-            system("clear||cls");
-            menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
-            break;
-          case '1':
-            system("clear||cls");
-            menuPrincipal();      // Salva e retorna para o menu principal/main
-            break;
-        }
+        // switch (op) {
+        //   case '0':
+        //     system("clear||cls");
+        //     menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+        //     break;
+        //   case '1':
+        //     system("clear||cls");
+        //     menuPrincipal();      // Salva e retorna para o menu principal/main
+        //     break;
+        // }
         break;
 
 
       case '2':
         system("clear||cls");
         alterarPrincipal();
-        switch (op) {
-          case '0':
-            system("clear||cls");
-            menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
-            break;
-          case '1':
-            system("clear||cls");
-            menuPrincipal();      // Salva e retorna para o menu principal/main
-            break;
-        }
+        // switch (op) {
+        //   case '0':
+        //     system("clear||cls");
+        //     menuProdutos();       // Salva e retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+        //     break;
+        //   case '1':
+        //     system("clear||cls");
+        //     menuPrincipal();      // Salva e retorna para o menu principal/main
+        //     break;
+        // }
         break;
 
 
       case '3': 
         system("clear||cls");
         pesquisarPrincipal();
-        switch (op) {
-          case '0':
-            system("clear||cls");
-            menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
-            break;
-          case '1':
-            system("clear||cls");
-            menuPrincipal();      // Salva e retorna para o menu principal/main
-            break;
-        } 
+        // switch (op) {
+        //   case '0':
+        //     system("clear||cls");
+        //     menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+        //     break;
+        //   case '1':
+        //     system("clear||cls");
+        //     menuPrincipal();      // Salva e retorna para o menu principal/main
+        //     break;
+        // } 
         break;
 
 
       case '4': 
         system("clear||cls");
         excluirPrincipal();
-        switch (op) {
-          case '0':
-            system("clear||cls");
-            menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
-            break;
-          case '1':
-            system("clear||cls");
-            menuPrincipal();      // Salva e retorna para o menu principal/main
-            break;
-        } 
+        // switch (op) {
+        //   case '0':
+        //     system("clear||cls");
+        //     menuProdutos();       // Retorna para o menu principal/primária da navegação PRODUTOS - Menu Produtos
+        //     break;
+        //   case '1':
+        //     system("clear||cls");
+        //     menuPrincipal();      // Salva e retorna para o menu principal/main
+        //     break;
+        // }
+        break;
+
        
       default:
         printf("        Valor digitado invalido \n");
         break;
     } 
-    op = menuProdutos();
-   
-
+    
   } while (op != '0');
 
-       
 }
 
 
