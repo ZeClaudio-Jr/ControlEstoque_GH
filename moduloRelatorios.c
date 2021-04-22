@@ -142,7 +142,7 @@ void relatorioEspecifico(void) {
     printf("\n");
     printf("\n");
     
-    printf("\t>>>           Tecle <ENTER> para continuar...\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
     getchar();
 
 
@@ -191,7 +191,7 @@ void relatorioGeral(void) {
     printf("      >>    ESTOQUE:                                                \n"); 
     printf("\n");
     printf("\n");
-    printf("\t>>>           Tecle <ENTER> para continuar...\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
     getchar();
     
 }
