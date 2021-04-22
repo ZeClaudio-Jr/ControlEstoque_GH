@@ -69,7 +69,7 @@ void pesquisarSaida(void){
 
 void excluirSaida(void){
   Saida* sai;
-  char* codigo;
+  char *codigo;
 
   codigo = excluirSai();
   sai = (Saida*) malloc(sizeof(Saida));
@@ -209,7 +209,7 @@ char menuSaida(void){
     }while(validar != 1);     
 
     printf("  \n"); 
-    printf("  |*|          **       Data da compra \n");
+    printf("  |*|          **        Data da venda \n");
     do{
       printf("  |*|          **        Digite o dia: ");
       scanf("%d", &sai->dd);
@@ -324,7 +324,7 @@ char* pesquisarSai(void){
 }
 
 char* excluirSai(void){
-  char* codigo;
+  char *codigo;
   int validar; // variavel para as validações
   codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
     system("cls");
@@ -377,6 +377,7 @@ void gravarSaida(Saida* sai){
   fclose(fp);//fecha o arquivo
 }
 
+
 Saida* buscarSaida(char* codigo) {
 	FILE* fp;
 	Saida* sai;
@@ -388,7 +389,7 @@ Saida* buscarSaida(char* codigo) {
     exit(1);
 	}
 	while(fread(sai, sizeof(Saida), 1, fp) == 1){
-		if(strcmp(sai->codigo, codigo) == 0){
+		if((strcmp(sai->codigo, codigo) == 0) && (sai->status == True)){
 			fclose(fp);
 			return sai;
 		}
@@ -397,24 +398,29 @@ Saida* buscarSaida(char* codigo) {
 	return NULL;
 }
 
-void exibirSaida(Saida* sai) {
 
+void exibirSaida(Saida* sai) {
+  
 	if (sai == NULL) {
-		printf("\n= = = Saida Inexistente = = =\n");
+		printf("\n#--##--##--##- Saida Inexistente #--##--##--##-\n");
 	} else {
-		printf("\n= = = Saida Cadastrada = = =\n");
-    printf("Nome do Produto: %s\n", sai->nome);
-		printf("Codigo do Produto: %s\n", sai->codigo);
-		printf("Descrição do produto: %s\n", sai->desc);
-		printf("Fornecedor: %s\n", sai->forn);
-    printf("Quantidade: %s\n", sai->qtde);
-	  printf(" Data da Saida: %d/%d/%d\n", sai->dd, sai->mm,   sai->aaaa);
+		printf("\n#--##--##--##- Saida Cadastrada #--##--##--##-\n\n");
+    printf("\tNome do Produto: %s\n", sai->nome);
+		printf("\tCodigo do Produto: %s\n", sai->codigo);
+		printf("\tDescricao do produto: %s\n", sai->desc);
+		printf("\tFornecedor: %s\n", sai->forn);
+    printf("\tQuantidade: %s\n", sai->qtde);
+	  printf("\tData da Saida: %d/%d/%d\n", sai->dd, sai->mm, sai->aaaa);
+    printf("\tstatus: %d\n", sai->status);
+
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
 }
 
+
 void regravarSaida(Saida* sai) {
+	int achou ;
 	FILE* fp;
 	Saida* saiLido;
 
@@ -424,8 +430,10 @@ void regravarSaida(Saida* sai) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
 	}
-  while(fread(saiLido, sizeof(Saida),1, fp)){
+  achou = False;
+  while(fread(saiLido, sizeof(Saida),1, fp) && !achou){
     if(strcmp(saiLido->codigo, sai->codigo) == 0){
+      achou = True;
       fseek(fp, -1*sizeof(Saida), SEEK_CUR);
       fwrite(sai, sizeof(Saida), 1, fp);
     }
