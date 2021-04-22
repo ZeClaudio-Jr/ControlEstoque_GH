@@ -81,13 +81,13 @@ void excluirEntrada(void){
 	ent = buscarEntrada(codigo);
 	if (ent == NULL) {
     	printf("\n\nEntrada não encontrada!\n\n");
-  	} else {
+  }else {
       ent->status = False;
 		  regravarEntrada(ent);
 		  free(ent);
 	}
-	free(codigo);
-  }
+  free(codigo);
+}
 
 
 char menuEntrada(void) {
@@ -239,7 +239,7 @@ Entrada* cadastEntr(void){
       }
     }while(validar != 1);   
     ent->status = True;
-  return ent;
+    return ent;
 }
 
 
@@ -326,8 +326,9 @@ char* pesquisarEntr(void){
 }
 
 char* excluirEntr(void){
-  char* codigo;
+  char *codigo;
   int validar; // variavel para as validações
+  codigo = (char*) malloc(5*sizeof(char));
   
     system("clear||cls");
     printf("\n");
@@ -351,7 +352,6 @@ char* excluirEntr(void){
     printf("  \n");
     printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
     printf("  \n");
-    codigo = (char*) malloc(5*sizeof(char));
     do{
       printf("  |*|          **        Codigo do produto: ");
       scanf("%s", codigo);
@@ -392,7 +392,7 @@ Entrada* buscarEntrada(char* codigo) {
     exit(1);
 	}
 	while(fread(ent, sizeof(Entrada), 1, fp) == 1){
-		if(strcmp(ent->codigo, codigo) == 0){
+		if((strcmp(ent->codigo, codigo) == 0) && (ent->status == True)){
 			fclose(fp);
 			return ent;
 		}
@@ -414,6 +414,8 @@ void exibirEntrada(Entrada* ent) {
 		printf("Fornecedor: %s\n", ent->forn);
     printf("Quantidade: %s\n", ent->qtde);
 	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
+    printf("status: %d\n", ent->status);
+
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
@@ -421,6 +423,7 @@ void exibirEntrada(Entrada* ent) {
 
 
 void regravarEntrada(Entrada* ent) {
+  int achou ;
 	FILE* fp;
 	Entrada* entLido;
 
@@ -430,8 +433,10 @@ void regravarEntrada(Entrada* ent) {
 		printf("Erro na abertura do arquivo!\n");
    exit(1);
 	}
-  while(fread(entLido, sizeof(Entrada),1, fp)){
+  achou = False;
+  while(fread(entLido, sizeof(Entrada),1, fp) && !achou){
     if(strcmp(entLido->codigo, ent->codigo) == 0){
+      achou = True;
       fseek(fp, -1*sizeof(Entrada), SEEK_CUR);
       fwrite(ent, sizeof(Entrada), 1, fp);
     }
