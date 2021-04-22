@@ -405,16 +405,16 @@ Entrada* buscarEntrada(char* codigo) {
 void exibirEntrada(Entrada* ent) {
   
 	if (ent == NULL) {
-		printf("\n= = = Entrada Inexistente = = =\n");
+		printf("\n#--##--##--##- Entrada Inexistente #--##--##--##-\n");
 	} else {
-		printf("\n= = = Entrada Cadastrada = = =\n");
-    printf("Nome do Produto: %s\n", ent->nome);
-		printf("Codigo do Produto: %s\n", ent->codigo);
-		printf("Descrição do produto: %s\n", ent->desc);
-		printf("Fornecedor: %s\n", ent->forn);
-    printf("Quantidade: %s\n", ent->qtde);
-	  printf(" Data da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
-    printf("status: %d\n", ent->status);
+		printf("\n#--##--##--##- Entrada Cadastrada #--##--##--##-\n\n");
+    printf("\tNome do Produto: %s\n", ent->nome);
+		printf("\tCodigo do Produto: %s\n", ent->codigo);
+		printf("\tDescrição do produto: %s\n", ent->desc);
+		printf("\tFornecedor: %s\n", ent->forn);
+    printf("\tQuantidade: %s\n", ent->qtde);
+	  printf("\tData da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
+    printf("\tstatus: %d\n", ent->status);
 
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
