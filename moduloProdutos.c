@@ -137,7 +137,7 @@ char menuProdutos(void) { //MENU PRINCIPAL PRODUTOS
   printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
   printf("\n");
   printf("                          Escolha sua opcao:   ");
-  scanf("%c", &op);
+  scanf("%c", &op); // 'c' é para um caractere. 's' é para um conjunto de char(vetor) e não precisa do '&'.
   getchar();
 
   return op;
@@ -219,7 +219,7 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   do{
     printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
-    scanf("%f.2", &prod->valor);
+    scanf("%.2f", &prod->valor);
     getchar();
     validar = validaValor(prod->valor);
     if(validar == 1){
@@ -257,7 +257,7 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...\n");
+  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
   return prod;
 
@@ -284,7 +284,7 @@ void pesquisarPrincipal(void) {
 
 
 //void pesquisarProduto(struct produtos p) {
-char* pesquisarProduto(void) {
+char* pesquisarProduto(void) {  // OK
   char* codigo;
   int validar;
     
@@ -334,7 +334,7 @@ char* pesquisarProduto(void) {
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
   return codigo;
   
@@ -444,7 +444,7 @@ void excluirPrincipal(void) {
 	prod = buscarProduto(codigo);
 	
   if (prod == NULL) {
-    	printf("\n\n ** Produto inexistente ** !\n\n");
+    	printf("\n\n     ** Produto inexistente ** !\n\n");
   } else {
 		  prod->status = False;
 		  regravarProduto(prod);
@@ -519,7 +519,7 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
 
 
 
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
+//SEPARAÇÃO DE MODULOS/FUNÇÕES  OK
 
 
 void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
@@ -540,7 +540,7 @@ void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
 
 
 
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
+//SEPARAÇÃO DE MODULOS/FUNÇÕES  OK
 
 
 Produtos* buscarProduto(char* codigo) {
@@ -558,8 +558,8 @@ Produtos* buscarProduto(char* codigo) {
   }
   
   while(fread(prod, sizeof(Produtos), 1, fp) == 1) {
-    if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
-    // if (strcmp(prod->codigo, codigo) == 0) {
+    // if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == 1)) {
+    if (strcmp(prod->codigo, codigo) == 0) {
       fclose(fp);
       return prod;
     }
@@ -570,21 +570,21 @@ Produtos* buscarProduto(char* codigo) {
 
 
 
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
+//SEPARAÇÃO DE MODULOS/FUNÇÕES  OK
 
 
 void exibirProduto(Produtos* prod) {
 
   if (prod == NULL) {
-    printf(" ## Produto nao cadastrado! ##\n\n");
+    printf("                  ## Produto nao cadastrado! ##\n\n");
   } else {
     printf("** Descricao do produto ja cadastrado **\n\n");
     printf("  >> Nome: %s\n", prod->nome);
     printf("  >> Codigo: %s\n", prod->codigo);
-    printf("  >> Valor: %f\n", prod->valor);
+    printf("  >> Valor: %.2f\n", prod->valor);
     printf("  >> Data de validade: %d/%d/%d\n", prod->dd, prod->mm, prod->aaaa);
   }
-  printf("Aperte ENTER para continuar.\n");
+  printf("\n                     Aperte ENTER para continuar.\n");
   getchar();
   //   if (prod->status == 'c') {
   //     strcpy(situacao, "CADASTRADO")

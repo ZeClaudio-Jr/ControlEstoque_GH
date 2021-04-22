@@ -39,10 +39,10 @@ char* alterarProduto(void); //Menu secundário PRODUTOS
 char* excluirProduto(void); //Menu secundário PRODUTOS
 
 
-void gravarProduto(Produtos* prod);
-void exibirProduto(Produtos* prod);
-Produtos* buscarProduto(char* codigo);
-void regravarProduto(Produtos* prod);
+void gravarProduto(Produtos*);
+void exibirProduto(Produtos*);
+Produtos* buscarProduto(char*);
+void regravarProduto(Produtos*);
 
 
 //MODULO ENTRADA
