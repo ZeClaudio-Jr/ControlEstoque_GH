@@ -446,7 +446,7 @@ void excluirPrincipal(void) {
   if (prod == NULL) {
     	printf("\n\n     ** Produto inexistente ** !\n\n");
   } else {
-		  prod->status = 0;
+		  prod->status = False;
 		  regravarProduto(prod);
 		  free(prod);
 	}
@@ -528,7 +528,7 @@ void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
   fp = fopen("produtos.dat", "ab"); //Abrir o arquivo para gravação ("ab" significa: ALTERAR(APPEND) e BINÁRIO(BINARY))
 
   if (fp == NULL) { //
-    printf("Nao foi possivel guardar o arquivo!\n");
+    printf("Nao foi possivel abrir o arquivo!\n");
     printf("Fechamento automatico\n");
     exit(1);
   }
@@ -558,7 +558,7 @@ Produtos* buscarProduto(char* codigo) {
   }
   
   while(fread(prod, sizeof(Produtos), 1, fp) == 1) {
-    if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == 1)) {
+    if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
     // if (strcmp(prod->codigo, codigo) == 0) {
       fclose(fp);
       return prod;
@@ -576,7 +576,7 @@ Produtos* buscarProduto(char* codigo) {
 void exibirProduto(Produtos* prod) {
 
   if (prod == NULL) {
-    printf("                  ## Produto nao cadastrado! ##\n\n");
+    printf("                           ## Produto nao cadastrado! ##\n\n");
   } else {
     printf("                      ** Descricao do produto cadastrado **\n\n");
     printf("                         >> Nome: %s\n", prod->nome);
@@ -599,7 +599,7 @@ void exibirProduto(Produtos* prod) {
 
 
 
-//SEPARAÇÃO DE MODULOS/FUNÇÕES
+//SEPARAÇÃO DE MODULOS/FUNÇÕES  OK
 
 
 void regravarProduto(Produtos* prod) {
@@ -626,11 +626,7 @@ void regravarProduto(Produtos* prod) {
      	fwrite(prod, sizeof(Produtos), 1, fp);
 			//break;
 		}
-    fclose(fp);
-    free(prodSim);
   }
+  fclose(fp);
+  free(prodSim);
 }
-//void cadastrarProduto(struct produtos*);
-//void alterarProduto(struct produtos*);
-//void pesquisarProduto(struct produtos);
-//void excluirProduto(struct produtos*);
