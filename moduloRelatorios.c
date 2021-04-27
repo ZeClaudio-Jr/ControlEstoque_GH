@@ -25,14 +25,15 @@ void navegacaoRelatorio(void) {
         break;
 //-----------------------------------------------------------------------------------------\\
 //-----------------------------------------------------------------------------------------//        
-      case '0': 
+      case '9': 
         menuPrincipal();
         break;
 //-----------------------------------------------------------------------------------------\\
 //-----------------------------------------------------------------------------------------//
       default:
-        printf("        Valor digitado invalido. \n");
-        break;
+        printf("             Valor digitado invalido. \n");
+        printf("   Tente digitar um numero correto para uma das opcoes. \n");
+        getchar();
     } 
 
   }while (op != '0'); 
@@ -69,8 +70,8 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                [ 1 ] << Relatorio de produto especifico >>             *|*\n");
     printf("  |*|                [ 2 ] << Relatorio Geral >>                             |*|\n");
-    printf("  *|*                [ 0 ] << Sair >>                                        *|*\n");
-    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                [ 9 ] << Sair >>                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
