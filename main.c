@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "assin.h"
+#include "produtos.h"
 
 
 /// Programa Principal <main>
