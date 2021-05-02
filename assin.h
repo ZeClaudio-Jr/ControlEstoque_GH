@@ -10,6 +10,8 @@ char menuEntrada(void);
 char menuSaida(void);
 char menuRelatorio(void);
 
+//MODULO ENTRADA
+typedef struct entrada Entrada; //Definição do tipo Entrada
 struct entrada{ //STRUCT para armazenar os dados da entrada
   char nome [25];
   char codigo [5];  
