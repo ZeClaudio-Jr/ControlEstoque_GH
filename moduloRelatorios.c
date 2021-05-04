@@ -207,11 +207,10 @@ void telaRelatProdutos(char* codigo) {
 }
 
 
-
 void listProdutosPorCodigo(char* codigo) {
     FILE* fp;
     Produtos* prod;
-    char codigoTrunc[4];
+    char nomeTrunc[26];
     int tam;
 
     prod = (Produtos*) malloc(sizeof(Produtos));
@@ -219,17 +218,45 @@ void listProdutosPorCodigo(char* codigo) {
     while (fread(prod, sizeof(Produtos), 1, fp)) {
         if (strcmp(prod->codigo, codigo) == 0) {
             tam = strlen(prod->nome);
-            strncpy(codigoTrunc, prod->nome, tam);
+            strncpy(nomeTrunc, prod->nome, tam);
             for (int i = tam; i < 25; i++) {
-                codigoTrunc[i] = ' ';
+                nomeTrunc[i] = ' ';
             }
-            codigoTrunc[25] = '\0';
-            printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
+            nomeTrunc[25] = '\0';
+            printf("  |*|  \tNome do Produto: %s        \n", prod->nome);
+            printf("  *|*  \tCodigo do Produto: %s      \n", prod->codigo);
+            printf("  *|*  \tData de Validade: %d/%d/%d  \n", prod->dd, prod->mm, prod->aaaa);
+        
         }
     }
     fclose(fp);
     free(prod);
 }
+
+
+
+// void listProdutosPorCodigo(char* codigo) {
+//     FILE* fp;
+//     Produtos* prod;
+//     char codigoTrunc[4];
+//     int tam;
+
+//     prod = (Produtos*) malloc(sizeof(Produtos));
+//     fp = fopen("produtos.dat", "rb");
+//     while (fread(prod, sizeof(Produtos), 1, fp)) {
+//         if (strcmp(prod->codigo, codigo) == 0) {
+//             tam = strlen(prod->nome);
+//             strncpy(codigoTrunc, prod->nome, tam);
+//             for (int i = tam; i < 25; i++) {
+//                 codigoTrunc[i] = ' ';
+//             }
+//             codigoTrunc[25] = '\0';
+//             printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
+//         }
+//     }
+//     fclose(fp);
+//     free(prod);
+// }
 
 
 // // RELATÓRIO Geral
