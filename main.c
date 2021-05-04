@@ -13,6 +13,7 @@
 #include <string.h>
 #include "assin.h"
 #include "produtos.h"
+#include "relatorios.h"
 
 
 /// Programa Principal <main>
