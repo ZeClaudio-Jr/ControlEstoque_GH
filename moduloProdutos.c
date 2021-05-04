@@ -130,7 +130,7 @@ char menuProdutos(void) { //MENU PRINCIPAL PRODUTOS
   printf("  *|*              [ 4 ] << Excluir produto >>                               *|*\n");
   printf("  |*|                                                                        |*|\n");
   printf("  *|*                                                                        *|*\n");
-  printf("  |*|              [ 9 ] << Voltar ao Menu principal >>                      |*|\n");
+  printf("  |*|              [ 0 ] << Voltar ao Menu principal >>                      |*|\n");
   printf("  *|*                                                                        *|*\n");
   printf("  |*|                                                                        |*|\n");
   printf("  |*|                                                                        |*|\n");

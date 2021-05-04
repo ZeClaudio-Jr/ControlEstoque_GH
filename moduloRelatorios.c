@@ -3,8 +3,12 @@
 #include <string.h>
 #include "validacao.h"
 #include "assin.h"
+#include "produtos.h"
 #include "relatorios.h"
 
+
+// void relatorioProdutos(void);
+// void relatorioGeral(void);
 
 void navegacaoRelatorio(void) {
  
@@ -13,13 +17,21 @@ void navegacaoRelatorio(void) {
     op = menuRelatorio();         
     switch (op) {
       case '1': 
-        relatorioEspecifico();         
+        relatorioProdutos();         
         break;
 
       case '2': 
         relatorioEntradas();      
         break;
    
+      // case '3': 
+      //   relatorioSaida();      
+      //   break;
+
+      // case '4': 
+      //   relatorioGeral();      
+      //   break;
+
       case '9': 
         menuPrincipal();
         break;
@@ -74,14 +86,25 @@ char menuRelatorio(void) {
     scanf("%c", &op);  
     getchar();
 
-  return op;  
+    return op;  
 }
 
 
 // RELATÓRIO Específico
 
-void relatorioEspecifico(void) {
-    char nome[25];
+void relatorioProdutos(void) {
+  char* codigo;
+
+  codigo = telaRelatorioProdutos();
+
+  telaRelatProdutos(codigo);
+
+  free(codigo);
+}
+
+
+char* telaRelatorioProdutos(void) {
+    char *codigo;
     int validar;
 
     system("clear||cls");
@@ -108,17 +131,21 @@ void relatorioEspecifico(void) {
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                 Escolha o produto para gerar relatorio:                |*|\n");
     printf("  *|*                                                                        *|*\n");
+    
+    
     do{
-      printf("  |*|          **        Nome do produto: ");
-      scanf("%s", nome);
-      getchar();
-      validar = validaNome(nome);
-      if(validar == 1){
-            printf("  |*|          **        Poduto encontrado!\n");
-      }else{
-            printf("  |*|          **        Produto Inexistente!\n");
-      }
-    }while(validar != 1);
+    printf("  |*|          **        Informe o codigo do produto: ");
+    scanf("%s", codigo);
+    getchar();
+
+    validar = validaCodigo(codigo); 
+    if(validar == 1){
+        printf("                         Codigo valido!\n");
+    }else{
+        printf("                         Codigo invalido!\n");
+    }
+  }while(validar != 1);
+
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
@@ -126,15 +153,49 @@ void relatorioEspecifico(void) {
     printf("\n");
     printf("\n");
     printf("\n");
-    printf("      >>    NOME:                                                   \n");
-    printf("      >>    CODIGO:                                                 \n");
-    printf("      >>    DESCRICAO:                                              \n");
-    printf("      >>    FORNECEDOR:                                             \n");
-    printf("      >>    ENTRADA:                                                \n");
-    printf("      >>    SAIDA:                                                  \n");
-    printf("      >>    DATA COMPRA:                                            \n");
-    printf("      >>    DATA VALIDADE:                                          \n");
-    printf("      >>    ESTOQUE:                                                \n"); 
+    printf("\n");
+    printf("\n");
+    
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+    
+    return codigo;
+
+}
+
+
+void telaRelatProdutos(char* codigo) {
+    
+    
+    system("cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Relatorio Produtos               =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    listProdutosPorCodigo(codigo);
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
     printf("\n");
     printf("\n");
     
@@ -143,6 +204,95 @@ void relatorioEspecifico(void) {
 
 
 }
+
+
+
+void listProdutosPorCodigo(char* codigo) {
+    FILE* fp;
+    Produtos* prod;
+    char codigoTrunc[4];
+    int tam;
+
+    prod = (Produtos*) malloc(sizeof(Produtos));
+    fp = fopen("produtos.dat", "rb");
+    while (fread(prod, sizeof(Produtos), 1, fp)) {
+        if (strcmp(prod->codigo, codigo) == 0) {
+            tam = strlen(prod->nome);
+            strncpy(codigoTrunc, prod->nome, tam);
+            for (int i = tam; i < 25; i++) {
+                codigoTrunc[i] = ' ';
+            }
+            codigoTrunc[25] = '\0';
+            printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
+        }
+    }
+    fclose(fp);
+    free(prod);
+}
+
+
+// // RELATÓRIO Geral
+
+// void listGeralProdutos(char* codigo) {
+//     FILE* fp;
+//     Produtos* prod;
+//     char codigoTrunc[4];
+//     int tam;
+
+//     prod = (Produtos*) malloc(sizeof(Produtos));
+//     fp = fopen("produtos.dat", "rb");
+//     while (fread(prod, sizeof(Produtos), 1, fp)) {
+//         if (strcmp(prod->codigo, codigo) == 0) {
+//             tam = strlen(prod->nome);
+//             strncpy(codigoTrunc, prod->nome, tam);
+//             for (int i = tam; i < 25; i++) {
+//                 codigoTrunc[i] = ' ';
+//             }
+//             codigoTrunc[25] = '\0';
+//             printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
+//         }
+//     }
+//     fclose(fp);
+//     free(prod);
+// }
+
+// void relatorioGeral(void) {
+//     char nome[25];
+//     int validar;
+
+//     system("cls");
+//     printf("\n");
+//     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|        ****************************************************            |*|\n");
+//     printf("  *|*        ****************************************************            *|*\n");
+//     printf("  |*|        =                                                  =            |*|\n");
+//     printf("  *|*        =                 Relatorio Geral                  =            *|*\n");
+//     printf("  |*|        =                                                  =            |*|\n");
+//     printf("  *|*        ****************************************************            *|*\n");
+//     printf("  |*|        ****************************************************            |*|\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|                                                                        |*|\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|                                                                        |*|\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+//     printf("  *|*===================================**===================================*|*\n");
+//     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+//     printf("  *|*                                                                        *|*\n");
+//     printf("  |*|                                                                        |*|\n");
+//     printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+//     printf("\n");
+//     printf("\n");
+//     printf("\n");
+//     listGeralProdutos();
+//     printf("\n");
+//     printf("\n");
+//     printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+//     getchar();
+    
+// }
+
 
 
 // RELATÓRIO DE ENTRADAS

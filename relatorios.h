@@ -11,3 +11,5 @@ void telaRelatProdutos(char*);
 
 void listProdutosPorCodigo(char*);
 void listGeralProdutos(char*);
+
+char* telaRelatorioProdutos(void);
