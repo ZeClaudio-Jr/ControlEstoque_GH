@@ -134,7 +134,7 @@ char* telaRelatorioProdutos(void) {
     
     
     do{
-    printf("  |*|          **        Informe o codigo do produto: ");
+    printf("  |*|          **        Informe o codigo do produto:  ");
     scanf("%s", codigo);
     getchar();
 
@@ -157,7 +157,8 @@ char* telaRelatorioProdutos(void) {
     printf("\n");
     
     printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
-    
+    getchar();
+
     return codigo;
 
 }
