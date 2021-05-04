@@ -4,7 +4,7 @@ struct produtos{
   char nome [71];
   char codigo [5];
   float valor;
-  int dd, mm, aaaa; //???? Será que é char?
+  int dd, mm, aaaa;
   int status;
 };
 
