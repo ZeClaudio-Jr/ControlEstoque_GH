@@ -8,7 +8,7 @@ char menuPrincipal(void);
 void menuSobre(void);
 char menuEntrada(void);    
 char menuSaida(void);
-char menuRelatorio(void);
+
 
 //MODULO ENTRADA
 typedef struct entrada Entrada; //Definição do tipo Entrada
