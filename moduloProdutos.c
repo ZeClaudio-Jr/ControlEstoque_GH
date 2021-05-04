@@ -46,10 +46,13 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
 
        
       default:
-        printf("        Valor digitado invalido \n");
+        printf(" \n");
         break;
-    } 
-    
+    }
+
+    printf("                  &&    Valor digitado invalido !    &&\n");
+    printf("                  Digite ENTER para tentar novamente !    \n");
+    getchar();
   } while (op != '0');
 
 }
