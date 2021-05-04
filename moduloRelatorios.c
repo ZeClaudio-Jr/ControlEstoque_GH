@@ -3,6 +3,7 @@
 #include <string.h>
 #include "validacao.h"
 #include "assin.h"
+#include "relatorios.h"
 
 
 void navegacaoRelatorio(void) {
