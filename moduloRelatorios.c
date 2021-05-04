@@ -416,3 +416,23 @@ void listaEntradas(char* codigo) {
     fclose(fp);
     free(ent);
 }
+
+
+// void listaGeralEntradas(Entrada* ent) {
+//     FILE* fp;
+
+//     ent = (Entrada*) malloc(sizeof(Entrada));
+//     fp = fopen("Entrada.dat", "rb");
+//     while (fread(ent, sizeof(Entrada), 1, fp)) {
+
+//             printf("  |*|  \tNome do Produto: %s        \n", ent->nome);
+//             printf("  *|*  \tCodigo do Produto: %s      \n", ent->codigo);
+//             printf("  |*|  \tDescricao do produto: %s   \n", ent->desc);
+//             printf("  *|*  \tFornecedor: %s             \n", ent->forn);
+//             printf("  |*|  \tQuantidade: %s             \n", ent->qtde);
+//             printf("  *|*  \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
+ 
+//     }
+//     fclose(fp);
+//     free(ent);
+// }

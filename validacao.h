@@ -31,4 +31,4 @@ int valiData(int dd, int mm, int aaaa);
 int bissexto(int aaaa);
 
 //assinatura da função validaValor
-float validaValor(float valor);
+double validaValor(double valor);

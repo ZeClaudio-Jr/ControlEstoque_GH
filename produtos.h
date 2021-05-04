@@ -3,7 +3,7 @@ typedef struct produtos Produtos;
 struct produtos{
   char nome [71];
   char codigo [5];
-  float valor;
+  double valor;
   int dd, mm, aaaa;
   int status;
 };
