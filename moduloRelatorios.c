@@ -76,7 +76,8 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                [ 1 ] << Relatorio de produtos >>                       *|*\n");
     printf("  |*|                [ 2 ] << Relatorio de Entradas >>                       |*|\n");
-    printf("  |*|                [ 3 ] << Relatorio de Saidas >>                         |*|\n");
+    printf("  *|*                [ 3 ] << Relatorio de Saidas >>                         *|*\n");
+    printf("  |*|                [ 4 ] << Relatorio Geral >>                             |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                [ 9 ] << Sair >>                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
