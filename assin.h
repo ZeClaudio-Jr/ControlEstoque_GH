@@ -67,5 +67,8 @@ void excluirSaida(void);
 // MODULO RELATÓRIO
 void navegacaoRelatorio(void);
 char menuRelatorio(void); //Menu primário RELATÓRIO
-void relatorioGeral(void);
+void relatorioEntradas(void);
+char* telarelatorioEntradas(void);
+void relatEntradas(char* codigo);
+void listaEntradas(char* codigo);
 void relatorioEspecifico(void);

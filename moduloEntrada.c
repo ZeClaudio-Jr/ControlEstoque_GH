@@ -309,7 +309,7 @@ char* pesquisarEntr(void){
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>     Informe o nome do produto ou o nome do fornecedor:     <<<<<<<<  \n");
+    printf("  >>>>>>>>                Informe o codigo da entrada:               <<<<<<<<  \n");
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
@@ -410,7 +410,7 @@ void exibirEntrada(Entrada* ent) {
 		printf("\n#--##--##--##- Entrada Cadastrada #--##--##--##-\n\n");
     printf("\tNome do Produto: %s\n", ent->nome);
 		printf("\tCodigo do Produto: %s\n", ent->codigo);
-		printf("\tDescrição do produto: %s\n", ent->desc);
+		printf("\tDescricao do produto: %s\n", ent->desc);
 		printf("\tFornecedor: %s\n", ent->forn);
     printf("\tQuantidade: %s\n", ent->qtde);
 	  printf("\tData da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
