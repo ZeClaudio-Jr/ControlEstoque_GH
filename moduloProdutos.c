@@ -245,7 +245,6 @@ void pesquisarPrincipal(void) {
 }
 
 
-//void pesquisarProduto(struct produtos p) {
 char* pesquisarProduto(void) {  // OK
   char* codigo;
   int validar;
@@ -271,7 +270,7 @@ char* pesquisarProduto(void) {  // OK
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("  >>>>>>>>>>>>            Informe o codigo do produto:            <<<<<<<<<<<<  \n");
+  printf("  >>>>>>>>>>>>          Forneça a informação necessaria           <<<<<<<<<<<<  \n");
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -283,9 +282,9 @@ char* pesquisarProduto(void) {  // OK
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                         Codigo valido!\n");
+        printf("                       \tCodigo valido!\n");
     }else{
-        printf("                         Codigo invalido!\n");
+        printf("                       \tCodigo invalido!\n");
     }
   }while(validar != 1);
 
@@ -296,7 +295,7 @@ char* pesquisarProduto(void) {  // OK
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  printf("  *#--##--##--##--##--                    ¨¨                 --##--##--##--##--#*\n");
   printf("\n");
   return codigo;
   
@@ -320,6 +319,7 @@ void alterarPrincipal(void) {
 		  prod = cadastrarProduto();
 		  strcpy(prod->codigo, codigo);
 		  regravarProduto(prod);
+      // printf("¨¨ Produto atualizado com sucesso ¨¨");
 		  // Outra opção:
 		  // excluirAluno(codigo);
 		  // gravarProduto(prod);
