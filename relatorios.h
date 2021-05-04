@@ -13,3 +13,10 @@ void listProdutosPorCodigo(char*);
 void listGeralProdutos(char*);
 
 char* telaRelatorioProdutos(void);
+
+
+//RELATORIO DE ENTRADA
+void relatorioEntradas(void);
+char* telarelatorioEntradas(void);
+void relatEntradas(char* codigo);
+void listaEntradas(char* codigo);

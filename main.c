@@ -13,6 +13,8 @@
 #include <string.h>
 #include "assin.h"
 #include "produtos.h"
+#include "entrada.h"
+#include "saida.h"
 #include "relatorios.h"
 
 

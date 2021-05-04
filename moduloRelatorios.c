@@ -4,11 +4,10 @@
 #include "validacao.h"
 #include "assin.h"
 #include "produtos.h"
+#include "entrada.h"
+#include "saida.h"
 #include "relatorios.h"
 
-
-// void relatorioProdutos(void);
-// void relatorioGeral(void);
 
 void navegacaoRelatorio(void) {
  
