@@ -182,7 +182,7 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   do{
     printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
-    scanf("%d", &prod->valor);
+    scanf("%f", &prod->valor);
     getchar();
     validar = validaValor(prod->valor);
     if(validar == 1){
