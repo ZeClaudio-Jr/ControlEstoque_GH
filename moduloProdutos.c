@@ -126,7 +126,7 @@ Produtos*  cadastrarProduto(void) {
   int validar;
   
 
-  prod = (Produtos*) malloc(sizeof(Produtos)); //Criando espaço
+  prod = (Produtos*) malloc(sizeof(Produtos)); //Criando/alocando espaço
 
   system("clear||cls");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -217,7 +217,7 @@ Produtos*  cadastrarProduto(void) {
   // printf("  \n");
   // printf("  \n");
   // printf("  \n");
-  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
   printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
