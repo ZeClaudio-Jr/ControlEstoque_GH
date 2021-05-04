@@ -161,7 +161,7 @@ Entrada* cadastEntr(void){
     ent = (Entrada*) malloc(sizeof(Entrada));//reservar/alocar uma quantidade de memória
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%s", ent->nome);
+      scanf("%24[^\n]", ent->nome);
       getchar();
       validar = validaNome(ent->nome);
       if(validar == 1){

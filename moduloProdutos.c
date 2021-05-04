@@ -155,7 +155,7 @@ Produtos*  cadastrarProduto(void) {
 
   do{
     printf("  |*|          **        Nome do produto: ");
-    scanf("%s", prod->nome);
+    scanf("%24[^\n]", prod->nome);
     getchar();
     validar = validaNome(prod->nome);
     if(validar == 1){
@@ -181,7 +181,7 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   do{
     printf("  |*|          **        Valor de compra/unid ('.' separador de centavos): << R$ ");
-    scanf("%f", &prod->valor);
+    scanf("%d", &prod->valor);
     getchar();
     validar = validaValor(prod->valor);
     if(validar == 1){

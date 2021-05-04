@@ -160,7 +160,7 @@ char menuSaida(void){
     sai = (Saida*) malloc(sizeof(Saida)); //reservar/alocar uma quantidade de memória
     do{
       printf("  |*|          **        Nome do produto: ");
-      scanf("%s", sai->nome);
+      scanf("%24[^\n]", sai->nome);
       getchar();
       validar = validaNome(sai->nome);
       if(validar == 1){
