@@ -42,7 +42,9 @@ int main(void) {
           navegacaoRelatorio();
           break;
       default:
-          printf("        Valor digitado invalido \n");
+          printf("\n                 *     Valor digitado invalido.     *\n");
+          printf("              *     Tecle ENTER e tente novamente.     * \n");
+          getchar();
     } 
   }while (opcao != '0');
   return 0; 
@@ -90,7 +92,7 @@ char menuPrincipal(void) {
   printf("  |*|                                                                        |*|\n");
   printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
   printf("\n");
-  printf("                    Escolha sua opcao:   ");
+  printf("                         Escolha sua opcao:   ");
   scanf("%c", &op);
   getchar();
 
