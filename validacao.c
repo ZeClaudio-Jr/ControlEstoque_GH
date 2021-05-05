@@ -96,7 +96,7 @@ int bissexto(int aaaa) {
 }
 
 // Função validaValor
-double validaValor(double valor){
+float validaValor(float valor){
   int f;
   f  = valor;
   if(f == valor){
