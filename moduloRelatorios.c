@@ -446,12 +446,12 @@ void listaEntradas(char* codigo) {
                 nomeTrunc[i] = ' ';
             }
             nomeTrunc[25] = '\0';
-            printf("  |*|  \tNome do Produto: %s        \n", ent->nome);
-            printf("  *|*  \tCodigo do Produto: %s      \n", ent->codigo);
-            printf("  |*|  \tDescricao do produto: %s   \n", ent->desc);
-            printf("  *|*  \tFornecedor: %s             \n", ent->forn);
-            printf("  |*|  \tQuantidade: %s             \n", ent->qtde);
-            printf("  *|*  \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
+            printf("  |*|             \tNome do Produto: %s        \n", ent->nome);
+            printf("  *|*             \tCodigo do Produto: %s      \n", ent->codigo);
+            printf("  |*|             \tDescricao do produto: %s   \n", ent->desc);
+            printf("  *|*             \tFornecedor: %s             \n", ent->forn);
+            printf("  |*|             \tQuantidade: %s             \n", ent->qtde);
+            printf("  *|*             \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
         
         }
     }
@@ -576,12 +576,12 @@ void listaSaidas(char* codigo){
                 nomeTrunc[i] = ' ';
             }
             nomeTrunc[25] = '\0';
-            printf("  |*|  \tNome do Produto: %s        \n", Sai->nome);
-            printf("  *|*  \tCodigo do Produto: %s      \n", Sai->codigo);
-            printf("  |*|  \tDescricao do produto: %s   \n", Sai->desc);
-            printf("  *|*  \tFornecedor: %s             \n", Sai->forn);
-            printf("  |*|  \tQuantidade: %s             \n", Sai->qtde);
-            printf("  *|*  \tData da Saida: %d/%d/%d  \n\n", Sai->dd, Sai->mm, Sai->aaaa);
+            printf("  |*|             \tNome do Produto: %s        \n", sai->nome);
+            printf("  *|*             \tCodigo do Produto: %s      \n", sai->codigo);
+            printf("  |*|             \tDescricao do produto: %s   \n", sai->desc);
+            printf("  *|*             \tFornecedor: %s             \n", sai->forn);
+            printf("  |*|             \tQuantidade: %s             \n", sai->qtde);
+            printf("  *|*             \tData da saida: %d/%d/%d  \n\n", sai->dd, sai->mm, sai->aaaa);
         
         }
     }
