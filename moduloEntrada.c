@@ -415,7 +415,6 @@ void exibirEntrada(Entrada* ent) {
 		printf("\tFornecedor: %s\n", ent->forn);
     printf("\tQuantidade: %s\n", ent->qtde);
 	  printf("\tData da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
-    printf("\tstatus: %d\n", ent->status);
 
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
