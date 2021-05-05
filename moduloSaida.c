@@ -125,7 +125,7 @@ char menuSaida(void){
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\tDigite a opcao desejada: ");
+    printf("                          Escolha sua opcao:   ");
     scanf("%c", &op);
     getchar();
   return op;
@@ -377,7 +377,7 @@ void gravarSaida(Saida* sai){
   FILE* fp;//endereço do arquivo
   fp = fopen("Saida.dat", "ab");//abre o arquivo para gravação
   if (fp == NULL) {
-    printf("Erro na abertura do arquivo!\n");
+    printf("Nao foi possivel abrir o arquivo!\n");
     exit(1);
   }
   fwrite(sai, sizeof(Saida), 1, fp);//escreve no arquivo
@@ -392,7 +392,7 @@ Saida* buscarSaida(char* codigo) {
 	sai = (Saida*) malloc(sizeof(Saida));
 	fp = fopen("Saida.dat", "rb");
 	if (fp == NULL) {
-		printf("Erro na abertura do arquivo!\n");
+		printf("      O arquivo nao foi encontrado!\n");
     exit(1);
 	}
 	while(fread(sai, sizeof(Saida), 1, fp) == 1){
