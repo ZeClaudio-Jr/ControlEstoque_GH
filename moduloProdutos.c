@@ -47,8 +47,8 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
        
       default:
         printf(" \n");
-        printf("                  &&    Valor digitado invalido !    &&\n");
-        printf("                  Digite ENTER para tentar novamente !    \n");
+        // printf("                  &&    Valor digitado invalido !    &&\n");
+        printf("                      Digite ENTER para continuar !    \n");
         getchar();
         break;
     }
