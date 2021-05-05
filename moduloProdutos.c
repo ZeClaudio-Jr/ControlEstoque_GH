@@ -445,14 +445,14 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                       \t       * Codigo valido!\n");
+        //printf("                       \t       * Codigo valido!\n");
     }else{
         printf("                       \t       * Codigo invalido!\n");
     }
   }while(validar != 1);
 
   printf("  \n");
-  printf("  \n");
+  printf("                   Item excluido com sucesso ou nao cadastrado!\n");
   printf("  \n");
   printf("  \n");
   printf("\t  >>>           Tecle <ENTER> para continuar...          <<<\n");
