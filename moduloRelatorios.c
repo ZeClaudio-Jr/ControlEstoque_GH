@@ -31,10 +31,6 @@ void navegacaoRelatorio(void) {
       //   relatorioGeral();      
       //   break;
 
-      // case '9': 
-      //   menuPrincipal();
-      //   break;
-
       // default:
       //   // printf("             Valor digitado invalido. \n");
         // printf("   Tente digitar um numero correto para uma das opcoes. \n");
@@ -167,6 +163,7 @@ char* telaRelatorioProdutos(void) {
 }
 
 
+
 void telaRelatProdutos(char* codigo) {
     
     
@@ -238,32 +235,7 @@ void listProdutosPorCodigo(char* codigo) {
 }
 
 
-
-// void listProdutosPorCodigo(char* codigo) {
-//     FILE* fp;
-//     Produtos* prod;
-//     char codigoTrunc[4];
-//     int tam;
-
-//     prod = (Produtos*) malloc(sizeof(Produtos));
-//     fp = fopen("produtos.dat", "rb");
-//     while (fread(prod, sizeof(Produtos), 1, fp)) {
-//         if (strcmp(prod->codigo, codigo) == 0) {
-//             tam = strlen(prod->nome);
-//             strncpy(codigoTrunc, prod->nome, tam);
-//             for (int i = tam; i < 25; i++) {
-//                 codigoTrunc[i] = ' ';
-//             }
-//             codigoTrunc[25] = '\0';
-//             printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
-//         }
-//     }
-//     fclose(fp);
-//     free(prod);
-// }
-
-
-// // RELATÓRIO Geral
+// RELATÓRIO Geral
 
 
 
@@ -289,6 +261,8 @@ void listProdutosPorCodigo(char* codigo) {
 //     fclose(fp);
 //     free(prod);
 // }
+
+
 
 // void relatorioGeral(void) {
 //     char nome[25];
@@ -329,7 +303,9 @@ void listProdutosPorCodigo(char* codigo) {
 
 
 
+
 // RELATÓRIO DE ENTRADAS
+
 void relatorioEntradas(void) {
   char* codigo;
 	codigo = telarelatorioEntradas();
@@ -460,7 +436,9 @@ void listaEntradas(char* codigo) {
 }
 
 
+
 // RELATÓRIO DE SAIDAS
+
 void relatorioSaidas(void){
   char* codigo;
     codigo = telarelatorioSaidas();
