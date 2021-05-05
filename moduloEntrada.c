@@ -165,9 +165,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaNome(ent->nome);
       if(validar == 1){
-            printf("  |*|          **        Nome do Produto valido!\n");
+            printf("                       \t       * Nome valido!\n");
       }else{
-            printf("  |*|          **        Nome do Produto invalido!\n");
+            printf("                       \t       * Nome invalido!\n");
       }
     }while(validar != 1);
 
@@ -178,9 +178,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaCodigo(ent->codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                       \t       * Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                       \t       * Codigo invalido!\n");
       }
     }while(validar != 1);
 
@@ -191,9 +191,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaDescricao(ent->desc); 
       if(validar == 1){
-          printf("  |*|          **        Descricao valida!\n");
+          printf("                       \t       * Descricao valida!\n");
       }else{
-          printf("  |*|          **        Descricao invalida!\n");
+          printf("                       \t       * Descricao invalida!\n");
       }
     }while(validar != 1);
 
@@ -204,9 +204,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaForne(ent->forn);
         if(validar == 1){
-          printf("  |*|          **        Fornecedor valido!\n");
+          printf("                       \t       * Fornecedor valido!\n");
         }else{
-          printf("  |*|          **        Fornecedor invalido!\n");
+          printf("                       \t       * Fornecedor invalido!\n");
         }
     }while(validar != 1);     
 
@@ -221,9 +221,9 @@ Entrada* cadastEntr(void){
       scanf("%d", &ent->aaaa);
       validar = valiData(ent->dd, ent->mm, ent->aaaa); 
         if(validar == 1){
-          printf("  |*|          **        %d/%d/%d - DATA ACEITA! \n", ent->dd, ent->mm,  ent->aaaa);
+          printf("\n\n                         %d/%d/%d - DATA ACEITA! \n", ent->dd, ent->mm,  ent->aaaa);
         }else{
-          printf("  |*|          **        Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", ent->dd, ent->mm,   ent->aaaa);
+          printf("\n                         Data: %d/%d/%d - Data informada   IMPROPRIA!  \nDigite  novamente.\n\n>>", ent->dd, ent->mm,   ent->aaaa);
         }
     }while(validar != 1);
   
@@ -234,9 +234,9 @@ Entrada* cadastEntr(void){
       getchar();
       validar = validaCodigo(ent->qtde); 
       if(validar == 1){
-          printf("  |*|          **        Quantidade valida!\n");
+          printf("                       \t       * Quantidade valida!\n");
       }else{
-          printf("  |*|          **        Quantidade invalida!\n");
+          printf("                       \t       * Quantidade invalida!\n");
       }
     }while(validar != 1);   
     ent->status = True;
