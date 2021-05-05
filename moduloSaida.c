@@ -433,7 +433,7 @@ void regravarSaida(Saida* sai) {
 	saiLido = (Saida*) malloc(sizeof(Saida));
 	fp = fopen("Saida.dat", "r+b");
 	if (fp == NULL) {
-		printf("Erro na abertura do arquivo!\n");
+		printf("    O arquivo nao pode ser aberto corretamente!\n");
    exit(1);
 	}
   achou = False;
