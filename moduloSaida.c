@@ -411,7 +411,6 @@ void exibirSaida(Saida* sai) {
 		printf("\tFornecedor: %s\n", sai->forn);
     printf("\tQuantidade: %s\n", sai->qtde);
 	  printf("\tData da Saida: %d/%d/%d\n", sai->dd, sai->mm, sai->aaaa);
-    printf("\tstatus: %d\n", sai->status);
 
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
