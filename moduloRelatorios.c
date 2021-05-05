@@ -27,14 +27,10 @@ void navegacaoRelatorio(void) {
         relatorioSaidas();      
         break;
 
-      // case '4': 
-      //   relatorioGeral();      
-      //   break;
-
-      // default:
-      //   // printf("             Valor digitado invalido. \n");
-        // printf("   Tente digitar um numero correto para uma das opcoes. \n");
-        // getchar();
+      default:
+        printf("             Valor digitado invalido. \n");
+        printf("   Tente digitar um numero correto para uma das opcoes. \n");
+        break;
     } 
 
   }while (op != '0'); 
@@ -72,7 +68,7 @@ char menuRelatorio(void) {
     printf("  *|*                [ 1 ] << Relatorio de produtos >>                       *|*\n");
     printf("  |*|                [ 2 ] << Relatorio de Entradas >>                       |*|\n");
     printf("  *|*                [ 3 ] << Relatorio de Saidas >>                         *|*\n");
-    printf("  |*|                [ 4 ] << Relatorio Geral >>                             |*|\n");
+    printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                [ 0 ] << Sair >>                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
@@ -210,19 +206,12 @@ void telaRelatProdutos(char* codigo) {
 void listProdutosPorCodigo(char* codigo) {
     FILE* fp;
     Produtos* prod;
-    char nomeTrunc[26];
-    int tam;
-
+    
     prod = (Produtos*) malloc(sizeof(Produtos));
     fp = fopen("produtos.dat", "rb");
     while (fread(prod, sizeof(Produtos), 1, fp)) {
         if (strcmp(prod->codigo, codigo) == 0) {
-            tam = strlen(prod->nome);
-            strncpy(nomeTrunc, prod->nome, tam);
-            for (int i = tam; i < 25; i++) {
-                nomeTrunc[i] = ' ';
-            }
-            nomeTrunc[25] = '\0';
+
             printf("  |*|             \tNome do Produto: %s        \n", prod->nome);
             printf("  *|*             \tCodigo do Produto: %s      \n", prod->codigo);
             printf("  *|*             \tValor do Produto: %.2f      \n", prod->valor);
@@ -233,74 +222,6 @@ void listProdutosPorCodigo(char* codigo) {
     fclose(fp);
     free(prod);
 }
-
-
-// RELATÓRIO Geral
-
-
-
-// void listGeralProdutos(char* codigo) {
-//     FILE* fp;
-//     Produtos* prod;
-//     char codigoTrunc[4];
-//     int tam;
-
-//     prod = (Produtos*) malloc(sizeof(Produtos));
-//     fp = fopen("produtos.dat", "rb");
-//     while (fread(prod, sizeof(Produtos), 1, fp)) {
-//         // if (strcmp(prod->codigo, codigo) == 0) {
-//         //     tam = strlen(prod->nome);
-//         //     strncpy(codigoTrunc, prod->nome, tam);
-//         //     for (int i = tam; i < 25; i++) {
-//         //         codigoTrunc[i] = ' ';
-//         //     }
-//         //     codigoTrunc[25] = '\0';
-//         //     printf("///           ||     %-3s     || %-26s ||             ///\n", prod->codigo, codigoTrunc);
-//         // }
-//     }
-//     fclose(fp);
-//     free(prod);
-// }
-
-
-
-// void relatorioGeral(void) {
-//     char nome[25];
-//     int validar;
-
-//     system("cls");
-//     printf("\n");
-//     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-//     printf("  *|*                                                                        *|*\n");
-//     printf("  |*|        ****************************************************            |*|\n");
-//     printf("  *|*        ****************************************************            *|*\n");
-//     printf("  |*|        =                                                  =            |*|\n");
-//     printf("  *|*        =                 Relatorio Geral                  =            *|*\n");
-//     printf("  |*|        =                                                  =            |*|\n");
-//     printf("  *|*        ****************************************************            *|*\n");
-//     printf("  |*|        ****************************************************            |*|\n");
-//     printf("  *|*                                                                        *|*\n");
-//     printf("  |*|                                                                        |*|\n");
-//     printf("  *|*                                                                        *|*\n");
-//     printf("  |*|                                                                        |*|\n");
-//     printf("  *|*                                                                        *|*\n");
-//     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-//     printf("  *|*===================================**===================================*|*\n");
-//     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-//     printf("  *|*                                                                        *|*\n");
-//     printf("  |*|                                                                        |*|\n");
-//     printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
-//     printf("\n");
-//     printf("\n");
-//     printf("\n");
-//     listGeralProdutos();
-//     printf("\n");
-//     printf("\n");
-//     printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
-//     getchar();
-    
-// }
-
 
 
 
