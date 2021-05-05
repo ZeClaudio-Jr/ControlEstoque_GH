@@ -228,7 +228,7 @@ void listProdutosPorCodigo(char* codigo) {
             nomeTrunc[25] = '\0';
             printf("  |*|             \tNome do Produto: %s        \n", prod->nome);
             printf("  *|*             \tCodigo do Produto: %s      \n", prod->codigo);
-            printf("  *|*             \tValor do Produto: %f      \n", prod->valor);
+            printf("  *|*             \tValor do Produto: %.2f      \n", prod->valor);
             printf("  |*|             \tData de Validade: %d/%d/%d \n", prod->dd, prod->mm, prod->aaaa);
         
         }
