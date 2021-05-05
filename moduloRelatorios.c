@@ -83,7 +83,7 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
-    printf("\t Digite a opcao desejada: ");
+    printf("\t                Digite a opcao desejada: ");
     scanf("%c", &op);  
     getchar();
 
@@ -107,6 +107,8 @@ void relatorioProdutos(void) {
 char* telaRelatorioProdutos(void) {
     char *codigo;
     int validar;
+
+    codigo = (char*) malloc(5*sizeof(char));
 
     system("clear||cls");
     printf("\n");
@@ -141,9 +143,9 @@ char* telaRelatorioProdutos(void) {
 
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                         Codigo valido!\n");
+        printf("                            Codigo valido!\n");
     }else{
-        printf("                         Codigo invalido!\n");
+        printf("                            Codigo invalido!\n");
     }
   }while(validar != 1);
 
@@ -224,9 +226,9 @@ void listProdutosPorCodigo(char* codigo) {
                 nomeTrunc[i] = ' ';
             }
             nomeTrunc[25] = '\0';
-            printf("  |*|  \tNome do Produto: %s        \n", prod->nome);
-            printf("  *|*  \tCodigo do Produto: %s      \n", prod->codigo);
-            printf("  *|*  \tData de Validade: %d/%d/%d  \n", prod->dd, prod->mm, prod->aaaa);
+            printf("  |*|             \tNome do Produto: %s        \n", prod->nome);
+            printf("  *|*             \tCodigo do Produto: %s      \n", prod->codigo);
+            printf("  |*|             \tData de Validade: %d/%d/%d \n", prod->dd, prod->mm, prod->aaaa);
         
         }
     }
