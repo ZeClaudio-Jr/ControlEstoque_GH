@@ -1,4 +1,6 @@
 // MODULO RELATÓRIO
+
+//RELATORIO DE PRODUTOS
 void navegacaoRelatorio(void);
 
 char menuRelatorio(void); //Menu primário RELATÓRIO
@@ -22,7 +24,7 @@ void relatEntradas(char* codigo);
 void listaEntradas(char* codigo);
 
 
-//RELATORIO DE ENTRADA
+//RELATORIO DE SAIDA
 void relatorioSaidas(void);
 char* telarelatorioSaidas(void);
 void relatSaidas(char* codigo);
