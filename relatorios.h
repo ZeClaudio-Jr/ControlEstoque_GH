@@ -20,3 +20,10 @@ void relatorioEntradas(void);
 char* telarelatorioEntradas(void);
 void relatEntradas(char* codigo);
 void listaEntradas(char* codigo);
+
+
+//RELATORIO DE ENTRADA
+void relatorioSaidas(void);
+char* telarelatorioSaidas(void);
+void relatSaidas(char* codigo);
+void listaSaidas(char* codigo);

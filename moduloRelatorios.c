@@ -23,9 +23,9 @@ void navegacaoRelatorio(void) {
         relatorioEntradas();      
         break;
    
-      // case '3': 
-      //   relatorioSaida();      
-      //   break;
+      case '3': 
+        relatorioSaidas();      
+        break;
 
       // case '4': 
       //   relatorioGeral();      
@@ -83,6 +83,7 @@ char menuRelatorio(void) {
     printf("  |*|                                                                        |*|\n");
     printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
+    printf("\t Digite a opcao desejada: ");
     scanf("%c", &op);  
     getchar();
 
@@ -445,21 +446,122 @@ void listaEntradas(char* codigo) {
 }
 
 
-// void listaGeralEntradas(Entrada* ent) {
-//     FILE* fp;
+// RELATÓRIO DE SAIDAS
+void relatorioSaidas(void){
+  char* codigo;
+    codigo = telarelatorioSaidas();
+      relatSaidas(codigo);
+      free(codigo);
+}
 
-//     ent = (Entrada*) malloc(sizeof(Entrada));
-//     fp = fopen("Entrada.dat", "rb");
-//     while (fread(ent, sizeof(Entrada), 1, fp)) {
 
-//             printf("  |*|  \tNome do Produto: %s        \n", ent->nome);
-//             printf("  *|*  \tCodigo do Produto: %s      \n", ent->codigo);
-//             printf("  |*|  \tDescricao do produto: %s   \n", ent->desc);
-//             printf("  *|*  \tFornecedor: %s             \n", ent->forn);
-//             printf("  |*|  \tQuantidade: %s             \n", ent->qtde);
-//             printf("  *|*  \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
- 
-//     }
-//     fclose(fp);
-//     free(ent);
-// }
+char* telarelatorioSaidas(void){
+  char* codigo;
+  int validar;
+  codigo = (char*) malloc(5*sizeof(char));
+    system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Relatorio Saidas                 =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("  >>>>>>>>                Informe o codigo da Saida:               <<<<<<<<  \n");
+    printf("  \n");
+    do{
+      printf("  |*|          **        Codigo do produto: ");
+      scanf(" %s", codigo);
+      getchar();
+      validar = validaCodigo(codigo); 
+      if(validar == 1){
+          printf("  |*|          **        Codigo valido!\n");
+      }else{
+          printf("  |*|          **        Codigo invalido!\n");
+      }
+    }while(validar != 1);
+    printf("\n");
+    printf("\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+    getchar();
+  return codigo;
+}
+
+
+void relatSaidas(char* codigo){
+  system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Relatorio Saidas                 =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+    printf("  *|*                                                                        *|*\n");
+    listaSaidas(codigo);
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");  
+    printf("\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+    getchar();
+}
+
+
+void listaSaidas(char* codigo){
+  FILE* fp;
+    Saida* Sai;
+    char nomeTrunc[26];
+    int tam;
+
+    Sai = (Saida*) malloc(sizeof(Saida));
+    fp = fopen("Saida.dat", "rb");
+    while (fread(Sai, sizeof(Saida), 1, fp)) {
+        if (strcmp(Sai->codigo, codigo) == 0) {
+            tam = strlen(Sai->nome);
+            strncpy(nomeTrunc, Sai->nome, tam);
+            for (int i = tam; i < 25; i++) {
+                nomeTrunc[i] = ' ';
+            }
+            nomeTrunc[25] = '\0';
+            printf("  |*|  \tNome do Produto: %s        \n", Sai->nome);
+            printf("  *|*  \tCodigo do Produto: %s      \n", Sai->codigo);
+            printf("  |*|  \tDescricao do produto: %s   \n", Sai->desc);
+            printf("  *|*  \tFornecedor: %s             \n", Sai->forn);
+            printf("  |*|  \tQuantidade: %s             \n", Sai->qtde);
+            printf("  *|*  \tData da Saida: %d/%d/%d  \n", Sai->dd, Sai->mm, Sai->aaaa);
+        
+        }
+    }
+    fclose(fp);
+    free(Sai);
+}
