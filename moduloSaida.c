@@ -115,7 +115,6 @@ char menuSaida(void){
     printf("  *|*              [ 2 ] << Alterar/atualizar saida >>                       *|*\n");
     printf("  |*|              [ 3 ] << pesquisar saida >>                               |*|\n");
     printf("  *|*              [ 4 ] << Excluir saida >>                                 *|*\n");
-    printf("  |*|              [ 5 ] << Gerar relatorio >>                               |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|              [ 0 ] <<Sair deste Menu>>                                 |*|\n");
     printf("  *|*                                                                        *|*\n");
