@@ -163,9 +163,9 @@ Produtos*  cadastrarProduto(void) {
     getchar();
     validar = validaNome(prod->nome);
     if(validar == 1){
-          printf("                       \t       * Descricao valida!\n");
+          printf("                       \t       * Nome valido!\n");
     }else{
-          printf("                       \t       * Descricao invalida!\n");
+          printf("                       \t       * Nome invalido!\n");
     }
   }while(validar != 1);
 
@@ -472,8 +472,8 @@ void gravarProduto(Produtos* prod) { //FUNÇÃO GRAVAR PRODUTOS
   fp = fopen("produtos.dat", "ab"); //Abrir o arquivo para gravação ("ab" significa: ALTERAR(APPEND) e BINÁRIO(BINARY))
 
   if (fp == NULL) { //
-    printf("Nao foi possivel abrir o arquivo!\n");
-    printf("Fechamento automatico\n");
+    printf("      Nao foi possivel abrir o arquivo!\n");
+    printf("          Fechamento automatico\n");
     exit(1);
   }
   fwrite(prod, sizeof(Produtos), 1, fp); //Se consiguir abrir o arq, a função vai escrever(fwrite)
@@ -520,7 +520,7 @@ Produtos* buscarProduto(char* codigo) {
 void exibirProduto(Produtos* prod) {
 
   if (prod == NULL) {
-    printf("                           ## Produto nao cadastrado! ##\n\n");
+    printf("                          ## Produto nao cadastrado! ##\n\n");
   } else {
     printf("                      ** Descricao do produto cadastrado **\n\n");
     printf("                         >> Nome: %s\n", prod->nome);
@@ -528,7 +528,7 @@ void exibirProduto(Produtos* prod) {
     printf("                         >> Valor: %.2f\n", prod->valor);
     printf("                         >> Data de validade: %d/%d/%d\n", prod->dd, prod->mm, prod->aaaa);
   }
-  printf("\n                           Aperte ENTER para continuar.\n");
+  printf("\n                          Aperte ENTER para continuar.\n");
   getchar();
   //   if (prod->status == 'c') {
   //     strcpy(situacao, "CADASTRADO")
