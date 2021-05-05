@@ -47,12 +47,12 @@ void navegacaoProduto(void) {//NAVEGAÇÃO PRINCIPAL
        
       default:
         printf(" \n");
+        printf("                  &&    Valor digitado invalido !    &&\n");
+        printf("                  Digite ENTER para tentar novamente !    \n");
+        getchar();
         break;
     }
-
-    printf("                  &&    Valor digitado invalido !    &&\n");
-    printf("                  Digite ENTER para tentar novamente !    \n");
-    getchar();
+    
   } while (op != '0');
 
 }
@@ -163,9 +163,9 @@ Produtos*  cadastrarProduto(void) {
     getchar();
     validar = validaNome(prod->nome);
     if(validar == 1){
-          printf("                         Descricao valida!\n");
+          printf("                       \t       * Descricao valida!\n");
     }else{
-          printf("                         Descricao invalida!\n");
+          printf("                       \t       * Descricao invalida!\n");
     }
   }while(validar != 1);
 
@@ -176,9 +176,9 @@ Produtos*  cadastrarProduto(void) {
     getchar();
     validar = validaCodigo(prod->codigo); 
     if(validar == 1){
-        printf("                         Codigo valido!\n");
+        printf("                       \t       * Codigo valido!\n");
     }else{
-        printf("                         Codigo invalido!\n");
+        printf("                       \t       * Codigo invalido!\n");
     }
   }while(validar != 1);
 
@@ -189,9 +189,9 @@ Produtos*  cadastrarProduto(void) {
     getchar();
     validar = validaValor(prod->valor);
     if(validar == 1){
-      printf("                         Valor valido!\n");
+      printf("                       \t       * Valor valido!\n");
     }else{
-      printf("                         Valor invalido!\n");
+      printf("                       \t       * Valor invalido!\n");
     }
   }while(validar != 1);
 
@@ -218,12 +218,9 @@ Produtos*  cadastrarProduto(void) {
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  \n");
   printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+  printf("\t  >>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
   return prod;
 
@@ -274,7 +271,7 @@ char* pesquisarProduto(void) {  // OK
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("  >>>>>>>>>>>>          Forneça a informação necessaria           <<<<<<<<<<<<  \n");
+  printf("  >>>>>>>>>>>>          Forneca a informacao necessaria           <<<<<<<<<<<<  \n");
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -286,23 +283,19 @@ char* pesquisarProduto(void) {  // OK
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                       \tCodigo valido!\n");
+      printf("\n");
+      //printf("                       \t       * Codigo valido!\n");
     }else{
-        printf("                       \tCodigo invalido!\n");
+      printf("                       \t       * Codigo invalido!\n");
     }
   }while(validar != 1);
 
   printf("  \n");
   printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  \n");
-  printf("  *#--##--##--##--##--                    ¨¨                 --##--##--##--##--#*\n");
+  printf("  *#--##--##--##--##--                  **                 --##--##--##--##--#*\n");
   printf("\n");
+
   return codigo;
-  
 }
 
 
@@ -318,16 +311,14 @@ void alterarPrincipal(void) {
 	prod = buscarProduto(codigo);
 
 	if (prod == NULL) {
-    	printf("\n\n ** Produduto inexistente! **\n\n");
+    	printf("\n\n\n ** Produduto inexistente! **\n\n");
   } else {
 		  prod = cadastrarProduto();
 		  strcpy(prod->codigo, codigo);
-		  regravarProduto(prod);
-      // printf("¨¨ Produto atualizado com sucesso ¨¨");
-		  // Outra opção:
-		  // excluirAluno(codigo);
-		  // gravarProduto(prod);
-		  free(prod);
+		  
+      regravarProduto(prod);
+      
+      free(prod);
   }
 	free(codigo);
 }
@@ -353,7 +344,7 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
   printf("  |*|        MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU            |*|\n");
   printf("  *|*                                                                        *|*\n");
   printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-  printf("\n");
+  printf("  \n");
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -371,9 +362,9 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                         Codigo valido!\n");
+        // printf("                       \t       * Codigo valido!\n");
     }else{
-        printf("                         Codigo invalido!\n");
+        printf("                       \t       * Codigo invalido!\n");
     }
   }while(validar != 1);
 
@@ -383,13 +374,8 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
   printf("  \n");
   printf("  \n");
   printf("                                                                                \n");
-  // printf("                      [ 0 ] << Salvar e voltar ao menu anterior >>              \n");
-  // printf("                      [ 1 ] << Salvar e Sair >>                                 \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
   printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+  printf("\t  >>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
   return codigo;
 
@@ -420,7 +406,6 @@ void excluirPrincipal(void) {
 }
 
 
-//void excluirProduto(struct produtos* p) {}
 char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
   char *codigo;
   int validar;
@@ -448,7 +433,7 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  printf("  >>>>>>>>>>>>            Informe o codigo do produto:            <<<<<<<<<<<<  \n");
+  printf("  >>>>>>>>>>>>          Forneca a informacao necessaria           <<<<<<<<<<<<  \n");
   printf("  \n");
   printf("  \n");
   printf("  \n");
@@ -460,9 +445,9 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        printf("                         Codigo valido!\n");
+        // printf("                       \t       * Codigo valido!\n");
     }else{
-        printf("                         Codigo invalido!\n");
+        printf("                       \t       * Codigo invalido!\n");
     }
   }while(validar != 1);
 
@@ -470,14 +455,7 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
   printf("  \n");
   printf("  \n");
   printf("  \n");
-  // printf("                                                                                \n");
-  // printf("                      [ 0 ] << Voltar ao menu anterior >>                       \n");
-  // printf("                      [ 1 ] << Sair >>                                          \n");
-  // printf("  \n");
-  // printf("  \n");
-  // printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
-  // printf("\n");
-  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+  printf("\t  >>>           Tecle <ENTER> para continuar...          <<<\n");
   getchar();
   return codigo;
 
@@ -518,8 +496,8 @@ Produtos* buscarProduto(char* codigo) {
   fp = fopen("produtos.dat", "rb");
   
   if (fp == NULL) {
-    printf("O arquivo nao foi encontrado!\n");
-    printf("A sequencia do programa sera interrompida!\n");
+    printf("      O arquivo nao foi encontrado!\n");
+    printf("  A sequencia do programa sera interrompida!\n");
     exit(1);
   }
   
@@ -578,8 +556,8 @@ void regravarProduto(Produtos* prod) {
 	fp = fopen("produtos.dat", "r+b");
 	
   if (fp == NULL) {
-    printf("O arquivo nao pode ser aberto corretamente!\n");
-    printf("A sequencia do programa sera interrompida!\n");
+    printf("    O arquivo nao pode ser aberto corretamente!\n");
+    printf("    A sequencia do programa sera interrompida!\n");
     exit(1);
   }
 	// while(!feof(fp)) {
