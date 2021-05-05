@@ -284,7 +284,7 @@ char* pesquisarProduto(void) {  // OK
     validar = validaCodigo(codigo); 
     if(validar == 1){
       printf("\n");
-      //printf("                       \t       * Codigo valido!\n");
+      printf("                       \t       * Codigo valido!\n");
     }else{
       printf("                       \t       * Codigo invalido!\n");
     }
@@ -362,7 +362,7 @@ char* alterarProduto(void) { //FUNÇÕES PARA ATUALIZAÇÃO
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        // printf("                       \t       * Codigo valido!\n");
+        printf("                       \t       * Codigo valido!\n");
     }else{
         printf("                       \t       * Codigo invalido!\n");
     }
@@ -445,7 +445,7 @@ char* excluirProduto(void) { //FUNÇÕES PARA EXCLUSÃO
     getchar();
     validar = validaCodigo(codigo); 
     if(validar == 1){
-        // printf("                       \t       * Codigo valido!\n");
+        printf("                       \t       * Codigo valido!\n");
     }else{
         printf("                       \t       * Codigo invalido!\n");
     }
