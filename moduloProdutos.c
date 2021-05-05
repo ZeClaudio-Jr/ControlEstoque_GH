@@ -548,14 +548,14 @@ void exibirProduto(Produtos* prod) {
 
 void regravarProduto(Produtos* prod) {
   int encontrado;
-	FILE* fp;
+	FILE* fp; // Tipo definido pela biblioteca padrão (abstração)
   Produtos* prodSim;
 
-	prodSim = (Produtos*) malloc(sizeof(Produtos));
+	prodSim = (Produtos*) malloc(sizeof(Produtos)); // Alocação de espaço de memória para a variável prodSim
 
-	fp = fopen("produtos.dat", "r+b");
+	fp = fopen("produtos.dat", "r+b"); // Abertura do arquivo produtos.dat, onde r significa ler e b, binario
 	
-  if (fp == NULL) {
+  if (fp == NULL) { // Se o arquivo analizado estiver NULL/vazio, apresenta e mensagem de erro e sai do programa com o EXIT(1)
     printf("    O arquivo nao pode ser aberto corretamente!\n");
     printf("    A sequencia do programa sera interrompida!\n");
     exit(1);
@@ -563,12 +563,12 @@ void regravarProduto(Produtos* prod) {
 	// while(!feof(fp)) {
 	encontrado = False;
 	while (fread(prodSim, sizeof(Produtos), 1, fp) && !encontrado) {
-    //fread(prodsim, sizeof(Produtos), 1, fp);
-		if (strcmp(prodSim->codigo, prod->codigo) == 0) {
+    
+		if (strcmp(prodSim->codigo, prod->codigo) == 0) { //Compara 
       encontrado = True;
-      fseek(fp, -1*sizeof(Produtos), SEEK_CUR);
+      fseek(fp, -1*sizeof(Produtos), SEEK_CUR); // Além de modificar o indicador de posição, fseek também limpa o indicador de fim de arquivo (EOF) e desfaz os efeitos causados por prévias chamadas a função ungetc.
      	fwrite(prod, sizeof(Produtos), 1, fp);
-			//break;
+			
 		}
   }
   fclose(fp);
