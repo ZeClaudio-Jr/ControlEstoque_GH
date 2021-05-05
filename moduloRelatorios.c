@@ -433,19 +433,12 @@ void relatEntradas(char* codigo) {
 void listaEntradas(char* codigo) {
     FILE* fp;
     Entrada* ent;
-    char nomeTrunc[26];
-    int tam;
 
     ent = (Entrada*) malloc(sizeof(Entrada));
     fp = fopen("Entrada.dat", "rb");
     while (fread(ent, sizeof(Entrada), 1, fp)) {
         if (strcmp(ent->codigo, codigo) == 0) {
-            tam = strlen(ent->nome);
-            strncpy(nomeTrunc, ent->nome, tam);
-            for (int i = tam; i < 25; i++) {
-                nomeTrunc[i] = ' ';
-            }
-            nomeTrunc[25] = '\0';
+            
             printf("  |*|             \tNome do Produto: %s        \n", ent->nome);
             printf("  *|*             \tCodigo do Produto: %s      \n", ent->codigo);
             printf("  |*|             \tDescricao do produto: %s   \n", ent->desc);
@@ -562,20 +555,13 @@ void relatSaidas(char* codigo){
 
 void listaSaidas(char* codigo){
   FILE* fp;
-    Saida* sai;
-    char nomeTrunc[26];
-    int tam;
+  Saida* sai;
 
-    sai = (Saida*) malloc(sizeof(Saida));
-    fp = fopen("Saida.dat", "rb");
-    while (fread(sai, sizeof(Saida), 1, fp)) {
-        if (strcmp(sai->codigo, codigo) == 0) {
-            tam = strlen(sai->nome);
-            strncpy(nomeTrunc, sai->nome, tam);
-            for (int i = tam; i < 25; i++) {
-                nomeTrunc[i] = ' ';
-            }
-            nomeTrunc[25] = '\0';
+  sai = (Saida*) malloc(sizeof(Saida));// aloca espaço p lê uma saida do arquivo
+    fp = fopen("Saida.dat", "rb");// abre o arquivo p leitura
+    while (fread(sai, sizeof(Saida), 1, fp)) {//leitura do 1º registro
+        if (strcmp(sai->codigo, codigo) == 0) {//compara os codigos
+          
             printf("  |*|             \tNome do Produto: %s        \n", sai->nome);
             printf("  *|*             \tCodigo do Produto: %s      \n", sai->codigo);
             printf("  |*|             \tDescricao do produto: %s   \n", sai->desc);
@@ -585,6 +571,6 @@ void listaSaidas(char* codigo){
         
         }
     }
-    fclose(fp);
+    fclose(fp);// fecha arquivo
     free(sai);
 }

@@ -392,8 +392,8 @@ void gravarEntrada(Entrada* ent){
 
 
 Entrada* buscarEntrada(char* codigo) {
-	FILE* fp;
-	Entrada* ent;
+	FILE* fp;// apontador p o arquivo
+	Entrada* ent;// apontador p struct Entrada
 
 	ent = (Entrada*) malloc(sizeof(Entrada));
 	fp = fopen("Entrada.dat", "rb");
@@ -434,21 +434,21 @@ void exibirEntrada(Entrada* ent) {
 
 void regravarEntrada(Entrada* ent) {
   int achou ;
-	FILE* fp;
+	FILE* fp;// ponteiro para o arquivo
 	Entrada* entLido;
 
-	entLido = (Entrada*) malloc(sizeof(Entrada));
-	fp = fopen("Entrada.dat", "r+b");
-	if (fp == NULL) {
+	entLido = (Entrada*) malloc(sizeof(Entrada));// alocação de espaço de memoria para a variavel entLido
+	fp = fopen("Entrada.dat", "r+b"); //abri o arquivo "Entrada.dat" (r = leitura e b = binario)
+	if (fp == NULL) {// se o arquivo estiver vazio/NULL mostra a msgm de erro e sai do programa
 		printf("      Nao foi possivel abrir o arquivo!\n");
     printf("          Fechamento automatico\n");
-   exit(1);
+    exit(1);
 	}
   achou = False;
   while(fread(entLido, sizeof(Entrada),1, fp) && !achou){
-    if(strcmp(entLido->codigo, ent->codigo) == 0){
+    if(strcmp(entLido->codigo, ent->codigo) == 0){// compara os codigos
       achou = True;
-      fseek(fp, -1*sizeof(Entrada), SEEK_CUR);
+      fseek(fp, -1*sizeof(Entrada), SEEK_CUR);// fseek modificar o indicador de posição
       fwrite(ent, sizeof(Entrada), 1, fp);
     }
   }
