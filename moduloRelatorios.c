@@ -328,23 +328,23 @@ void relatEntradas(char* codigo) {
 
 
 void listaEntradas(char* codigo) {
-    FILE* fp;
-    Entrada* ent;
+  FILE* fp;
+  Entrada* ent;
 
-    ent = (Entrada*) malloc(sizeof(Entrada));
-    fp = fopen("Entrada.dat", "rb");
-    while (fread(ent, sizeof(Entrada), 1, fp)) {
-        if (strcmp(ent->codigo, codigo) == 0) {
+  ent = (Entrada*) malloc(sizeof(Entrada));
+  fp = fopen("Entrada.dat", "rb");
+  while (fread(ent, sizeof(Entrada), 1, fp)) {
+    if (strcmp(ent->codigo, codigo) == 0) {
             
-            printf("  |*|             \tNome do Produto: %s        \n", ent->nome);
-            printf("  *|*             \tCodigo do Produto: %s      \n", ent->codigo);
-            printf("  |*|             \tDescricao do produto: %s   \n", ent->desc);
-            printf("  *|*             \tFornecedor: %s             \n", ent->forn);
-            printf("  |*|             \tQuantidade: %s             \n", ent->qtde);
-            printf("  *|*             \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
+      printf("  |*|             \tNome do Produto: %s        \n", ent->nome);
+      printf("  *|*             \tCodigo do Produto: %s      \n", ent->codigo);
+      printf("  |*|             \tDescricao do produto: %s   \n", ent->desc);
+      printf("  *|*             \tFornecedor: %s             \n", ent->forn);
+      printf("  |*|             \tQuantidade: %s             \n", ent->qtde);
+      printf("  *|*             \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
         
-        }
-    }
+      }
+  }
     fclose(fp);
     free(ent);
 }
@@ -456,10 +456,10 @@ void listaSaidas(char* codigo){
   FILE* fp;
   Saida* sai;
 
-  sai = (Saida*) malloc(sizeof(Saida));// aloca espaço p lê uma saida do arquivo
-    fp = fopen("Saida.dat", "rb");// abre o arquivo p leitura
-    while (fread(sai, sizeof(Saida), 1, fp)) {//leitura do 1º registro
-        if (strcmp(sai->codigo, codigo) == 0) {//compara os codigos
+  sai = (Saida*) malloc(sizeof(Saida));
+    fp = fopen("Saida.dat", "rb");
+    while (fread(sai, sizeof(Saida), 1, fp)) {
+        if (strcmp(sai->codigo, codigo) == 0) {
           
             printf("  |*|             \tNome do Produto: %s        \n", sai->nome);
             printf("  *|*             \tCodigo do Produto: %s      \n", sai->codigo);
@@ -470,6 +470,6 @@ void listaSaidas(char* codigo){
         
         }
     }
-    fclose(fp);// fecha arquivo
+    fclose(fp);
     free(sai);
 }
