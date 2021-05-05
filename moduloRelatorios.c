@@ -378,10 +378,19 @@ char* telarelatorioEntradas(void) {
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
     printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    
     printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
     getchar();
+
   return codigo;
 }
 
@@ -500,10 +509,19 @@ char* telarelatorioSaidas(void){
           printf("  |*|          **        Codigo invalido!\n");
       }
     }while(validar != 1);
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
     printf("\n");
     printf("\n");
+    printf("\n");
+    printf("\n");
+    printf("\n");
+    
     printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
     getchar();
+
   return codigo;
 }
 
