@@ -503,7 +503,7 @@ Produtos* buscarProduto(char* codigo) {
   
   while(fread(prod, sizeof(Produtos), 1, fp) == 1) {
     if ((strcmp(prod->codigo, codigo) == 0) && (prod->status == True)) {
-    // if (strcmp(prod->codigo, codigo) == 0) {
+    
       fclose(fp);
       return prod;
     }
@@ -530,15 +530,7 @@ void exibirProduto(Produtos* prod) {
   }
   printf("\n                          Aperte ENTER para continuar.\n");
   getchar();
-  //   if (prod->status == 'c') {
-  //     strcpy(situacao, "CADASTRADO")
-  //   } else if (prod->status == 'sc') {
-  //     strcpy(situacao, "NAO CADASTRADO");
-  //   } else {
-  //     strcpy(situacao, "Sem informacao");
-  //   }
-  //   printf("Status do produto: %s\n", situacao);
-  // } 
+
 }
 
 
