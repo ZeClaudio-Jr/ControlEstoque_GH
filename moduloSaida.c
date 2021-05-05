@@ -37,7 +37,7 @@ void cadastrarSaida(void){
   Saida *sai;
   sai = cadastSai();
   gravarSaida(sai);
-  free(sai);//desaloca a porção de memória alocada por malloc
+  free(sai);
 }
 
 void alterarSaida(void){
@@ -131,9 +131,10 @@ char menuSaida(void){
   return op;
 }
 
- Saida* cadastSai(void){
-  int validar; // variavel para as validações
-  Saida *sai; //Declaração da variavel
+
+Saida* cadastSai(void){
+  int validar; 
+  Saida *sai; 
 
   system("clear||cls");
     printf("\n");
@@ -156,7 +157,7 @@ char menuSaida(void){
     printf("  \n");
     printf("  >>>>>>>>>>>>>>>         Informe sobre a nova saida:         <<<<<<<<<<<<<<<   \n");
     printf("  \n");
-    sai = (Saida*) malloc(sizeof(Saida)); //reservar/alocar uma quantidade de memória
+    sai = (Saida*) malloc(sizeof(Saida)); 
     do{
       printf("  |*|          **        Nome do produto: ");
       scanf("%24[^\n]", sai->nome);
@@ -245,7 +246,7 @@ char menuSaida(void){
 char* alterarSai(void){
   char* codigo;
   int validar; // variavel para as validações
-  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
+  codigo = (char*) malloc(5*sizeof(char)); 
 
   system("clear||cls");
     printf("\n");
@@ -282,10 +283,11 @@ char* alterarSai(void){
   return codigo;
 }
 
+
 char* pesquisarSai(void){
   char* codigo;
-  int validar; // variavel para as validações
-  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
+  int validar; 
+  codigo = (char*) malloc(5*sizeof(char)); 
   
     system("clear||cls");
     printf("\n");
@@ -330,10 +332,11 @@ char* pesquisarSai(void){
   return codigo;
 }
 
+
 char* excluirSai(void){
   char *codigo;
-  int validar; // variavel para as validações
-  codigo = (char*) malloc(5*sizeof(char)); //reservar/aloca uma quantidade de memória
+  int validar; 
+  codigo = (char*) malloc(5*sizeof(char)); 
     system("cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
@@ -374,14 +377,14 @@ char* excluirSai(void){
 //FUNÇÕES DE ARQUIVOS
 void gravarSaida(Saida* sai){
 
-  FILE* fp;//endereço do arquivo
-  fp = fopen("Saida.dat", "ab");//abre o arquivo para gravação
+  FILE* fp;
+  fp = fopen("Saida.dat", "ab");
   if (fp == NULL) {
     printf("Nao foi possivel abrir o arquivo!\n");
     exit(1);
   }
-  fwrite(sai, sizeof(Saida), 1, fp);//escreve no arquivo
-  fclose(fp);//fecha o arquivo
+  fwrite(sai, sizeof(Saida), 1, fp);
+  fclose(fp);
 }
 
 
