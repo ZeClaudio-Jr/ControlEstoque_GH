@@ -28,7 +28,7 @@ typedef struct entrada Entrada; //Definição do tipo Entrada
               excluirEntrada();
      				  break;
           default:
-              printf("Valor invalido \n");
+              printf("                      Valor invalido!    \n");
               break;
      		}
      	} while (opcao != '0');
@@ -51,7 +51,7 @@ void alterarEntrada(void){
 	codigo = alterarEntr();
 	ent = buscarEntrada(codigo);
 	if (ent == NULL) {
-    	printf("\n\nEntrada não encontrada!\n\n");
+    	printf("\n\n\n ** Entrada inexistente! **\n\n");
   	} else {
 		  ent = cadastEntr();
 		  strcpy(ent->codigo, codigo);
@@ -81,7 +81,7 @@ void excluirEntrada(void){
 	ent = (Entrada*) malloc(sizeof(Entrada));
 	ent = buscarEntrada(codigo);
 	if (ent == NULL) {
-    	printf("\n\nEntrada não encontrada!\n\n");
+    	printf("\n\n\n ** Entrada inexistente! **\n\n");
   }else {
       ent->status = False;
 		  regravarEntrada(ent);
