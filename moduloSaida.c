@@ -300,14 +300,17 @@ char* pesquisarSai(void){
     printf("  |*|          MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU**MENU          |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
-    printf("\n");
+     printf("\n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
     printf("  \n");
-    printf("  >>>>>>>>>>>>>     Forneca novas informacoes sobre a saida:    <<<<<<<<<<<<<   \n");
+    printf("  >>>>>>>>                Informe o codigo da saiada:               <<<<<<<<    \n");
+    printf("  \n");
+    printf("  \n");
+    printf("  \n");
     printf("  \n");
     do{
       printf("  |*|          **        Codigo do produto: ");
@@ -315,11 +318,15 @@ char* pesquisarSai(void){
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                       \t       * Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                       \t       * Codigo invalido!\n");
       }
     }while(validar != 1);
+    printf("  \n");
+    printf("  \n");
+    printf("  *#--##--##--##--##--                  **                 --##--##--##--##--#*\n");
+    printf("\n");
   return codigo;
 }
 
