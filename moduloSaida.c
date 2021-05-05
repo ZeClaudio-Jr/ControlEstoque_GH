@@ -409,18 +409,18 @@ Saida* buscarSaida(char* codigo) {
 void exibirSaida(Saida* sai) {
   
 	if (sai == NULL) {
-		printf("\n#--##--##--##- Saida Inexistente #--##--##--##-\n");
+		printf("                           ## saida nao cadastrada! ##\n\n");
 	} else {
-		printf("\n#--##--##--##- Saida Cadastrada #--##--##--##-\n\n");
-    printf("\tNome do Produto: %s\n", sai->nome);
-		printf("\tCodigo do Produto: %s\n", sai->codigo);
-		printf("\tDescricao do produto: %s\n", sai->desc);
-		printf("\tFornecedor: %s\n", sai->forn);
-    printf("\tQuantidade: %s\n", sai->qtde);
-	  printf("\tData da Saida: %d/%d/%d\n", sai->dd, sai->mm, sai->aaaa);
+		printf("                      ** Descricao da saida cadastrada **\n\n");
+    printf("                         >> Nome do Produto: %s\n", sai->nome);
+		printf("                         >> Codigo do Produto: %s\n", sai->codigo);
+		printf("                         >> Descricao do produto: %s\n", sai->desc);
+		printf("                         >> Fornecedor: %s\n", sai->forn);
+    printf("                         >> Quantidade: %s\n", sai->qtde);
+	  printf("                         >> Data da Saida: %d/%d/%d\n", sai->dd, sai->mm, sai->aaaa);
 
 	}
-	printf("\n\nTecle ENTER para continuar!\n\n");
+	printf("\n                           Aperte ENTER para continuar.\n");
 	getchar();
 }
 
