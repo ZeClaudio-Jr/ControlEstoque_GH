@@ -442,7 +442,7 @@ void listaEntradas(char* codigo) {
             printf("  |*|  \tDescricao do produto: %s   \n", ent->desc);
             printf("  *|*  \tFornecedor: %s             \n", ent->forn);
             printf("  |*|  \tQuantidade: %s             \n", ent->qtde);
-            printf("  *|*  \tData da Entrada: %d/%d/%d  \n", ent->dd, ent->mm, ent->aaaa);
+            printf("  *|*  \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
         
         }
     }
@@ -563,7 +563,7 @@ void listaSaidas(char* codigo){
             printf("  |*|  \tDescricao do produto: %s   \n", Sai->desc);
             printf("  *|*  \tFornecedor: %s             \n", Sai->forn);
             printf("  |*|  \tQuantidade: %s             \n", Sai->qtde);
-            printf("  *|*  \tData da Saida: %d/%d/%d  \n", Sai->dd, Sai->mm, Sai->aaaa);
+            printf("  *|*  \tData da Saida: %d/%d/%d  \n\n", Sai->dd, Sai->mm, Sai->aaaa);
         
         }
     }
