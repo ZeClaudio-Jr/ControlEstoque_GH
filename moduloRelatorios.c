@@ -562,16 +562,16 @@ void relatSaidas(char* codigo){
 
 void listaSaidas(char* codigo){
   FILE* fp;
-    Saida* Sai;
+    Saida* sai;
     char nomeTrunc[26];
     int tam;
 
-    Sai = (Saida*) malloc(sizeof(Saida));
+    sai = (Saida*) malloc(sizeof(Saida));
     fp = fopen("Saida.dat", "rb");
-    while (fread(Sai, sizeof(Saida), 1, fp)) {
-        if (strcmp(Sai->codigo, codigo) == 0) {
-            tam = strlen(Sai->nome);
-            strncpy(nomeTrunc, Sai->nome, tam);
+    while (fread(sai, sizeof(Saida), 1, fp)) {
+        if (strcmp(sai->codigo, codigo) == 0) {
+            tam = strlen(sai->nome);
+            strncpy(nomeTrunc, sai->nome, tam);
             for (int i = tam; i < 25; i++) {
                 nomeTrunc[i] = ' ';
             }
@@ -586,5 +586,5 @@ void listaSaidas(char* codigo){
         }
     }
     fclose(fp);
-    free(Sai);
+    free(sai);
 }
