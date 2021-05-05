@@ -416,18 +416,18 @@ Entrada* buscarEntrada(char* codigo) {
 void exibirEntrada(Entrada* ent) {
   
 	if (ent == NULL) {
-		printf("\n#--##--##--##- Entrada Inexistente #--##--##--##-\n");
+		printf("                           ## entrada nao cadastrada! ##\n\n");
 	} else {
-		printf("\n#--##--##--##- Entrada Cadastrada #--##--##--##-\n\n");
-    printf("\tNome do Produto: %s\n", ent->nome);
-		printf("\tCodigo do Produto: %s\n", ent->codigo);
-		printf("\tDescricao do produto: %s\n", ent->desc);
-		printf("\tFornecedor: %s\n", ent->forn);
-    printf("\tQuantidade: %s\n", ent->qtde);
-	  printf("\tData da Entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
+		printf("                      ** Descricao da entrada cadastrada **\n\n");
+    printf("                         >> Nome do Produto: %s\n", ent->nome);
+		printf("                         >> Codigo do Produto: %s\n", ent->codigo);
+		printf("                         >> Descricao do produto: %s\n", ent->desc);
+		printf("                         >> Fornecedor: %s\n", ent->forn);
+    printf("                         >> Quantidade: %s\n", ent->qtde);
+	  printf("                         >> Data da entrada: %d/%d/%d\n", ent->dd, ent->mm, ent->aaaa);
 
 	}
-	printf("\n\nTecle ENTER para continuar!\n\n");
+	printf("\n                           Aperte ENTER para continuar.\n");
 	getchar();
 }
 
@@ -440,7 +440,8 @@ void regravarEntrada(Entrada* ent) {
 	entLido = (Entrada*) malloc(sizeof(Entrada));
 	fp = fopen("Entrada.dat", "r+b");
 	if (fp == NULL) {
-		printf("Erro na abertura do arquivo!\n");
+		printf("      Nao foi possivel abrir o arquivo!\n");
+    printf("          Fechamento automatico\n");
    exit(1);
 	}
   achou = False;
