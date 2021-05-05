@@ -277,9 +277,9 @@ char* alterarEntr(void){
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                       \t       * Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                       \t       * Codigo invalido!\n");
       }
     }while(validar != 1);
   return codigo;
@@ -367,9 +367,9 @@ char* excluirEntr(void){
       getchar();
       validar = validaCodigo(codigo); 
       if(validar == 1){
-          printf("  |*|          **        Codigo valido!\n");
+          printf("                       \t       * Codigo valido!\n");
       }else{
-          printf("  |*|          **        Codigo invalido!\n");
+          printf("                       \t       * Codigo invalido!\n");
       }
     }while(validar != 1);
   return codigo;
@@ -382,7 +382,8 @@ void gravarEntrada(Entrada* ent){
   FILE* fp;//endereço do arquivo
   fp = fopen("Entrada.dat", "ab");//abre o arquivo para gravação
   if (fp == NULL) {
-    printf("Erro na abertura do arquivo!\n");
+    printf("      Nao foi possivel abrir o arquivo!\n");
+    printf("          Fechamento automatico\n");
     exit(1);
   }
   fwrite(ent, sizeof(Entrada), 1, fp);//escreve no arquivo
@@ -397,7 +398,8 @@ Entrada* buscarEntrada(char* codigo) {
 	ent = (Entrada*) malloc(sizeof(Entrada));
 	fp = fopen("Entrada.dat", "rb");
 	if (fp == NULL) {
-		printf("Erro na abertura do arquivo!\n");
+		printf("      Nao foi possivel abrir o arquivo!\n");
+    printf("          Fechamento automatico\n");
     exit(1);
 	}
 	while(fread(ent, sizeof(Entrada), 1, fp) == 1){
