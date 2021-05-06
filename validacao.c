@@ -18,7 +18,8 @@ int validaNome(char nome[]){
 int validaCodigo(char codigo[]){
 
   for(int i = 0; i < strlen(codigo); i++){
-    if((codigo[i] >= 0 && codigo[i] <= 47) || (codigo[i] >= 58 && codigo[i] <= 126)){    return 0;
+    if((codigo[i] >= 0 && codigo[i] <= 47) || (codigo[i] >= 58 && codigo[i] <= 126)){    
+      return 0;
     }else  if (strlen(codigo) > 4){ // limita numero de caracteres digitados
       return 0;
     }
@@ -56,7 +57,8 @@ int validaForne(char forn[]){
 int validaQuant(char qtde[]){
 
   for(int i = 0; i < strlen(qtde); i++){
-    if((qtde[i] >= 0 && qtde[i] <= 47) || (qtde[i] >= 58 && qtde[i] <= 126)){    return 0;
+    if((qtde[i] >= 0 && qtde[i] <= 47) || (qtde[i] >= 58 && qtde[i] <= 126)){    
+      return 0;
     }else  if (strlen(qtde) > 4){ // limita numero de caracteres digitados
       return 0;
     }
