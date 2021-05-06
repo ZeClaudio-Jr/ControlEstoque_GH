@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "assin.h"
-#include "entrada.h"
+#include "moduloEntrada.h"
 #include "validacao.h"
 
 
