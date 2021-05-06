@@ -3,10 +3,10 @@
 #include <string.h>
 #include "validacao.h"
 #include "assin.h"
-#include "produtos.h"
+#include "moduloProdutos.h"
 #include "moduloEntrada.h"
 #include "moduloSaida.h"
-#include "relatorios.h"
+#include "moduloRelatorios.h"
 
 
 void navegacaoRelatorio(void) {
@@ -16,7 +16,20 @@ void navegacaoRelatorio(void) {
     op = menuRelatorio();         
     switch (op) {
       case '1': 
-        relatorioProdutos();         
+        menuRelatorioProdutos();  //Antigo relatorioProdutos
+          do{
+            switch (op) {
+              case '1':
+                system("clear||cls");
+                relatorioProdutos();
+                break;
+              
+              case '2':
+                system("clear||cls");
+                relatGeralProdutos();
+                break;
+            }
+          } while (op != '0');
         break;
 
       case '2': 
@@ -85,7 +98,52 @@ char menuRelatorio(void) {
 
 // RELATÓRIO Específico
 
-void relatorioProdutos(void) {
+char menuRelatorioProdutos(void) {
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =             Gerar Relatorio de Produtos          =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");  
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                [ 1 ] << Relatorio Especifico  >>                       *|*\n");
+    printf("  |*|                [ 2 ] << Relatorio Geral  >>                            |*|\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                [ 0 ] << Sair >>                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t                Digite a opcao desejada: ");
+    scanf("%c", &op);  
+    getchar();
+  return op;  
+}
+
+
+
+void relatorioProdutos(void) { // Específico
   char* codigo;
 
   codigo = telaRelatorioProdutos();
@@ -170,7 +228,7 @@ void telaRelatProdutos(char* codigo) {
     printf("  |*|        ****************************************************            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        =                 Relatorio Produtos               =            *|*\n");
+    printf("  *|*        =          Relatorio Especifico de Produtos        =            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");
@@ -222,6 +280,69 @@ void listProdutosPorCodigo(char* codigo) {
     fclose(fp);
     free(prod);
 }
+
+
+
+
+void relatGeralProdutos(void) {
+
+  system("clear||cls");
+  printf("\n");
+  printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|        ****************************************************            |*|\n");
+  printf("  *|*        ****************************************************            *|*\n");
+  printf("  |*|        =                                                  =            |*|\n");
+  printf("  *|*        =           Relatorio Geral dos Produtos           =            *|*\n");
+  printf("  |*|        =                                                  =            |*|\n");
+  printf("  *|*        ****************************************************            *|*\n");
+  printf("  |*|        ****************************************************            |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+  printf("  *|*===================================**===================================*|*\n");
+  printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+  printf("  *|*                                                                        *|*\n");
+  printf("  |*|                                                                        |*|\n");
+  printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+  printf("  *|*                                                                        *|*\n");
+  listaGeralProdutos();
+  printf("  |*|                                                                        |*|\n");
+  printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+  printf("\n");  
+  printf("\n");
+  printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+  getchar();
+
+}
+
+
+void listaGeralProdutos(void) {
+  FILE* fp;
+  Produtos* prod;
+
+  prod = (Produtos*) malloc(sizeof(Produtos));
+
+  fp = fopen("produtos.dat", "rb");
+
+  while (fread(prod, sizeof(Produtos), 1, fp)) {
+
+    printf("\n");
+    printf("  |*|             \tNome do Produto: %s        \n", prod->nome);
+    printf("  *|*             \tCodigo do Produto: %s      \n", prod->codigo);
+    printf("  *|*             \tValor do Produto: %.2f      \n", prod->valor);
+    printf("  |*|             \tData de Validade: %d/%d/%d \n", prod->dd, prod->mm, prod->aaaa);
+    printf("\n\n");
+   
+    }
+    fclose(fp);
+    free(prod);
+}
+
+
 
 
 
@@ -596,7 +717,8 @@ void listaSaidas(char* codigo){
 }
 
 
-void relatGeralSaidas(void){
+void relatGeralSaidas(void) {
+
   system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
