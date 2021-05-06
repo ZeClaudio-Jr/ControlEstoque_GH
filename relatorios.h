@@ -18,12 +18,15 @@ char* telaRelatorioProdutos(void);
 
 
 //RELATORIO DE ENTRADA
-char menuRelatorioentrada(void);
+void navegacaoRelatorioEntrada(void);
+char menuRelatorioEntrada(void);
 void relatorioEntradas(void);
-char* telarelatorioEntradas(void);
+char* telarelatorioEntradasEspecifico(void);
+void relatorioEntradasEspecifico(void);
 void relatEntradas(char* codigo);
 void listaEntradas(char* codigo);
-
+void relatGeralEntradas(void);
+void listaGeralEntradas(void);
 
 //RELATORIO DE SAIDA
 void relatorioSaidas(void);
