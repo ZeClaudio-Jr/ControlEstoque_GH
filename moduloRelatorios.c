@@ -96,7 +96,7 @@ char menuRelatorio(void) {
 }
 
 
-// RELATÓRIO Específico
+// RELATÓRIO PRODUTOS
 
 char menuRelatorioProdutos(void) {
     char op;
@@ -348,30 +348,6 @@ void listaGeralProdutos(void) {
 
 // RELATÓRIO DE ENTRADAS
 
-void navegacaoRelatorioEntrada(void) {
- 
-  char op;
-  do {
-    op = menuRelatorioEntrada();         
-    switch (op) {
-      case '1': 
-        relatorioEntradasEspecifico();    
-        break;
-
-      case '2': 
-        relatGeralEntradas();      
-        break;
-  
-      default:
-        printf("             Valor digitado invalido. \n");
-        printf("   Tente digitar um numero correto para uma das opcoes. \n");
-        break;
-    } 
-
-  }while (op != '0'); 
-}
-
-
 char menuRelatorioEntrada(void) {
     char op;
 
@@ -411,20 +387,31 @@ char menuRelatorioEntrada(void) {
     printf("\n");
     printf("\t                Digite a opcao desejada: ");
     scanf("%c", &op);  
+    do{
+      switch(op) {
+        case '1':
+          relatorioEntradas();
+          break;
+              
+        case '2':
+          relatGeralEntradas();
+          break;
+      }
+    } while (op != '0');
     getchar();
-  return op;  
+
 }
 
 
-void relatorioEntradasEspecifico(void) {
+void relatorioEntradas(void) { //Relatorio Especifico
   char* codigo;
-	codigo = telarelatorioEntradasEspecifico();
+	codigo = telarelatorioEntradas();
     relatEntradas(codigo);
     free(codigo);
 }
 
 
-char* telarelatorioEntradasEspecifico(void) {
+char* telarelatorioEntradas(void) {
   char* codigo;
   int validar;
   codigo = (char*) malloc(5*sizeof(char));
@@ -489,7 +476,7 @@ void relatEntradas(char* codigo) {
     printf("  |*|        ****************************************************            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        =                 Relatorio Entradas               =            *|*\n");
+    printf("  *|*        =          Relatorio Especifico de Entradas        =            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");
@@ -538,6 +525,7 @@ void listaEntradas(char* codigo) {
     free(ent);
 }
 
+
 void relatGeralEntradas(void){
   system("clear||cls");
     printf("\n");
@@ -546,7 +534,7 @@ void relatGeralEntradas(void){
     printf("  |*|        ****************************************************            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        =                 Relatorio Entradas               =            *|*\n");
+    printf("  *|*        =          Relatorio geral das Entradas            =            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");
