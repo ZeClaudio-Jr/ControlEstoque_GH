@@ -24,7 +24,7 @@ void navegacaoRelatorio(void) {
         break;
    
       case '3': 
-        relatorioSaidas();      
+        menuRelatorioSaidas();      
         break;
 
       default:
