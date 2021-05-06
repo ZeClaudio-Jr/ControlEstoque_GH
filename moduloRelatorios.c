@@ -224,7 +224,7 @@ char* telaRelatorioProdutos(void) {
 void telaRelatProdutos(char* codigo) {
     
     
-    system("cls");
+    system("clear||cls");
     printf("\n");
     printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
     printf("  *|*                                                                        *|*\n");
@@ -404,7 +404,7 @@ char menuRelatorioEntrada(void) {
             break;
     }   
   getchar();
-return op;
+  return op;
 }
 
 
@@ -582,7 +582,7 @@ void listaGeralEntradas(void){
    
     }
   fclose(fp);
-   free(ent);
+  free(ent);
 }
 
 
