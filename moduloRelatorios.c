@@ -20,7 +20,7 @@ void navegacaoRelatorio(void) {
         break;
 
       case '2': 
-        relatorioEntradas();      
+        menuRelatorioentrada();      
         break;
    
       case '3': 
@@ -65,9 +65,9 @@ char menuRelatorio(void) {
     printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");  
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                                                                        |*|\n");
-    printf("  *|*                [ 1 ] << Relatorio de produtos >>                       *|*\n");
-    printf("  |*|                [ 2 ] << Relatorio de Entradas >>                       |*|\n");
-    printf("  *|*                [ 3 ] << Relatorio de Saidas >>                         *|*\n");
+    printf("  *|*                [ 1 ] << Relatorios de produtos >>                      *|*\n");
+    printf("  |*|                [ 2 ] << Relatorios de Entradas >>                      |*|\n");
+    printf("  *|*                [ 3 ] << Relatorios de Saidas >>                        *|*\n");
     printf("  |*|                                                                        |*|\n");
     printf("  *|*                                                                        *|*\n");
     printf("  |*|                [ 0 ] << Sair >>                                        |*|\n");
@@ -227,6 +227,50 @@ void listProdutosPorCodigo(char* codigo) {
 
 // RELATÓRIO DE ENTRADAS
 
+char menuRelatorioentrada(void) {
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =             Gerar Relatorio de Entrada           =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");  
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                [ 1 ] << Relatorio Especifico  >>                       *|*\n");
+    printf("  |*|                [ 2 ] << Relatorio Geral  >>                            |*|\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                [ 0 ] << Sair >>                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t                Digite a opcao desejada: ");
+    scanf("%c", &op);  
+    getchar();
+  return op;  
+}
+
+
 void relatorioEntradas(void) {
   char* codigo;
 	codigo = telarelatorioEntradas();
@@ -246,7 +290,7 @@ char* telarelatorioEntradas(void) {
     printf("  |*|        ****************************************************            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
-    printf("  *|*        =                 Relatorio Entradas               =            *|*\n");
+    printf("  *|*        =               Relatorio Especifico               =            *|*\n");
     printf("  |*|        =                                                  =            |*|\n");
     printf("  *|*        ****************************************************            *|*\n");
     printf("  |*|        ****************************************************            |*|\n");

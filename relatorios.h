@@ -18,6 +18,7 @@ char* telaRelatorioProdutos(void);
 
 
 //RELATORIO DE ENTRADA
+char menuRelatorioentrada(void);
 void relatorioEntradas(void);
 char* telarelatorioEntradas(void);
 void relatEntradas(char* codigo);
