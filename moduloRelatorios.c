@@ -3,10 +3,10 @@
 #include <string.h>
 #include "validacao.h"
 #include "assin.h"
-#include "produtos.h"
+#include "moduloProdutos.h"
 #include "moduloEntrada.h"
 #include "moduloSaida.h"
-#include "relatorios.h"
+#include "moduloRelatorios.h"
 
 
 void navegacaoRelatorio(void) {
