@@ -587,7 +587,7 @@ void listaGeralEntradas(void){
 
 
 // RELATÓRIO DE SAIDAS
-char menuRelatorioSaida(void) {
+char menuRelatorioSaidas(void) {
     char op;
 
     system("clear||cls");
@@ -627,20 +627,20 @@ char menuRelatorioSaida(void) {
     printf("\t                Digite a opcao desejada: ");
     scanf("%c", &op);  
     switch(op) {
-          case '1':
-            relatorioSaidas();
-            break;
+      case '1':
+        relatorioSaidas();
+        break;
             
-          case '2':
-            relatGeralSaidas();
-            break;
+      case '2':
+        relatGeralSaidas();
+        break;
             
-          case '0':
-            menuRelatorioSaida(); 
-            break;
+      case '0':
+        menuRelatorioSaidas(); 
+        break;
     }   
   getchar();
-return op;
+  return op;
 }
 
 
