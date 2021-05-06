@@ -17,19 +17,6 @@ void navegacaoRelatorio(void) {
     switch (op) {
       case '1': 
         menuRelatorioProdutos();  //Antigo relatorioProdutos
-          do{
-            switch (op) {
-              case '1':
-                system("clear||cls");
-                relatorioProdutos();
-                break;
-              
-              case '2':
-                system("clear||cls");
-                relatGeralProdutos();
-                break;
-            }
-          } while (op != '0');
         break;
 
       case '2': 
@@ -137,8 +124,27 @@ char menuRelatorioProdutos(void) {
     printf("\n");
     printf("\t                Digite a opcao desejada: ");
     scanf("%c", &op);  
-    getchar();
-  return op;  
+    
+    switch (op) {
+              case '1':
+                system("clear||cls");
+                relatorioProdutos();
+                break;
+              
+              case '2':
+                system("clear||cls");
+                relatGeralProdutos();
+                break;
+    
+              case '0':
+                system("clear||cls");
+                menuRelatorioProdutos();
+                break;
+    }
+         
+  getchar();
+  return op; 
+   
 }
 
 
