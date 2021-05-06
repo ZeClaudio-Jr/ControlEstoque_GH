@@ -29,3 +29,5 @@ void relatorioSaidas(void);
 char* telarelatorioSaidas(void);
 void relatSaidas(char* codigo);
 void listaSaidas(char* codigo);
+void relatGeralSaidas(void);
+void listaGeralSaidas(void);

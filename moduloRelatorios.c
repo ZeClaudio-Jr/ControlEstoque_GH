@@ -4,8 +4,8 @@
 #include "validacao.h"
 #include "assin.h"
 #include "produtos.h"
-#include "entrada.h"
-#include "saida.h"
+#include "moduloEntrada.h"
+#include "moduloSaida.h"
 #include "relatorios.h"
 
 
@@ -472,4 +472,59 @@ void listaSaidas(char* codigo){
     }
     fclose(fp);
     free(sai);
+}
+
+
+void relatGeralSaidas(void){
+  system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Relatorio Saidas                 =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+    printf("  *|*                                                                        *|*\n");
+    listaGeralSaidas();
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");  
+    printf("\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+    getchar();
+}
+
+
+void listaGeralSaidas(void){
+  FILE* fp;
+  Saida* sai;
+
+  sai = (Saida*) malloc(sizeof(Saida));
+    fp = fopen("Saida.dat", "rb");
+    while (fread(sai, sizeof(Saida), 1, fp)) {
+        
+      printf("  |*|             \tNome do Produto: %s        \n", sai->nome);
+      printf("  *|*             \tCodigo do Produto: %s      \n", sai->codigo);
+      printf("  |*|             \tDescricao do produto: %s   \n", sai->desc);
+      printf("  *|*             \tFornecedor: %s             \n", sai->forn);
+      printf("  |*|             \tQuantidade: %s             \n", sai->qtde);
+      printf("  *|*             \tData da saida: %d/%d/%d  \n\n", sai->dd, sai->mm, sai->aaaa);
+   
+    }
+  fclose(fp);
+   free(sai);
 }
