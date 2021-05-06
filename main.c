@@ -12,10 +12,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include "assin.h"
-#include "produtos.h"
+#include "moduloProdutos.h"
 #include "moduloEntrada.h"
 #include "moduloSaida.h"
-#include "relatorios.h"
+#include "moduloRelatorios.h"
 
 
 /// Programa Principal <main>
