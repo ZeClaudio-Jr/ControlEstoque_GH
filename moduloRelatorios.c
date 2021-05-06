@@ -127,17 +127,14 @@ char menuRelatorioProdutos(void) {
     
     switch (op) {
               case '1':
-                system("clear||cls");
                 relatorioProdutos();
                 break;
               
               case '2':
-                system("clear||cls");
                 relatGeralProdutos();
                 break;
     
               case '0':
-                system("clear||cls");
                 menuRelatorioProdutos();
                 break;
     }
@@ -590,6 +587,63 @@ void listaGeralEntradas(void){
 
 
 // RELATÓRIO DE SAIDAS
+char menuRelatorioSaida(void) {
+    char op;
+
+    system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =             Gerar Relatorio de Saida             =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|            Digite o tipo de relatorio desejado ou sair:                |*|\n");  
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                [ 1 ] << Relatorio Especifico  >>                       *|*\n");
+    printf("  |*|                [ 2 ] << Relatorio Geral  >>                            |*|\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                [ 0 ] << Sair >>                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");
+    printf("\t                Digite a opcao desejada: ");
+    scanf("%c", &op);  
+    switch(op) {
+          case '1':
+            relatorioSaidas();
+            break;
+            
+          case '2':
+            relatGeralSaidas();
+            break;
+            
+          case '0':
+            menuRelatorioSaida(); 
+            break;
+    }   
+  getchar();
+return op;
+}
+
+
 
 void relatorioSaidas(void){
   char* codigo;
