@@ -387,19 +387,21 @@ char menuRelatorioEntrada(void) {
     printf("\n");
     printf("\t                Digite a opcao desejada: ");
     scanf("%c", &op);  
-    do{
-      switch(op) {
-        case '1':
-          relatorioEntradas();
-          break;
-              
-        case '2':
-          relatGeralEntradas();
-          break;
-      }
-    } while (op != '0');
-    getchar();
-
+    switch(op) {
+          case '1':
+            relatorioEntradas();
+            break;
+            
+          case '2':
+            relatGeralEntradas();
+            break;
+            
+          case '0':
+            menuRelatorioEntrada(); 
+            break;
+    }   
+  getchar();
+return op;
 }
 
 
