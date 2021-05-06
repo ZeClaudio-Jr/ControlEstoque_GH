@@ -30,6 +30,7 @@ void listaGeralEntradas(void);
 
 
 //RELATORIO DE SAIDA
+char menuRelatorioSaida(void);
 void relatorioSaidas(void);
 char* telarelatorioSaidas(void);
 void relatSaidas(char* codigo);
