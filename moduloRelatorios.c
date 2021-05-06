@@ -20,7 +20,7 @@ void navegacaoRelatorio(void) {
         break;
 
       case '2': 
-        menuRelatorioentrada();      
+        menuRelatorioEntrada();      
         break;
    
       case '3': 
@@ -227,7 +227,31 @@ void listProdutosPorCodigo(char* codigo) {
 
 // RELATÓRIO DE ENTRADAS
 
-char menuRelatorioentrada(void) {
+void navegacaoRelatorioEntrada(void) {
+ 
+  char op;
+  do {
+    op = menuRelatorioEntrada();         
+    switch (op) {
+      case '1': 
+        relatorioEntradasEspecifico();    
+        break;
+
+      case '2': 
+        relatGeralEntradas();      
+        break;
+  
+      default:
+        printf("             Valor digitado invalido. \n");
+        printf("   Tente digitar um numero correto para uma das opcoes. \n");
+        break;
+    } 
+
+  }while (op != '0'); 
+}
+
+
+char menuRelatorioEntrada(void) {
     char op;
 
     system("clear||cls");
@@ -271,15 +295,15 @@ char menuRelatorioentrada(void) {
 }
 
 
-void relatorioEntradas(void) {
+void relatorioEntradasEspecifico(void) {
   char* codigo;
-	codigo = telarelatorioEntradas();
+	codigo = telarelatorioEntradasEspecifico();
     relatEntradas(codigo);
     free(codigo);
 }
 
 
-char* telarelatorioEntradas(void) {
+char* telarelatorioEntradasEspecifico(void) {
   char* codigo;
   int validar;
   codigo = (char*) malloc(5*sizeof(char));
@@ -393,6 +417,59 @@ void listaEntradas(char* codigo) {
     free(ent);
 }
 
+void relatGeralEntradas(void){
+  system("clear||cls");
+    printf("\n");
+    printf("  *#--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--#*\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        =                 Relatorio Entradas               =            *|*\n");
+    printf("  |*|        =                                                  =            |*|\n");
+    printf("  *|*        ****************************************************            *|*\n");
+    printf("  |*|        ****************************************************            |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*===================================**===================================*|*\n");
+    printf("  |*|>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<|*|\n");
+    printf("  *|*                                                                        *|*\n");
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--              **              --##--##--##--##--##-<<<\n");
+    printf("  *|*                                                                        *|*\n");
+    listaGeralEntradas();
+    printf("  |*|                                                                        |*|\n");
+    printf("  >>>-##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##--##-<<<\n");
+    printf("\n");  
+    printf("\n");
+    printf("\t>>>           Tecle <ENTER> para continuar...          <<<\n");
+    getchar();
+}
+
+
+void listaGeralEntradas(void){
+  FILE* fp;
+  Entrada* ent;
+
+  ent = (Entrada*) malloc(sizeof(Entrada));
+    fp = fopen("Entrada.dat", "rb");
+    while (fread(ent, sizeof(Entrada), 1, fp)) {
+        
+      printf("  |*|             \tNome do Produto: %s        \n", ent->nome);
+      printf("  *|*             \tCodigo do Produto: %s      \n", ent->codigo);
+      printf("  |*|             \tDescricao do produto: %s   \n", ent->desc);
+      printf("  *|*             \tFornecedor: %s             \n", ent->forn);
+      printf("  |*|             \tQuantidade: %s             \n", ent->qtde);
+      printf("  *|*             \tData da Entrada: %d/%d/%d  \n\n", ent->dd, ent->mm, ent->aaaa);
+   
+    }
+  fclose(fp);
+   free(ent);
+}
 
 
 // RELATÓRIO DE SAIDAS
