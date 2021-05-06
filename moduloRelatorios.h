@@ -4,15 +4,17 @@
 void navegacaoRelatorio(void);
 
 char menuRelatorio(void); //Menu primário RELATÓRIO
+char menuRelatorioProdutos(void);
 
 void relatorioGeral(void);
+void relatGeralProdutos(void);
 void relatorioProdutos(void);
 
 void telaRelatProdEspecifico(void);
 void telaRelatProdutos(char*);
 
 void listProdutosPorCodigo(char*);
-void listGeralProdutos(char*);
+void listaGeralProdutos(void);
 
 char* telaRelatorioProdutos(void);
 
