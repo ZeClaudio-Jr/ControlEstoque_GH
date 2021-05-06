@@ -3,7 +3,7 @@
 #include <string.h>         //Biblioteca para Strings
 #include "assin.h"          //Biblioteca de Assinaturas
 #include "validacao.h"      //Biblioteca para as validações
-#include "produtos.h"
+#include "moduloProdutos.h"
 
 
 
